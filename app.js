@@ -51,33 +51,33 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to bezkoder application." });
 });
 
-require("./app/routes/auth.routes")(app);
-require("./app/routes/role.routes")(app);
-require("./app/routes/userRole.routes")(app);
-require("./app/routes/user.routes")(app);
-require("./app/routes/userResumeReview.routes")(app);
-require("./app/routes/student.routes")(app);
-require("./app/routes/link.routes")(app);
-require("./app/routes/education.routes")(app);
-require("./app/routes/course.routes")(app);
-require("./app/routes/experience.routes")(app);
-require("./app/routes/project.routes")(app);
-require("./app/routes/skill.routes")(app);
-require("./app/routes/certification.routes")(app);
-require("./app/routes/interest.routes")(app);
+require("./app/routes/resumeRoutes/auth.routes")(app);
+require("./app/routes/resumeRoutes/role.routes")(app);
+require("./app/routes/resumeRoutes/userRole.routes")(app);
+require("./app/routes/resumeRoutes/user.routes")(app);
+require("./app/routes/resumeRoutes/userResumeReview.routes")(app);
+require("./app/routes/resumeRoutes/student.routes")(app);
+require("./app/routes/resumeRoutes/link.routes")(app);
+require("./app/routes/resumeRoutes/education.routes")(app);
+require("./app/routes/resumeRoutes/course.routes")(app);
+require("./app/routes/resumeRoutes/experience.routes")(app);
+require("./app/routes/resumeRoutes/project.routes")(app);
+require("./app/routes/resumeRoutes/skill.routes")(app);
+require("./app/routes/resumeRoutes/certification.routes")(app);
+require("./app/routes/resumeRoutes/interest.routes")(app);
 
-require("./app/routes/resumeReview.routes")(app);
-require("./app/routes/resume.routes")(app);
-require("./app/routes/resumeLink.routes")(app);
-require("./app/routes/resumeEducation.routes")(app);
-require("./app/routes/resumeCourse.routes")(app);
-require("./app/routes/resumeExperience.routes")(app);
-require("./app/routes/resumeProject.routes")(app);
-require("./app/routes/resumeSkill.routes")(app);
-require("./app/routes/resumeCertification.routes")(app);
-require("./app/routes/resumeInterest.routes")(app);
-require("./app/routes/adminRole.routes")(app);
-require("./app/routes/reviewerRole.routes")(app);
+require("./app/routes/resumeRoutes/resumeReview.routes")(app);
+require("./app/routes/resumeRoutes/resume.routes")(app);
+require("./app/routes/resumeRoutes/resumeLink.routes")(app);
+require("./app/routes/resumeRoutes/resumeEducation.routes")(app);
+require("./app/routes/resumeRoutes/resumeCourse.routes")(app);
+require("./app/routes/resumeRoutes/resumeExperience.routes")(app);
+require("./app/routes/resumeRoutes/resumeProject.routes")(app);
+require("./app/routes/resumeRoutes/resumeSkill.routes")(app);
+require("./app/routes/resumeRoutes/resumeCertification.routes")(app);
+require("./app/routes/resumeRoutes/resumeInterest.routes")(app);
+require("./app/routes/resumeRoutes/adminRole.routes")(app);
+require("./app/routes/resumeRoutes/reviewerRole.routes")(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
