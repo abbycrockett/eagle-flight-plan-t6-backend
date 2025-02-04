@@ -1,10 +1,10 @@
 {
-  "name": "resume-t6-backend",
+  "name": "flight-plan-t6-backend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "bundle": "mkdir deploy && cp -r app app.js package.json package-lock.json resume-backend-t6.service .env deploy"
+    "bundle": "mkdir deploy && cp -r app app.js package.json package-lock.json flight-plan-t6-backend.service .env deploy"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

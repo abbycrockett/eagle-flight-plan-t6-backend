@@ -1,11 +1,11 @@
 [Unit]
-Description=NodeJS Resume App
+Description=NodeJS Eagle Flight Plan
 After=network.target
  
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/nodeapps/2024/project3/t6
+WorkingDirectory=/home/ubuntu/nodeapps/2025/flight-plan/t6
 ExecStart=/usr/bin/npm run start
 Restart=on-failure
  
