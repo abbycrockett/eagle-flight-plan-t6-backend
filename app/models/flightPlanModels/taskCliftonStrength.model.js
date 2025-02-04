@@ -1,19 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
     const TaskCliftonStrength = sequelize.define("taskCliftonStrength", {
-        taskId: {
+        id: {
             type: Sequelize.INTEGER,
-            references: {
-                model: 'task', 
-                key: 'id', 
-            }
+            autoIncrement: true,
+            primaryKey: true,
         },
-        cliftonStrengthId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'cliftonStrength',
-                key: 'id', 
-            }
-        }
+        // taskId
+        // cliftonStrengthId
     });
     return TaskCliftonStrength;
 };

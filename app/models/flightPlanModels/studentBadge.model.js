@@ -1,19 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
     const StudentBadge = sequelize.define("studentBadge", {
-        studentId: {
+        id:{
             type: Sequelize.INTEGER,
-            references: {
-                model: 'student', 
-                key: 'id',
-            }
+            autoIncrement: true,
+            primaryKey: true,
         },
-        badgeId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'badge', 
-                key: 'id', 
-            }
-        },
+        // studentId
+        // badgeId
         date_acquired: {
             type: Sequelize.DATE,
             allowNull: false,

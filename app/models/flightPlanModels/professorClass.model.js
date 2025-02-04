@@ -3,10 +3,10 @@ module.exports = (sequelize, Sequelize) => {
         id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
-            references: {
-                model: 'user', 
-                key: 'id', 
-            }
+            // references: {
+            //     model: 'user', 
+            //     key: 'id', 
+            // }
         },
         email: {
             type: Sequelize.STRING,

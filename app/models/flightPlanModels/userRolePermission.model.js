@@ -1,19 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
     const UserRolePermission = sequelize.define("userRolePermission", {
-        userRoleId: {
+        id: {
             type: Sequelize.INTEGER,
-            references: {
-                model: 'userRole', 
-                key: 'id', 
-            }
+            autoIncrement: true,
+            primaryKey: true,
         },
-        permissionId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'permission', 
-                key: 'id', 
-            }
-        },
+        // userRoleId
+        // permissionId
         type: {
             type: Sequelize.ENUM,
             values: ['read', 'write', 'delete'],

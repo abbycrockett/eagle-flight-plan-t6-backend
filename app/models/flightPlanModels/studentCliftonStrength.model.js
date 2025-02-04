@@ -1,19 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
     const StudentCliftonStrength = sequelize.define("studentCliftonStrength", {
-        studentId: {
+        id: {
             type: Sequelize.INTEGER,
-            references: {
-                model: 'student', 
-                key: 'id', 
-            }
+            autoIncrement: true,
+            primaryKey: true,
         },
-        cliftonStrengthId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'cliftonStrength', 
-                key: 'id',
-            }
-        }
+        // studentId
+        // cliftonStrengthId
     });
     return StudentCliftonStrength;
 };

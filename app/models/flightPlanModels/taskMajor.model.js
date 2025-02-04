@@ -1,19 +1,14 @@
+const { ideahub } = require("googleapis/build/src/apis/ideahub");
+
 module.exports = (sequelize, Sequelize) => {
     const TaskMajor = sequelize.define("taskMajor", {
-        taskId: {
+        id:{
             type: Sequelize.INTEGER,
-            references: {
-                model: 'task', 
-                key: 'id',
-            }
-        },
-        majorId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'major', 
-                key: 'id',
-            }
+            primaryKey: true,
+            autoIncrement: true,
         }
+        // taskId
+        // majorId
     });
     return TaskMajor;
 };

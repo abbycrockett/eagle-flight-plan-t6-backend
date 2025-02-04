@@ -1,19 +1,12 @@
 module.exports = (sequelize, Sequelize) => {
     const StudentMajor = sequelize.define("studentMajor", {
-        studentId: {
+        id: {
             type: Sequelize.INTEGER,
-            references: {
-                model: 'student',
-                key: 'id', 
-            }
+            autoIncrement: true,
+            primaryKey: true,
         },
-        majorId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'major',
-                key: 'id', 
-            }
-        },
+        // studentId
+        // majorId
         dateAcquired: {
             type: Sequelize.DATE,
             allowNull: false,
