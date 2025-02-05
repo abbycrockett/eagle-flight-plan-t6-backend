@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         type: {
             type: Sequelize.ENUM,
-            values: ['Automatic', 'Semi-Automatic', 'Manual'],
+            values: ['automatic', 'semi_automatic', 'manual'],
             allowNull: true,
         },
         points: {

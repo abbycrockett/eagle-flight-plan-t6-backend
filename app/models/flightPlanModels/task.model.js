@@ -7,13 +7,13 @@ module.exports = (sequelize, Sequelize) => {
         },
         category: {
             type: Sequelize.ENUM,
-            values: ['Academic', 'Leadership', 'Networking', 'Strengths', 'Career Prep', 'Mentoring', 'Volunteer', 'Other'],
+            values: ['academic', 'leadership', 'networking', 'strengths', 'career_prep', 'mentoring', 'volunteer', 'other'],
             allowNull: false,
         },
         type: {
             type: Sequelize.ENUM,
             //Type (Automatic or Manual addition to Flight Plan)
-            values: ['Automatic', 'Semi-Automatic', 'Manual'],
+            values: ['automatic', 'semi_automatic', 'manual'],
             allowNull: false,
         },
         reflection_required: {
@@ -27,7 +27,7 @@ module.exports = (sequelize, Sequelize) => {
         schedule_type: {
             type: Sequelize.ENUM,
             // Scheduling type (one time, semesterly, special event, etc.)
-            values: ['One Time', 'Semesterly', 'Special Event', 'Other'],
+            values: ['one_time', 'semesterly', 'special_event', 'other'],
             allowNull: false,
         },
         name: {
@@ -49,7 +49,7 @@ module.exports = (sequelize, Sequelize) => {
         // Competition types (automatic, self-reported, confirmed by OC employee)
         completion_type: {
             type: Sequelize.ENUM,
-            values: ['Automatic', 'Self-Reported', 'Confirmed by OC employee'],
+            values: ['automatic', 'self_reported', 'confirmed_by_oc_employee'],
             allowNull: true,
         },
         point_value: {

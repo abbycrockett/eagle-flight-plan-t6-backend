@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         semester_approved: {
             type: Sequelize.ENUM,
-            values: ['Fall', 'Spring'],
+            values: ['fall', 'spring'],
             allowNull: true,
         },
         image: {
