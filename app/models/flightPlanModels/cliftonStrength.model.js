@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         category: {
             type: Sequelize.ENUM,

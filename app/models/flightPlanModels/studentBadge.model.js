@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
         // badgeId
         date_acquired: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
         }
     });
     return StudentBadge;

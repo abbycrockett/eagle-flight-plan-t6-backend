@@ -7,10 +7,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         // studentId
         // majorId
-        dateAcquired: {
-            type: Sequelize.DATE,
-            allowNull: false,
-        }
     });
     return StudentMajor;
 };

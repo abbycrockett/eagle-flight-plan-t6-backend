@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         category: {
             type: Sequelize.ENUM,
-            values: ['Academic', 'Leadership', 'Networking', 'Strengths', 'Career Prep', 'Mentoring', 'Volunteer'],
+            values: ['Academic', 'Leadership', 'Networking', 'Strengths', 'Career Prep', 'Mentoring', 'Volunteer', 'Other'],
             allowNull: false,
         },
         type: {
@@ -40,17 +40,17 @@ module.exports = (sequelize, Sequelize) => {
         },
         rationale: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         semester_from_grad: {
             type: Sequelize.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
         // Competition types (automatic, self-reported, confirmed by OC employee)
         completion_type: {
             type: Sequelize.ENUM,
             values: ['Automatic', 'Self-Reported', 'Confirmed by OC employee'],
-            allowNull: false,
+            allowNull: true,
         },
         point_value: {
             type: Sequelize.INTEGER,

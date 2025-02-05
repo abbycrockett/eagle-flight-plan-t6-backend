@@ -7,11 +7,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         email: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         phoneNumber: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         }
     });
     return Class;

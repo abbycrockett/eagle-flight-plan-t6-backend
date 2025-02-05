@@ -7,12 +7,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         completion_date: {
             type: Sequelize.DATE,
-            allowNull: false,
+            allowNull: true,
         },
         semester_approved: {
             type: Sequelize.ENUM,
             values: ['Fall', 'Spring'],
-            allowNull: false,
+            allowNull: true,
         },
         image: {
             type: Sequelize.BLOB,

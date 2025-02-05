@@ -11,12 +11,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         type: {
             type: Sequelize.ENUM,
             values: ['Automatic', 'Semi-Automatic', 'Manual'],
-            allowNull: false,
+            allowNull: true,
         },
         points: {
             type: Sequelize.INTEGER,

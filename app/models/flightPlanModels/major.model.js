@@ -11,11 +11,11 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         department: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         }
     });
     return Major;
