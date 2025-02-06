@@ -8,7 +8,7 @@ module.exports = (sequelize, Sequelize) => {
         // studentId
         // badgeId
         date_acquired: {
-            type: Sequelize.DATE,
+            type: Sequelize.DATETIME,
             allowNull: true,
         }
     });

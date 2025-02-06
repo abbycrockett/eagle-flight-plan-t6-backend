@@ -18,6 +18,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         reflection_required: {
             type: Sequelize.BOOLEAN,
+            defaultValue: false,
             allowNull: false,
         },
         reflection: {
@@ -36,7 +37,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         description: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         rationale: {
             type: Sequelize.STRING,

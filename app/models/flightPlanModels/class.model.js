@@ -5,11 +5,15 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             //userId
         },
-        email: {
+        course_number: {
             type: Sequelize.STRING,
             allowNull: true,
         },
-        phoneNumber: {
+        course_name: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        department: {
             type: Sequelize.STRING,
             allowNull: true,
         }

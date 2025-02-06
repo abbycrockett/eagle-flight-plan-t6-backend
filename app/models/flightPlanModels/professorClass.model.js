@@ -7,15 +7,8 @@ module.exports = (sequelize, Sequelize) => {
             //     model: 'user', 
             //     key: 'id', 
             // }
-        },
-        email: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        phoneNumber: {
-            type: Sequelize.STRING,
-            allowNull: false,
         }
+        //FKs: userId, classId
     });
     return ProfessorClass;
 };
