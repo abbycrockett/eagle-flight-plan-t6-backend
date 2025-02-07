@@ -79,6 +79,42 @@ require("./app/routes/resumeRoutes/resumeInterest.routes")(app);
 require("./app/routes/resumeRoutes/adminRole.routes")(app);
 require("./app/routes/resumeRoutes/reviewerRole.routes")(app);
 
+// Flight Plan
+require("./app/routes/flightPlanRoutes/award.routes")(app);
+require("./app/routes/flightPlanRoutes/badge.routes")(app);
+require("./app/routes/flightPlanRoutes/badgeExperienceType.routes")(app);
+require("./app/routes/flightPlanRoutes/class.routes")(app);
+require("./app/routes/flightPlanRoutes/cliftonStrength.routes")(app);
+require("./app/routes/flightPlanRoutes/document.routes")(app);
+require("./app/routes/flightPlanRoutes/event.routes")(app);
+require("./app/routes/flightPlanRoutes/eventCliftonStrength.routes")(app);
+require("./app/routes/flightPlanRoutes/experienceType.routes")(app);
+require("./app/routes/flightPlanRoutes/experienceTypeEvent.routes")(app);
+require("./app/routes/flightPlanRoutes/experienceTypeMajor.routes")(app);
+require("./app/routes/flightPlanRoutes/flightPlan.routes")(app);
+require("./app/routes/flightPlanRoutes/flightPlanExperienceType.routes")(app);
+require("./app/routes/flightPlanRoutes/flightPlanTask.routes")(app);
+require("./app/routes/flightPlanRoutes/major.routes")(app);
+require("./app/routes/flightPlanRoutes/permission.routes")(app);
+require("./app/routes/flightPlanRoutes/professorClass.routes")(app);
+require("./app/routes/flightPlanRoutes/rolePermission.routes")(app);
+require("./app/routes/flightPlanRoutes/semester.routes")(app);
+require("./app/routes/flightPlanRoutes/studentBadge.routes")(app);
+require("./app/routes/flightPlanRoutes/studentClass.routes")(app);
+require("./app/routes/flightPlanRoutes/studentCliftonStrength.routes")(app);
+require("./app/routes/flightPlanRoutes/studentExperienceType.routes")(app);
+require("./app/routes/flightPlanRoutes/studentExperienceTypeEvent.routes")(app);
+require("./app/routes/flightPlanRoutes/studentFlightPlan.routes")(app);
+require("./app/routes/flightPlanRoutes/studentFlightPlanTask.routes")(app);
+require("./app/routes/flightPlanRoutes/studentMajor.routes")(app);
+require("./app/routes/flightPlanRoutes/task.routes")(app);
+require("./app/routes/flightPlanRoutes/taskBadge.routes")(app);
+require("./app/routes/flightPlanRoutes/taskCliftonStrength.routes")(app);
+require("./app/routes/flightPlanRoutes/taskMajor.routes")(app);
+require("./app/routes/flightPlanRoutes/transaction.routes")(app);
+require("./app/routes/flightPlanRoutes/userRolePermission.routes")(app);
+require("./app/routes/flightPlanRoutes/verification.routes")(app);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

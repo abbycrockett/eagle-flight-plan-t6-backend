@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const experienceTypeController = require()
+const experienceTypeController = require('../../controllers/flightPlanController/experienceType.controller.js');
 
 const router = genericRouter(experienceTypeController, []);
 

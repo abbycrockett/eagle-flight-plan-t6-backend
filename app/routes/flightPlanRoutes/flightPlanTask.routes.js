@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const flightPlanTaskController = require()
+const flightPlanTaskController = require('../../controllers/flightPlanController/flightPlanTask.controller.js');
 
 const router = genericRouter(flightPlanTaskController, [
     { name: "flightPlan", key: "flightPlanId" },

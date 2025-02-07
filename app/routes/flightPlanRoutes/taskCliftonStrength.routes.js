@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const taskCliftonStrengthController = require()
+const taskCliftonStrengthController = require('../../controllers/flightPlanController/taskCliftonStrength.controller.js');
 
 const router = genericRouter(taskCliftonStrengthController, [
     { name: "task", key: "taskId" },

@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const studentClassController = require()
+const studentClassController = require('../../controllers/flightPlanController/studentClass.controller.js');
 
 const router = genericRouter(studentClassController, [
     { name: "student", key: "studentId" },

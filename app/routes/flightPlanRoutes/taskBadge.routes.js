@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const taskBadgeController = require()
+const taskBadgeController = require('../../controllers/flightPlanController/taskBadge.controller.js');
 
 const router = genericRouter(taskBadgeController, [
     { name: "task", key: "taskId" },

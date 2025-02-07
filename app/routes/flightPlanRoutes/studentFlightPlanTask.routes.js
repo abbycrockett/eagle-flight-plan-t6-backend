@@ -1,9 +1,9 @@
 const genericRouter = require('./genericRouter');
-const studentFlightPlanTaskController = require()
+const studentFlightPlanTaskController = require('../../controllers/flightPlanController/studentFlightPlanTask.controller.js');
 
 const router = genericRouter(studentFlightPlanTaskController, [
     { name: "studentFlightPlan", key: "studentFlightPlanId" },
-    { name: "task", key: "keyId" },
+    { name: "task", key: "taskId" },
     { name: "user", key: "userId" }
 ]);
 

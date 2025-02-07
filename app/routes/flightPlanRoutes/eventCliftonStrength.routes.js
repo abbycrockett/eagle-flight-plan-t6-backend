@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const eventCliftonStrengthController = require()
+const eventCliftonStrengthController = require('../../controllers/flightPlanController/eventCliftonStrength.controller.js');
 
 const router = genericRouter(eventCliftonStrengthController, [ 
     { name: "event", key: "eventId" },

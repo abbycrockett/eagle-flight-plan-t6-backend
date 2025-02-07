@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const eventController = require()
+const eventController = require('../../controllers/flightPlanController/event.controller.js');
 
 const router = genericRouter(eventController, []);
 

@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const transactionController = require()
+const transactionController = require('../../controllers/flightPlanController/transaction.controller.js');
 
 const router = genericRouter(transactionController, [
     { name: "user", key: "userId" },

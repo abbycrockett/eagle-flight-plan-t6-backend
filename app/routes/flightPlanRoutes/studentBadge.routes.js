@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const studentBadgeController = require()
+const studentBadgeController = require('../../controllers/flightPlanController/studentBadge.controller.js');
 
 const router = genericRouter(studentBadgeController, [
     { name: "student", key: "studentId" },

@@ -1,5 +1,5 @@
 const genericRouter = require('./genericRouter');
-const verificationController = require()
+const verificationController = require('../../controllers/flightPlanController/verification.controller.js');
 
 const router = genericRouter(verificationController, []);
 
