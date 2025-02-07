@@ -19,10 +19,6 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.BOOLEAN,
             allowNull: false,
         },
-        reflection: {
-            type: Sequelize.STRING, 
-            allowNull: true,
-        },
         schedule_type: {
             type: Sequelize.ENUM('one_time', 'every_semester', 'special_event'),
             allowNull: false,

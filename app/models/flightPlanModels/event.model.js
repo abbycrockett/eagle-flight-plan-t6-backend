@@ -35,19 +35,14 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         attendance_type: {
-            type: Sequelize.ENUM('automatic', 'semi_automatic', 'manual'),
+            type: Sequelize.ENUM('in_person', 'online'),
             allowNull: false,
-            defaultValue: 'automatic',
+            defaultValue: 'in_person',
         },
         registration: {
-            type: Sequelize.ENUM('automatic', 'semi_automatic', 'manual'),
+            type: Sequelize.ENUM('handshake', 'in_app'),
             allowNull: false,
-            defaultValue: 'automatic',
-        },
-        completion_type: {
-            type: Sequelize.ENUM('automatic', 'semi_automatic', 'manual'),
-            allowNull: false,
-            defaultValue: 'automatic',
+            defaultValue: 'in_app',
         },
         custom: {
             type: Sequelize.BOOL,

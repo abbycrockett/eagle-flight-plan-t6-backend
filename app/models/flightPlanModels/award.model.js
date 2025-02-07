@@ -18,9 +18,9 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         redemption_type: {
-            type: Sequelize.ENUM('inPerson', 'online'),
+            type: Sequelize.ENUM('in_person', 'online'),
             allowNull: false,
-            defaultValue: 'student',
+            defaultValue: 'in_person',
         },
         redemption_info: {
             type: Sequelize.STRING,
