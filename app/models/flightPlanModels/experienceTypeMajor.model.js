@@ -1,10 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
-    const FlightPlan = sequelize.define("flightPlan", {
+    const ExperienceTypeMajor = sequelize.define("experienceTypeMajor", {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
     });
-    return FlightPlan;
+    return ExperienceTypeMajor;
 };
