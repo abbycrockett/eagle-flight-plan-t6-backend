@@ -17,6 +17,11 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: true,
         },
+        status: {
+            type: Sequelize.ENUM('in_progress', 'ready_for_review', 'unapproved', 'approved'),
+            allowNull: false,
+            defaultValue: 'in_progress',
+        },
     });
     return StudentFlightPlanTask;
 };

@@ -22,9 +22,9 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true,
         },
         status: {
-            type: Sequelize.ENUM('academic', 'leadership',),
+            type: Sequelize.ENUM('in_progress', 'ready_for_review', 'unapproved', 'approved'),
             allowNull: false,
-            defaultValue: 'automatic',
+            defaultValue: 'in_progress',
         },
     });
     return StudentExperienceTypeEvent;
