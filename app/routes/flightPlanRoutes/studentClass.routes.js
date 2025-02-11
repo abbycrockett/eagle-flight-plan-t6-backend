@@ -1,4 +1,4 @@
-const genericRouter = require('./genericRouter');
+const genericRouter = require('../genericRoutes.js');
 const studentClassController = require('../../controllers/flightPlanController/studentClass.controller.js');
 
 const router = genericRouter(studentClassController, [

@@ -1,4 +1,4 @@
-const genericRouter = require('./genericRouter');
+const genericRouter = require('../genericRoutes.js');
 const rolePermissionController = require('../../controllers/flightPlanController/rolePermission.controller.js');
 
 const router = genericRouter(rolePermissionController, [

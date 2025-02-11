@@ -1,4 +1,4 @@
-const genericRouter = require('./genericRouter');
+const genericRouter = require('../genericRoutes.js');
 const transactionController = require('../../controllers/flightPlanController/transaction.controller.js');
 
 const router = genericRouter(transactionController, [

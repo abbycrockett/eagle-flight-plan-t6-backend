@@ -41,6 +41,42 @@ db.resumeInterest = require("./resumeModels/resumeInterest.model.js")(sequelize,
 db.reviewerRole = require("./resumeModels/reviewerRole.model.js")(sequelize, Sequelize);
 db.adminRole = require("./resumeModels/adminRole.model.js")(sequelize, Sequelize);
 
+// Flight Plan
+db.award = require("./flightPlanModels/award.model.js")(sequelize, Sequelize);
+db.badge = require("./flightPlanModels/badge.model.js")(sequelize, Sequelize);
+db.badgeExperienceType = require("./flightPlanModels/badgeExperienceType.model.js")(sequelize, Sequelize);
+db.class = require("./flightPlanModels/class.model.js")(sequelize, Sequelize);
+db.cliftonStrength = require("./flightPlanModels/cliftonStrength.model.js")(sequelize, Sequelize);
+db.document = require("./flightPlanModels/document.model.js")(sequelize, Sequelize);
+db.event = require("./flightPlanModels/event.model.js")(sequelize, Sequelize);
+db.eventCliftonStrength = require("./flightPlanModels/eventCliftonStrength.model.js")(sequelize, Sequelize);
+db.experienceType = require("./flightPlanModels/experienceType.model.js")(sequelize, Sequelize);
+db.experienceTypeEvent = require("./flightPlanModels/experienceTypeEvent.model.js")(sequelize, Sequelize);
+db.experienceTypeMajor = require("./flightPlanModels/experienceTypeMajor.model.js")(sequelize, Sequelize);
+db.flightPlan = require("./flightPlanModels/flightPlan.model.js")(sequelize, Sequelize);
+db.flightPlanExperienceType = require("./flightPlanModels/flightPlanExperienceType.model.js")(sequelize, Sequelize);
+db.flightPlanTask = require("./flightPlanModels/flightPlanTask.model.js")(sequelize, Sequelize);
+db.major = require("./flightPlanModels/major.model.js")(sequelize, Sequelize);
+db.permission = require("./flightPlanModels/permission.model.js")(sequelize, Sequelize);
+db.professorClass = require("./flightPlanModels/professorClass.model.js")(sequelize, Sequelize);
+db.rolePermission = require("./flightPlanModels/rolePermission.model.js")(sequelize, Sequelize);
+db.semester = require("./flightPlanModels/semester.model.js")(sequelize, Sequelize);
+db.studentBadge = require("./flightPlanModels/studentBadge.model.js")(sequelize, Sequelize);
+db.studentClass = require("./flightPlanModels/studentClass.model.js")(sequelize, Sequelize);
+db.studentCliftonStrength = require("./flightPlanModels/studentCliftonStrength.model.js")(sequelize, Sequelize);
+db.studentExperienceType = require("./flightPlanModels/studentExperienceType.model.js")(sequelize, Sequelize);
+db.studentExperienceTypeEvent = require("./flightPlanModels/studentExperienceTypeEvent.model.js")(sequelize, Sequelize);
+db.studentFlightPlan = require("./flightPlanModels/studentFlightPlan.model.js")(sequelize, Sequelize);
+db.studentFlightPlanTask = require("./flightPlanModels/studentFlightPlanTask.model.js")(sequelize, Sequelize);
+db.studentMajor = require("./flightPlanModels/studentMajor.model.js")(sequelize, Sequelize);
+db.task = require("./flightPlanModels/task.model.js")(sequelize, Sequelize);
+db.taskBadge = require("./flightPlanModels/taskBadge.model.js")(sequelize, Sequelize);
+db.taskCliftonStrength = require("./flightPlanModels/taskCliftonStrength.model.js")(sequelize, Sequelize);
+db.taskMajor = require("./flightPlanModels/taskMajor.model.js")(sequelize, Sequelize);
+db.transaction = require("./flightPlanModels/transaction.model.js")(sequelize, Sequelize);
+db.userRolePermission = require("./flightPlanModels/userRolePermission.model.js")(sequelize, Sequelize);
+db.verification = require("./flightPlanModels/verification.model.js")(sequelize, Sequelize);
+
 // Role hasMany UserRole
 db.role.hasMany(db.userRole, {
   as: "userRole",

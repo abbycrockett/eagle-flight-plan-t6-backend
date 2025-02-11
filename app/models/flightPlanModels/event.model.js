@@ -19,15 +19,15 @@ module.exports = (sequelize, Sequelize) => {
             defaultValue: 'career_services',
         },
         date: {
-            type: Sequelize.DATETIME, 
+            type: Sequelize.DATE, 
             allowNull: false,
         },
         start_date_time: {
-            type: Sequelize.DATETIME,
+            type: Sequelize.DATE,
             allowNull: false,
         },
         end_date_time: {
-            type: Sequelize.DATETIME,
+            type: Sequelize.DATE,
             allowNull: false,
         },
         location: {
@@ -45,7 +45,7 @@ module.exports = (sequelize, Sequelize) => {
             defaultValue: 'in_app',
         },
         custom: {
-            type: Sequelize.BOOL,
+            type: Sequelize.BOOLEAN,
             allowNull: false,
             defaultValue: false,
         },
@@ -60,5 +60,5 @@ module.exports = (sequelize, Sequelize) => {
         },
 
     });
-    return Education;
+    return Event;
 };

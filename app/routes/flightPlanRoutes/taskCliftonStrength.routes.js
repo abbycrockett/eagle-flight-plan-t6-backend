@@ -1,4 +1,4 @@
-const genericRouter = require('./genericRouter');
+const genericRouter = require('../genericRoutes.js');
 const taskCliftonStrengthController = require('../../controllers/flightPlanController/taskCliftonStrength.controller.js');
 
 const router = genericRouter(taskCliftonStrengthController, [
