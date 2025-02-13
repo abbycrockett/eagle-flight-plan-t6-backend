@@ -1,8 +1,8 @@
 const express = require('express');
+// Authentication with Google Login (Tokens required to make a request to the backend)
+const { authenticate } = require("../authorization/authorization.js"); 
 
 const genericRouter = (controller, parentResources = []) => {
-    // Authentication with Google Login (Tokens required to make a request to the backend)
-    const { authenticate } = require("../authorization/authorization.js"); 
     const router = express.Router();
 
     // CRUD
