@@ -41,6 +41,42 @@ db.resumeInterest = require("./resumeModels/resumeInterest.model.js")(sequelize,
 db.reviewerRole = require("./resumeModels/reviewerRole.model.js")(sequelize, Sequelize);
 db.adminRole = require("./resumeModels/adminRole.model.js")(sequelize, Sequelize);
 
+// Flight Plan
+db.award = require("./flightPlanModels/award.model.js")(sequelize, Sequelize);
+db.badge = require("./flightPlanModels/badge.model.js")(sequelize, Sequelize);
+db.badgeExperienceType = require("./flightPlanModels/badgeExperienceType.model.js")(sequelize, Sequelize);
+db.class = require("./flightPlanModels/class.model.js")(sequelize, Sequelize);
+db.cliftonStrength = require("./flightPlanModels/cliftonStrength.model.js")(sequelize, Sequelize);
+db.document = require("./flightPlanModels/document.model.js")(sequelize, Sequelize);
+db.event = require("./flightPlanModels/event.model.js")(sequelize, Sequelize);
+db.eventCliftonStrength = require("./flightPlanModels/eventCliftonStrength.model.js")(sequelize, Sequelize);
+db.experienceType = require("./flightPlanModels/experienceType.model.js")(sequelize, Sequelize);
+db.experienceTypeEvent = require("./flightPlanModels/experienceTypeEvent.model.js")(sequelize, Sequelize);
+db.experienceTypeMajor = require("./flightPlanModels/experienceTypeMajor.model.js")(sequelize, Sequelize);
+db.flightPlan = require("./flightPlanModels/flightPlan.model.js")(sequelize, Sequelize);
+db.flightPlanExperienceType = require("./flightPlanModels/flightPlanExperienceType.model.js")(sequelize, Sequelize);
+db.flightPlanTask = require("./flightPlanModels/flightPlanTask.model.js")(sequelize, Sequelize);
+db.major = require("./flightPlanModels/major.model.js")(sequelize, Sequelize);
+db.permission = require("./flightPlanModels/permission.model.js")(sequelize, Sequelize);
+db.professorClass = require("./flightPlanModels/professorClass.model.js")(sequelize, Sequelize);
+db.rolePermission = require("./flightPlanModels/rolePermission.model.js")(sequelize, Sequelize);
+db.semester = require("./flightPlanModels/semester.model.js")(sequelize, Sequelize);
+db.studentBadge = require("./flightPlanModels/studentBadge.model.js")(sequelize, Sequelize);
+db.studentClass = require("./flightPlanModels/studentClass.model.js")(sequelize, Sequelize);
+db.studentCliftonStrength = require("./flightPlanModels/studentCliftonStrength.model.js")(sequelize, Sequelize);
+db.studentExperienceType = require("./flightPlanModels/studentExperienceType.model.js")(sequelize, Sequelize);
+db.studentExperienceTypeEvent = require("./flightPlanModels/studentExperienceTypeEvent.model.js")(sequelize, Sequelize);
+db.studentFlightPlan = require("./flightPlanModels/studentFlightPlan.model.js")(sequelize, Sequelize);
+db.studentFlightPlanTask = require("./flightPlanModels/studentFlightPlanTask.model.js")(sequelize, Sequelize);
+db.studentMajor = require("./flightPlanModels/studentMajor.model.js")(sequelize, Sequelize);
+db.task = require("./flightPlanModels/task.model.js")(sequelize, Sequelize);
+db.taskBadge = require("./flightPlanModels/taskBadge.model.js")(sequelize, Sequelize);
+db.taskCliftonStrength = require("./flightPlanModels/taskCliftonStrength.model.js")(sequelize, Sequelize);
+db.taskMajor = require("./flightPlanModels/taskMajor.model.js")(sequelize, Sequelize);
+db.transaction = require("./flightPlanModels/transaction.model.js")(sequelize, Sequelize);
+db.userRolePermission = require("./flightPlanModels/userRolePermission.model.js")(sequelize, Sequelize);
+db.verification = require("./flightPlanModels/verification.model.js")(sequelize, Sequelize);
+
 // Role hasMany UserRole
 db.role.hasMany(db.userRole, {
   as: "userRole",
@@ -471,6 +507,594 @@ db.user.belongsTo(db.adminRole, {
   as: "adminRole",
   foreignKey: "adminId",
   onDelete: "CASCADE"
+});
+
+// Flight Plan Foreign Keys
+// UserRolePermission
+db.permission.hasMany(db.userRolePermission, {
+  as: "userRolePermission",
+  foreignKey: "permissionId",
+  onDelete: "CASCADE"
+});
+db.userRolePermission.belongsTo(db.permission, {
+  as: "permission",
+  foreignKey: "permissionId",
+  onDelete: "SET NULL" 
+});
+
+db.userRole.hasMany(db.userRolePermission, {
+  as: "userRolePermission",
+  foreignKey: "userRoleId",
+  onDelete: "CASCADE"
+});
+db.userRolePermission.belongsTo(db.userRole, {
+  as: "userRole",
+  foreignKey: "userRoleId",
+  onDelete: "SET NULL"
+});
+
+// RolePermission
+db.permission.hasMany(db.rolePermission, {
+  as: "rolePermission",
+  foreignKey: "permissionId",
+  onDelete: "CASCADE"
+});
+db.rolePermission.belongsTo(db.permission, {
+  as: "permission",
+  foreignKey: "permissionId",
+  onDelete: "SET NULL"
+});
+
+db.role.hasMany(db.rolePermission, {
+  as: "rolePermission",
+  foreignKey: "roleId",
+  onDelete: "CASCADE"
+});
+db.rolePermission.belongsTo(db.role, {
+  as: "role",
+  foreignKey: "roleId",
+  onDelete: "SET NULL"
+});
+
+// Document
+db.student.hasMany(db.document, {
+  as: "document",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.document.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+// Class
+db.semester.hasMany(db.class, {
+  as: "class",
+  foreignKey: "semesterId",
+  onDelete: "CASCADE"
+});
+db.class.belongsTo(db.semester, {
+  as: "semester",
+  foreignKey: "semesterId",
+  onDelete: "SET NULL"
+});
+
+// StudentClass
+db.student.hasMany(db.studentClass, {
+  as: "studentClass",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentClass.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+db.class.hasMany(db.studentClass, {
+  as: "studentClass",
+  foreignKey: "classId",
+  onDelete: "CASCADE"
+});
+db.studentClass.belongsTo(db.class, {
+  as: "class",
+  foreignKey: "classId",
+  onDelete: "SET NULL"
+});
+
+// ProfessorClass
+db.user.hasMany(db.professorClass, {
+  as: "professorClass",
+  foreignKey: "userId",
+  onDelete: "CASCADE"
+});
+db.professorClass.belongsTo(db.user, {
+  as: "user",
+  foreignKey: "userId",
+  onDelete: "SET NULL"
+});
+
+db.class.hasMany(db.professorClass, {
+  as: "professorClass",
+  foreignKey: "classId",
+  onDelete: "CASCADE"
+});
+db.professorClass.belongsTo(db.class, {
+  as: "class",
+  foreignKey: "classId",
+  onDelete: "SET NULL"
+});
+
+// StudentMajor
+db.major.hasMany(db.studentMajor, {
+  as: "studentMajor",
+  foreignKey: "majorId",
+  onDelete: "CASCADE"
+});
+db.studentMajor.belongsTo(db.major, {
+  as: "major",
+  foreignKey: "majorId",
+  onDelete: "SET NULL"
+});
+
+db.student.hasMany(db.studentMajor, {
+  as: "studentMajor",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentMajor.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+// StudentCliftonStrength
+db.cliftonStrength.hasMany(db.studentCliftonStrength, {
+  as: "studentCliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "CASCADE"
+});
+db.studentCliftonStrength.belongsTo(db.cliftonStrength, {
+  as: "cliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "SET NULL"
+});
+
+db.student.hasMany(db.studentCliftonStrength, {
+  as: "studentCliftonStrength",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentCliftonStrength.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+// StudentBadge
+db.badge.hasMany(db.studentBadge, {
+  as: "studentBadge",
+  foreignKey: "badgeId",
+  onDelete: "CASCADE"
+});
+db.studentBadge.belongsTo(db.badge, {
+  as: "badge",
+  foreignKey: "badgeId",
+  onDelete: "SET NULL"
+});
+
+db.student.hasMany(db.studentBadge, {
+  as: "studentBadge",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentBadge.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+// Task - Self Reference, will have to see how this works
+db.task.hasMany(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.task.belongsTo(db.task, {
+  as: "prerequisite", // THe prereq task, May need to change this
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+db.verification.hasOne(db.task, {
+  as: "task",
+  foreignKey: "verificationId",
+  onDelete: "SET NULL"
+});
+db.task.belongsTo(db.verification, {
+  as: "verification",
+  foreignKey: "verificationId",
+  onDelete: "SET NULL"
+});
+
+// TaskMajor
+db.task.hasMany(db.taskMajor, {
+  as: "taskMajor",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.taskMajor.belongsTo(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+db.major.hasMany(db.taskMajor, {
+  as: "taskMajor",
+  foreignKey: "majorId",
+  onDelete: "CASCADE"
+});
+db.taskMajor.belongsTo(db.major, {
+  as: "major",
+  foreignKey: "majorId",
+  onDelete: "SET NULL"
+});
+
+// TaskCliftonStrength
+db.task.hasMany(db.taskCliftonStrength, {
+  as: "taskCliftonStrength",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.taskCliftonStrength.belongsTo(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+db.cliftonStrength.hasMany(db.taskCliftonStrength, {
+  as: "taskCliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "CASCADE"
+});
+db.taskCliftonStrength.belongsTo(db.cliftonStrength, {
+  as: "cliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "SET NULL"
+});
+
+// TaskBadge
+db.task.hasMany(db.taskBadge, {
+  as: "taskBadge",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.taskBadge.belongsTo(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+db.badge.hasMany(db.taskBadge, {
+  as: "taskBadge",
+  foreignKey: "badgeId",
+  onDelete: "CASCADE"
+});
+db.taskBadge.belongsTo(db.badge, {
+  as: "badge",
+  foreignKey: "badgeId",
+  onDelete: "SET NULL"
+});
+
+// ExperienceTypeMajor
+db.experienceType.hasMany(db.experienceTypeMajor, {
+  as: "experienceTypeMajor",
+  foreignKey: "experienceTypeId",
+  onDelete: "CASCADE"
+});
+db.experienceTypeMajor.belongsTo(db.experienceType, {
+  as: "experienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "SET NULL"
+});
+
+db.major.hasMany(db.experienceTypeMajor, {
+  as: "experienceTypeMajor",
+  foreignKey: "majorId",
+  onDelete: "CASCADE"
+});
+db.experienceTypeMajor.belongsTo(db.major, {
+  as: "major",
+  foreignKey: "majorId",
+  onDelete: "SET NULL"
+});
+
+// BadgeExperienceType
+db.experienceType.hasMany(db.badgeExperienceType, {
+  as: "badgeExperienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "CASCADE"
+});
+db.badgeExperienceType.belongsTo(db.experienceType, {
+  as: "experienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "SET NULL"
+});
+
+db.badge.hasMany(db.badgeExperienceType, {
+  as: "badgeExperienceType",
+  foreignKey: "badgeId",
+  onDelete: "CASCADE"
+});
+db.badgeExperienceType.belongsTo(db.badge, {
+  as: "badge",
+  foreignKey: "badgeId",
+  onDelete: "SET NULL"
+});
+
+// StudentExperienceType
+db.student.hasMany(db.studentExperienceType, {
+  as: "studentExperienceType",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentExperienceType.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+db.experienceType.hasMany(db.studentExperienceType, {
+  as: "studentExperienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "CASCADE"
+});
+db.studentExperienceType.belongsTo(db.experienceType, {
+  as: "experienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "SET NULL"
+});
+
+// Event
+db.verification.hasOne(db.event, {
+  as: "event",
+  foreignKey: "verificationId",
+  onDelete: "CASCADE"
+});
+db.event.belongsTo(db.verification, {
+  as: "verification",
+  foreignKey: "verificationId",
+  onDelete: "SET NULL"
+});
+
+// EventCliftonStrength
+db.event.hasMany(db.eventCliftonStrength, {
+  as: "eventCliftonStrength",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+db.eventCliftonStrength.belongsTo(db.event, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL"
+});
+
+db.cliftonStrength.hasMany(db.eventCliftonStrength, {
+  as: "eventCliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "CASCADE"
+});
+db.eventCliftonStrength.belongsTo(db.cliftonStrength, {
+  as: "cliftonStrength",
+  foreignKey: "cliftonStrengthId",
+  onDelete: "SET NULL"
+});
+
+// ExperienceTypeEvent
+db.experienceType.hasMany(db.experienceTypeEvent, {
+  as: "experienceTypeEvent",
+  foreignKey: "experienceTypeId",
+  onDelete: "CASCADE"
+});
+db.experienceTypeEvent.belongsTo(db.experienceType, {
+  as: "experienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "SET NULL"
+});
+
+db.event.hasMany(db.experienceTypeEvent, {
+  as: "experienceTypeEvent",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+db.experienceTypeEvent.belongsTo(db.event, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL"
+});
+
+// StudentExperienceTypeEvent
+db.studentExperienceType.hasMany(db.studentExperienceTypeEvent, {
+  as: "studentExperienceTypeEvent",
+  foreignKey: "studentExperienceTypeId",
+  onDelete: "CASCADE"
+});
+db.studentExperienceTypeEvent.belongsTo(db.studentExperienceType, {
+  as: "studentExperienceType",
+  foreignKey: "studentExperienceTypeId",
+  onDelete: "SET NULL"
+});
+
+db.event.hasMany(db.studentExperienceTypeEvent, {
+  as: "studentExperienceTypeEvent",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+db.studentExperienceTypeEvent.belongsTo(db.event, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL"
+});
+
+db.user.hasMany(db.studentExperienceTypeEvent, {
+  as: "studentExperienceTypeEvent",
+  foreignKey: "userId",
+  onDelete: "CASCADE"
+});
+db.studentExperienceTypeEvent.belongsTo(db.user, {
+  as: "approver", // Different name from usual, don't know if this is right or not
+  foreignKey: "userId",
+  onDelete: "SET NULL"
+});
+
+// FlightPlan
+db.semester.hasOne(db.flightPlan, {
+  as: "flightPlan",
+  foreignKey: "semesterId",
+  onDelete: "SET NULL"
+});
+db.flightPlan.belongsTo(db.semester, {
+  as: "semester",
+  foreignKey: "semesterId",
+  onDelete: "SET NULL"
+});
+
+// StudentFlightPlan
+db.student.hasMany(db.studentFlightPlan, {
+  as: "studentFlightPlan",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.studentFlightPlan.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+db.flightPlan.hasMany(db.studentFlightPlan, {
+  as: "studentFlightPlan",
+  foreignKey: "flightPlanId",
+  onDelete: "CASCADE"
+});
+db.studentFlightPlan.belongsTo(db.flightPlan, {
+  as: "flightPlan",
+  foreignKey: "flightPlanId",
+  onDelete: "SET NULL"
+});
+
+// FlightPlanTask
+db.flightPlan.hasMany(db.flightPlanTask, {
+  as: "flightPlanTask",
+  foreignKey: "flightPlanId",
+  onDelete: "CASCADE"
+});
+db.flightPlanTask.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+db.task.hasMany(db.flightPlanTask, {
+  as: "flightPlanTask",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.flightPlanTask.belongsTo(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+// FlightPlanExperienceType
+db.flightPlan.hasMany(db.flightPlanExperienceType, {
+  as: "flightPlanExperienceType",
+  foreignKey: "flightPlanId",
+  onDelete: "CASCADE"
+});
+db.flightPlanExperienceType.belongsTo(db.flightPlan, {
+  as: "flightPlan",
+  foreignKey: "flightPlanId",
+  onDelete: "SET NULL"
+});
+
+db.experienceType.hasMany(db.flightPlanExperienceType, {
+  as: "flightPlanExperienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "CASCADE"
+});
+db.flightPlanExperienceType.belongsTo(db.experienceType, {
+  as: "experienceType",
+  foreignKey: "experienceTypeId",
+  onDelete: "SET NULL"
+});
+
+// StudentFlightPlanTask
+db.studentFlightPlan.hasMany(db.studentFlightPlanTask, {
+  as: "studentFlightPlanTask",
+  foreignKey: "studentFlightPlanId",
+  onDelete: "CASCADE"
+});
+db.studentFlightPlanTask.belongsTo(db.studentFlightPlan, {
+  as: "studentFlightPlan",
+  foreignKey: "studentFlightPlanId",
+  onDelete: "SET NULL"
+});
+
+db.task.hasMany(db.studentFlightPlanTask, {
+  as: "studentFlightPlanTask",
+  foreignKey: "taskId",
+  onDelete: "CASCADE"
+});
+db.studentFlightPlanTask.belongsTo(db.task, {
+  as: "task",
+  foreignKey: "taskId",
+  onDelete: "SET NULL"
+});
+
+db.user.hasMany(db.studentFlightPlanTask, {
+  as: "studentFlightPlanTask",
+  foreignKey: "userId",
+  onDelete: "CASCADE"
+});
+db.studentFlightPlanTask.belongsTo(db.user, {
+  as: "approver", // Different Name from user
+  foreignKey: "userId",
+  onDelete: "SET NULL"
+});
+
+// Transaction
+db.user.hasMany(db.transaction, {
+  as: "transaction",
+  foreignKey: "userId",
+  onDelete: "CASCADE"
+});
+db.transaction.belongsTo(db.user, {
+  as: "verified_by", // Different Name from usual
+  foreignKey: "userId",
+  onDelete: "SET NULL"
+});
+
+db.student.hasMany(db.transaction, {
+  as: "transaction",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+db.transaction.belongsTo(db.student, {
+  as: "purchased_by", // Different Name from usual
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
+db.award.hasMany(db.transaction, {
+  as: "transaction",
+  foreignKey: "awardId",
+  onDelete: "CASCADE"
+});
+db.transaction.belongsTo(db.award, {
+  as: "award",
+  foreignKey: "awardId",
+  onDelete: "SET NULL"
 });
 
 db.sequelize.sync({ alter: true });

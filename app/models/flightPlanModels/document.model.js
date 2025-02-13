@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
         },
         completion_date: {
-            type: Sequelize.DATETIME,
+            type: Sequelize.DATE,
             allowNull: true,
         },
         semester_approved: {
