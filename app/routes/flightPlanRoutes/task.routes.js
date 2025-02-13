@@ -4,7 +4,7 @@ module.exports = (app) => {
 
     const router = genericRouter(taskController, [
         { name: "prerequisiteTask", key: "taskId" } // Self reference, prerequisiteTask is from the task table
-    ]);
+    ], "task");
 
     app.use("/flightPlan-t6", router);
 };

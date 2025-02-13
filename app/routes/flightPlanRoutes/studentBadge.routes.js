@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(studentBadgeController, [
         { name: "student", key: "studentId" },
         { name: "badge", key: "badgeId" }
-    ]);
+    ], "studentBadge");
 
     app.use("/flightPlan-t6", router);
 };

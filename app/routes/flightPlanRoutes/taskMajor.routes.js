@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(taskMajorController, [
         { name: "task", key: "taskId" },
         { name: "major", key: "majorId" }
-    ]);
+    ], "taskMajor");
 
     app.use("/flightPlan-t6", router);
 };

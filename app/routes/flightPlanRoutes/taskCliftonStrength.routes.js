@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(taskCliftonStrengthController, [
         { name: "task", key: "taskId" },
         { name: "cliftonStrength", key: "cliftonStrengthId" }
-    ]);
+    ], "taskCliftonStrength");
 
     app.use("/flightPlan-t6", router);
 };

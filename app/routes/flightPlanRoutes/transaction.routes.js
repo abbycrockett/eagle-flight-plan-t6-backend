@@ -6,7 +6,7 @@ module.exports = (app) => {
         { name: "user", key: "userId" },
         { name: "student", key: "studentId" },
         { name: "award", key: "awardId" }
-    ]);
+    ], "transaction");
 
     app.use("/flightPlan-t6", router);
 };

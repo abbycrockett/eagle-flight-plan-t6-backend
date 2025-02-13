@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(badgeExperienceTypeController, [
         { name: 'experienceType', key: 'experienceTypeId' },
         { name: 'badge', key: 'badgeId' }
-    ]);
+    ], "badgeExperienceType");
 
     app.use("/flightPlan-t6", router);
 };

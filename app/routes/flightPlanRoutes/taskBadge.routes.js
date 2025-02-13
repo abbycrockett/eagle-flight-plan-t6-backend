@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(taskBadgeController, [
         { name: "task", key: "taskId" },
         { name: "badge", key: "badgeId" }
-    ]);
+    ], "taskBadge");
 
     app.use("/flightPlan-t6", router);
 };

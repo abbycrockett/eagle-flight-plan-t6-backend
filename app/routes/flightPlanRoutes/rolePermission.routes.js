@@ -5,7 +5,7 @@ module.exports = (app) => {
     const router = genericRouter(rolePermissionController, [
         { name: "role", key: "roleId" },
         { name: "permission", key: "permissionId" }
-    ]);
+    ], "rolePermission");
 
     app.use("/flightPlan-t6", router);
 };

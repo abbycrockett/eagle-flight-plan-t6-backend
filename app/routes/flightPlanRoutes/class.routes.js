@@ -4,7 +4,7 @@ module.exports = (app) => {
 
     const router = genericRouter(classController, [
         { name: "semester", key: "semesterId" }
-    ]);
+    ], "class");
 
     app.use("/flightPlan-t6", router);
 };
