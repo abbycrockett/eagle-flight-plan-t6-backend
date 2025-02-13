@@ -1,6 +1,7 @@
-const genericRouter = require('../genericRoutes.js');
-const awardController = require('../../controllers/flightPlanController/award.controller.js');
+module.exports = (app) => {
+    const genericRouter = require('../genericRoutes.js');
+    const awardController = require('../../controllers/flightPlanController/award.controller.js');
+    const router = genericRouter(awardController, []);
 
-const router = genericRouter(awardController, []);
-
-module.exports = router;
+    app.use("/flightPlan-t6", router);
+};

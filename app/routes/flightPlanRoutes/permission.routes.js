@@ -1,6 +1,8 @@
-const genericRouter = require('../genericRoutes.js');
-const permissionController = require('../../controllers/flightPlanController/permission.controller.js');
+module.exports = (app) => {
+    const genericRouter = require('../genericRoutes.js');
+    const permissionController = require('../../controllers/flightPlanController/permission.controller.js');
 
-const router = genericRouter(permissionController, []);
+    const router = genericRouter(permissionController, []);
 
-module.exports = router;
+    app.use("/flightPlan-t6", router);
+};

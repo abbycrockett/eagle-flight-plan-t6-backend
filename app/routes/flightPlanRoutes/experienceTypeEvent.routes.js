@@ -1,9 +1,11 @@
-const genericRouter = require('../genericRoutes.js');
-const experienceTypeEventController = require('../../controllers/flightPlanController/experienceTypeEvent.controller.js');
+module.exports = (app) => {
+    const genericRouter = require('../genericRoutes.js');
+    const experienceTypeEventController = require('../../controllers/flightPlanController/experienceTypeEvent.controller.js');
 
-const router = genericRouter(experienceTypeEventController, [
-    { name: "experienceType", key: "experienceTypeId" },
-    { name: "event", key: "eventId" }
-]);
+    const router = genericRouter(experienceTypeEventController, [
+        { name: "experienceType", key: "experienceTypeId" },
+        { name: "event", key: "eventId" }
+    ]);
 
-module.exports = router;
+    app.use("/flightPlan-t6", router);
+};

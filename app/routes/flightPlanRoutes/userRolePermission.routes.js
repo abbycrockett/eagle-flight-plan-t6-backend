@@ -1,9 +1,11 @@
-const genericRouter = require('../genericRoutes.js');
-const userRolePermissionController = require('../../controllers/flightPlanController/userRolePermission.controller.js');
+module.exports = (app) => {
+    const genericRouter = require('../genericRoutes.js');
+    const userRolePermissionController = require('../../controllers/flightPlanController/userRolePermission.controller.js');
 
-const router = genericRouter(userRolePermissionController, [
-    { name: "userRole", key: "userRoleId" },
-    { name: "permission", key: "permissionId" }
-]);
+    const router = genericRouter(userRolePermissionController, [
+        { name: "userRole", key: "userRoleId" },
+        { name: "permission", key: "permissionId" }
+    ]);
 
-module.exports = router;
+    app.use("/flightPlan-t6", router);
+};

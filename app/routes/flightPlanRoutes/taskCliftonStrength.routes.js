@@ -1,9 +1,11 @@
-const genericRouter = require('../genericRoutes.js');
-const taskCliftonStrengthController = require('../../controllers/flightPlanController/taskCliftonStrength.controller.js');
+module.exports = (app) => {
+    const genericRouter = require('../genericRoutes.js');
+    const taskCliftonStrengthController = require('../../controllers/flightPlanController/taskCliftonStrength.controller.js');
 
-const router = genericRouter(taskCliftonStrengthController, [
-    { name: "task", key: "taskId" },
-    { name: "cliftonStrength", key: "cliftonStrengthId" }
-]);
+    const router = genericRouter(taskCliftonStrengthController, [
+        { name: "task", key: "taskId" },
+        { name: "cliftonStrength", key: "cliftonStrengthId" }
+    ]);
 
-module.exports = router;
+    app.use("/flightPlan-t6", router);
+};
