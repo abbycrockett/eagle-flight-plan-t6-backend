@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "bundle": "mkdir deploy && cp -r app app.js package.json package-lock.json flight-plan-t6-backend.service .env deploy"
+    "bundle": "mkdir deploy && cp -r app app.js package.json package-lock.json flight-plan-t6-backend.service .env deploy",
+    "seed:all": "sequelize-cli db:seed:all"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
@@ -23,7 +24,9 @@
     "mysql2": "^3.11.3",
     "node-fetch": "^3.3.2",
     "pug": "^3.0.3",
-    "sequelize": "^6.37.4",
-    "sequelize-cli": "^6.2.0"
+    "sequelize": "^6.37.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
   }
 }
