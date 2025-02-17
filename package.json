@@ -5,10 +5,12 @@
   "scripts": {
     "start": "node app.js",
     "bundle": "mkdir deploy && cp -r app app.js package.json package-lock.json flight-plan-t6-backend.service .env deploy",
-    "seed:all": "sequelize-cli db:seed:all"
+    "seed:all": "sequelize-cli db:seed:all",
+    "start-seed": "concurrently \"npm run start\" \"wait-on tcp:3026 && npm run seed:all\""
   },
   "dependencies": {
     "body-parser": "^1.20.3",
+    "concurrently": "^9.1.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
