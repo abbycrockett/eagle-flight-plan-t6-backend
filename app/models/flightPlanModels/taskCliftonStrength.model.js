@@ -5,8 +5,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        // taskId
-        // cliftonStrengthId
     });
     return TaskCliftonStrength;
 };

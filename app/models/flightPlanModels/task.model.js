@@ -10,12 +10,6 @@ module.exports = (sequelize, Sequelize) => {
             values: ['academic', 'leadership', 'networking', 'strengths', 'career_prep', 'mentoring', 'volunteer', 'other'],
             allowNull: false,
         },
-        type: {
-            type: Sequelize.ENUM,
-            //Type (Automatic or Manual addition to Flight Plan)
-            values: ['automatic', 'semi_automatic', 'manual'],
-            allowNull: false,
-        },
         reflection_required: {
             type: Sequelize.BOOLEAN,
             defaultValue: false,
@@ -45,12 +39,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         semester_from_grad: {
             type: Sequelize.INTEGER,
-            allowNull: true,
-        },
-        // Competition types (automatic, self-reported, confirmed by OC employee)
-        completion_type: {
-            type: Sequelize.ENUM,
-            values: ['automatic', 'self_reported', 'confirmed_by_oc_employee'],
             allowNull: true,
         },
         point_value: {

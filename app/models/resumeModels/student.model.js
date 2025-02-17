@@ -5,6 +5,22 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
+        address: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        graduation_date: {
+            type: Sequelize.DATE,
+            allowNull: true,
+        },
+        points: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+        },
+        student_issued_id: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
     });
     return Student;
 };

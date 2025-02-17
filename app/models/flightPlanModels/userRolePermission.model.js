@@ -5,8 +5,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        // userRoleId
-        // permissionId
         type: {
             type: Sequelize.ENUM,
             values: ['read', 'write', 'delete'],

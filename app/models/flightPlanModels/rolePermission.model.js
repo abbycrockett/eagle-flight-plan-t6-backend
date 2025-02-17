@@ -7,8 +7,6 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        // roleId
-        // permissionId
     });
     return RolePermission;
 };

@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         type: {
             type: Sequelize.ENUM,
-            values: ['read', 'write', 'delete'],
+            values: [ 'user_maintenance', 'flightplan_maintenance', 'flightplan_approval', 'shop_maintenance', 'shop_approval', 'admin_view', 'student_view', 'professor_view'],
             allowNull: false,
         }
     });

@@ -17,14 +17,14 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false,
           },
-          // is_admin: {
-          //   type: Sequelize.BOOLEAN,
-          //   allowNull: false,
-          // },
-          // is_student: {
-          //   type: Sequelize.BOOLEAN,
-          //   allowNull: false,
-          // },
+          phone_number: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
+          prefix: {
+            type: Sequelize.STRING,
+            allowNull: true,
+          },
           // refresh_token: {
           //   type: Sequelize.STRING(512),
           //   allowNull: true
