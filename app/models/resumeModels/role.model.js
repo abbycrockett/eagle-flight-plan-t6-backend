@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
         primaryKey: true,
       },
       role_type: {
-        type: Sequelize.ENUM('admin', 'student', 'reviewer'),
+        type: Sequelize.ENUM('admin', 'student', 'reviewer', 'student_worker', 'professor'),
         allowNull: false,
         defaultValue: 'student',
       },
