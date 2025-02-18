@@ -17,8 +17,8 @@ module.exports = {
           await queryInterface.bulkDelete('majors', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('permissions', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('roles', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('semesters', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('users', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('verifications', null, { truncate: true, cascade: true, restartIdentity: true });
         }
 
@@ -26,40 +26,40 @@ module.exports = {
         {
           await queryInterface.bulkDelete('badgeExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('classes', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('documents', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('events', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('experienceTypeMajors', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('flightPlans', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('rolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentBadges', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentMajors', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('tasks', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('userRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('users', null, { truncate: true, cascade: true, restartIdentity: true });
         }
 
         // Bridge Tables +
         {
-          await queryInterface.bulkDelete('documents', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('eventCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('experienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('eventCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('flightPlanExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('flightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('professorClasses', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('studentBadges', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('studentClasses', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('studentCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('studentExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentExperienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('studentFlightPlans', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('studentMajors', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('taskBadges', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('taskCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('taskMajors', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('transactions', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('userRoles', null, { truncate: true, cascade: true, restartIdentity: true });
         }
 
         // Bridge Tables *
         {
-          await queryInterface.bulkDelete('studentExperienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
         }
       }
       // Resume Builder
@@ -179,6 +179,34 @@ module.exports = {
           { role_type: 'professor', createdAt: new Date(), updatedAt: new Date() },
         ]);
 
+        // Populate students
+        await queryInterface.bulkInsert('students', [
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+          { createdAt: new Date(), updatedAt: new Date() },
+        ]);
+        /*
+        await queryInterface.bulkInsert('students', [
+          { address: '123 Main St, Cityville', graduation_date: new Date('2025-05-15'), points: 1500, student_issued_id: 'S12345', createdAt: new Date(), updatedAt: new Date() },
+          { address: '456 Oak Ave, Townsville', graduation_date: new Date('2024-12-20'), points: 1200, student_issued_id: 'S12346', createdAt: new Date(), updatedAt: new Date() },
+          { address: '789 Pine Rd, Villagecity', graduation_date: new Date('2026-05-10'), points: 1800, student_issued_id: 'S12347', createdAt: new Date(), updatedAt: new Date() },
+          { address: '321 Elm Blvd, Metropolis', graduation_date: new Date('2025-05-15'), points: 1100, student_issued_id: 'S12348', createdAt: new Date(), updatedAt: new Date() },
+          { address: '654 Maple St, Hamptontown', graduation_date: new Date('2024-12-20'), points: 1400, student_issued_id: 'S12349', createdAt: new Date(), updatedAt: new Date() },
+          { address: '987 Birch Ln, Springfield', graduation_date: new Date('2025-12-15'), points: 1600, student_issued_id: 'S12350', createdAt: new Date(), updatedAt: new Date() },
+          { address: '135 Cedar Dr, Westbury', graduation_date: new Date('2024-12-20'), points: 1300, student_issued_id: 'S12351', createdAt: new Date(), updatedAt: new Date() },
+          { address: '246 Redwood Ave, Eastside', graduation_date: new Date('2025-05-15'), points: 1250, student_issued_id: 'S12352', createdAt: new Date(), updatedAt: new Date() },
+          { address: '369 Willow Way, Greenfield', graduation_date: new Date('2026-05-10'), points: 1550, student_issued_id: 'S12353', createdAt: new Date(), updatedAt: new Date() },
+          { address: '741 Pinecrest Blvd, Hilltown', graduation_date: new Date('2025-12-15'), points: 1450, student_issued_id: 'S12354', createdAt: new Date(), updatedAt: new Date() }
+        ]);
+        */
+
         // Populate semesters
         await queryInterface.bulkInsert('semesters', [
           { name: 'Fall 2023', start_date: new Date('2023-09-01'), end_date: new Date('2023-12-15'), createdAt: new Date(), updatedAt: new Date() },
@@ -191,20 +219,6 @@ module.exports = {
           { name: 'Spring 2027', start_date: new Date('2027-01-15'), end_date: new Date('2027-05-10'), createdAt: new Date(), updatedAt: new Date() },
           { name: 'Fall 2027', start_date: new Date('2027-09-01'), end_date: new Date('2027-12-15'), createdAt: new Date(), updatedAt: new Date() },
           { name: 'Spring 2028', start_date: new Date('2028-01-15'), end_date: new Date('2028-05-10'), createdAt: new Date(), updatedAt: new Date() }
-        ]);
-
-        // Populate users
-        await queryInterface.bulkInsert('users', [
-          { fName: 'John', lName: 'Doe', email: 'john.doe@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Jane', lName: 'Smith', email: 'jane.smith@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Alice', lName: 'Johnson', email: 'alice.johnson@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Bob', lName: 'Williams', email: 'bob.williams@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Charlie', lName: 'Brown', email: 'charlie.brown@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Dana', lName: 'Davis', email: 'dana.davis@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Grace', lName: 'Rodriguez', email: 'grace.rodriguez@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate verifications
@@ -250,6 +264,20 @@ module.exports = {
           { course_number: 'ART105', course_name: 'Introduction to Art', department: 'Fine Arts', createdAt: new Date(), updatedAt: new Date() },
           { course_number: 'PSY200', course_name: 'Psychology Principles', department: 'Psychology', createdAt: new Date(), updatedAt: new Date() },
           { course_number: 'ECON101', course_name: 'Microeconomics', department: 'Economics', createdAt: new Date(), updatedAt: new Date() }
+        ]);
+
+        // Populate documents
+        await queryInterface.bulkInsert('documents', [
+          { name: 'Resume', completion_date: new Date('2024-01-15'), semester_approved: 'spring', image: null, studentId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Cover Letter', completion_date: new Date('2024-02-10'), semester_approved: 'spring', image: null, studentId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Internship Agreement', completion_date: new Date('2023-12-05'), semester_approved: 'fall', image: null, studentId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Project Report', completion_date: new Date('2024-03-20'), semester_approved: 'spring', image: null, studentId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Research Paper', completion_date: new Date('2023-11-30'), semester_approved: 'fall', image: null, studentId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Portfolio', completion_date: new Date('2024-01-25'), semester_approved: 'spring', image: null, studentId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Reference Letter', completion_date: new Date('2024-02-15'), semester_approved: 'spring', image: null, studentId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Certification', completion_date: new Date('2023-10-20'), semester_approved: 'fall', image: null, studentId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Training Completion', completion_date: new Date('2024-04-05'), semester_approved: 'spring', image: null, studentId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Workshop Notes', completion_date: new Date('2023-09-15'), semester_approved: 'fall', image: null, studentId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate events
@@ -308,33 +336,61 @@ module.exports = {
           { roleId: 5, permissionId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
-        // Populate students
-        await queryInterface.bulkInsert('students', [
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
+        // Populate studentBadges
+        await queryInterface.bulkInsert('studentBadges', [
+          { date_acquired: new Date('2024-01-15'), studentId: 1, badgeId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2024-02-10'), studentId: 2, badgeId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2023-12-05'), studentId: 3, badgeId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2024-03-20'), studentId: 4, badgeId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2023-11-30'), studentId: 5, badgeId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2024-01-25'), studentId: 6, badgeId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2024-02-15'), studentId: 7, badgeId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2023-10-20'), studentId: 8, badgeId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2024-04-05'), studentId: 9, badgeId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { date_acquired: new Date('2023-09-15'), studentId: 10, badgeId: 5, createdAt: new Date(), updatedAt: new Date() }
         ]);
-        /*
-        await queryInterface.bulkInsert('students', [
-          { address: '123 Main St, Cityville', graduation_date: new Date('2025-05-15'), points: 1500, student_issued_id: 'S12345', createdAt: new Date(), updatedAt: new Date() },
-          { address: '456 Oak Ave, Townsville', graduation_date: new Date('2024-12-20'), points: 1200, student_issued_id: 'S12346', createdAt: new Date(), updatedAt: new Date() },
-          { address: '789 Pine Rd, Villagecity', graduation_date: new Date('2026-05-10'), points: 1800, student_issued_id: 'S12347', createdAt: new Date(), updatedAt: new Date() },
-          { address: '321 Elm Blvd, Metropolis', graduation_date: new Date('2025-05-15'), points: 1100, student_issued_id: 'S12348', createdAt: new Date(), updatedAt: new Date() },
-          { address: '654 Maple St, Hamptontown', graduation_date: new Date('2024-12-20'), points: 1400, student_issued_id: 'S12349', createdAt: new Date(), updatedAt: new Date() },
-          { address: '987 Birch Ln, Springfield', graduation_date: new Date('2025-12-15'), points: 1600, student_issued_id: 'S12350', createdAt: new Date(), updatedAt: new Date() },
-          { address: '135 Cedar Dr, Westbury', graduation_date: new Date('2024-12-20'), points: 1300, student_issued_id: 'S12351', createdAt: new Date(), updatedAt: new Date() },
-          { address: '246 Redwood Ave, Eastside', graduation_date: new Date('2025-05-15'), points: 1250, student_issued_id: 'S12352', createdAt: new Date(), updatedAt: new Date() },
-          { address: '369 Willow Way, Greenfield', graduation_date: new Date('2026-05-10'), points: 1550, student_issued_id: 'S12353', createdAt: new Date(), updatedAt: new Date() },
-          { address: '741 Pinecrest Blvd, Hilltown', graduation_date: new Date('2025-12-15'), points: 1450, student_issued_id: 'S12354', createdAt: new Date(), updatedAt: new Date() }
+
+        // Populate studentCliftonStrength
+        await queryInterface.bulkInsert('studentCliftonStrengths', [
+          { studentId: 1, cliftonStrengthId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 1, cliftonStrengthId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 2, cliftonStrengthId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 2, cliftonStrengthId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 3, cliftonStrengthId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 3, cliftonStrengthId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 4, cliftonStrengthId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 4, cliftonStrengthId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 5, cliftonStrengthId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 5, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
-        */
+
+        // Populate studentExperienceType
+        await queryInterface.bulkInsert('studentExperienceTypes', [
+          { studentId: 1, experienceTypeId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 1, experienceTypeId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 2, experienceTypeId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 2, experienceTypeId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 3, experienceTypeId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 3, experienceTypeId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 4, experienceTypeId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 4, experienceTypeId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 5, experienceTypeId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 5, experienceTypeId: 10, createdAt: new Date(), updatedAt: new Date() }
+        ]);
+
+        // Populate studentMajor
+        await queryInterface.bulkInsert('studentMajors', [
+          { studentId: 1, majorId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 2, majorId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 3, majorId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 4, majorId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 5, majorId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 6, majorId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 7, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 8, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 9, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { studentId: 10, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
+        ]);
 
         // Populate task
         await queryInterface.bulkInsert('tasks', [
@@ -350,35 +406,35 @@ module.exports = {
           { category: 'leadership', type: 'semi_automatic', reflection_required: false, reflection: null, schedule_type: 'special_event', name: 'Leadership Conference', description: 'Attend a leadership conference in person.', rationale: 'Learn from leadership experts and network with peers.', semester_from_grad: 3, completion_type: 'confirmed_by_oc_employee', point_value: 110, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
-        // Populate userRole
-        await queryInterface.bulkInsert('userRoles', [
-          { userId: 1, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 2, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 3, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 4, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 5, roleId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 6, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 7, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 8, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 9, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 10, roleId: 5, createdAt: new Date(), updatedAt: new Date() }
+        // Populate users
+        await queryInterface.bulkInsert('users', [
+          { fName: 'John', lName: 'Doe', email: 'john.doe@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Jane', lName: 'Smith', email: 'jane.smith@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Alice', lName: 'Johnson', email: 'alice.johnson@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Bob', lName: 'Williams', email: 'bob.williams@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Charlie', lName: 'Brown', email: 'charlie.brown@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Dana', lName: 'Davis', email: 'dana.davis@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Grace', lName: 'Rodriguez', email: 'grace.rodriguez@example.com', createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', createdAt: new Date(), updatedAt: new Date() }
         ]);
       }
 
       // Bridge Tables +
       {
-        // Populate documents
-        await queryInterface.bulkInsert('documents', [
-          { name: 'Resume', completion_date: new Date('2024-01-15'), semester_approved: 'spring', image: null, studentId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Cover Letter', completion_date: new Date('2024-02-10'), semester_approved: 'spring', image: null, studentId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Internship Agreement', completion_date: new Date('2023-12-05'), semester_approved: 'fall', image: null, studentId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Project Report', completion_date: new Date('2024-03-20'), semester_approved: 'spring', image: null, studentId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Research Paper', completion_date: new Date('2023-11-30'), semester_approved: 'fall', image: null, studentId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Portfolio', completion_date: new Date('2024-01-25'), semester_approved: 'spring', image: null, studentId: 6, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Reference Letter', completion_date: new Date('2024-02-15'), semester_approved: 'spring', image: null, studentId: 7, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Certification', completion_date: new Date('2023-10-20'), semester_approved: 'fall', image: null, studentId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Training Completion', completion_date: new Date('2024-04-05'), semester_approved: 'spring', image: null, studentId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Workshop Notes', completion_date: new Date('2023-09-15'), semester_approved: 'fall', image: null, studentId: 10, createdAt: new Date(), updatedAt: new Date() }
+        // Populate experienceTypeEvent
+        await queryInterface.bulkInsert('experienceTypeEvents', [
+          { experienceTypeId: 1, eventId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 2, eventId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 3, eventId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 4, eventId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 5, eventId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 6, eventId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 7, eventId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 8, eventId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 9, eventId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { experienceTypeId: 10, eventId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate eventCliftonStrength
@@ -393,20 +449,6 @@ module.exports = {
           { eventId: 8, cliftonStrengthId: 8, createdAt: new Date(), updatedAt: new Date() },
           { eventId: 9, cliftonStrengthId: 9, createdAt: new Date(), updatedAt: new Date() },
           { eventId: 10, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() }
-        ]);
-
-        // Populate experienceTypeEvent
-        await queryInterface.bulkInsert('experienceTypeEvents', [
-          { experienceTypeId: 1, eventId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 2, eventId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 3, eventId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 4, eventId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 5, eventId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 6, eventId: 6, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 7, eventId: 7, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 8, eventId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 9, eventId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { experienceTypeId: 10, eventId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate flightPlanExperienceType
@@ -451,20 +493,6 @@ module.exports = {
           { userId: 1, classId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
-        // Populate studentBadges
-        await queryInterface.bulkInsert('studentBadges', [
-          { date_acquired: new Date('2024-01-15'), studentId: 1, badgeId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2024-02-10'), studentId: 2, badgeId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2023-12-05'), studentId: 3, badgeId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2024-03-20'), studentId: 4, badgeId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2023-11-30'), studentId: 5, badgeId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2024-01-25'), studentId: 6, badgeId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2024-02-15'), studentId: 7, badgeId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2023-10-20'), studentId: 8, badgeId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2024-04-05'), studentId: 9, badgeId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { date_acquired: new Date('2023-09-15'), studentId: 10, badgeId: 5, createdAt: new Date(), updatedAt: new Date() }
-        ]);
-
         // Populate studentClasses
         await queryInterface.bulkInsert('studentClasses', [
           { semester: 1, studentId: 1, classId: 1, createdAt: new Date(), updatedAt: new Date() },
@@ -479,32 +507,18 @@ module.exports = {
           { semester: 1, studentId: 10, classId: 5, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
-        // Populate studentCliftonStrength
-        await queryInterface.bulkInsert('studentCliftonStrengths', [
-          { studentId: 1, cliftonStrengthId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 1, cliftonStrengthId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 2, cliftonStrengthId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 2, cliftonStrengthId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 3, cliftonStrengthId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 3, cliftonStrengthId: 6, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 4, cliftonStrengthId: 7, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 4, cliftonStrengthId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 5, cliftonStrengthId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 5, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() }
-        ]);
-
-        // Populate studentExperienceType
-        await queryInterface.bulkInsert('studentExperienceTypes', [
-          { studentId: 1, experienceTypeId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 1, experienceTypeId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 2, experienceTypeId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 2, experienceTypeId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 3, experienceTypeId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 3, experienceTypeId: 6, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 4, experienceTypeId: 7, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 4, experienceTypeId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 5, experienceTypeId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 5, experienceTypeId: 10, createdAt: new Date(), updatedAt: new Date() }
+        // Populate studentExperienceTypeEvents
+        await queryInterface.bulkInsert('studentExperienceTypeEvents', [
+          { studentExperienceTypeId: 1, eventId: 1, userId: 1, points_earned: 10, completed_date: new Date('2025-01-15'), unapprove_reason: null, reflection_text: 'This event helped me develop teamwork and leadership skills.', status: 'approved' },
+          { studentExperienceTypeId: 2, eventId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, reflection_text: 'I gained valuable insights into the project management process.', status: 'ready_for_review' },
+          { studentExperienceTypeId: 3, eventId: 3, userId: 3, points_earned: 15, completed_date: new Date('2025-01-30'), unapprove_reason: 'Did not meet minimum requirements.', reflection_text: 'The event was engaging, but I did not complete all the tasks.', status: 'unapproved' },
+          { studentExperienceTypeId: 4, eventId: 4, userId: 4, points_earned: 20, completed_date: new Date('2025-01-25'), unapprove_reason: null, reflection_text: 'The hands-on experience was invaluable for my learning.', status: 'approved' },
+          { studentExperienceTypeId: 5, eventId: 5, userId: 5, points_earned: 5, completed_date: new Date('2025-02-10'), unapprove_reason: null, reflection_text: 'It was a good experience, though I felt I could have done more.', status: 'in_progress' },
+          { studentExperienceTypeId: 1, eventId: 6, userId: 6, points_earned: 12, completed_date: new Date('2025-01-18'), unapprove_reason: null, reflection_text: 'This event gave me a deeper understanding of communication skills.', status: 'approved' },
+          { studentExperienceTypeId: 2, eventId: 7, userId: 7, points_earned: 9, completed_date: new Date('2025-02-05'), unapprove_reason: null, reflection_text: 'I learned a lot about data analysis and its applications.', status: 'ready_for_review' },
+          { studentExperienceTypeId: 3, eventId: 8, userId: 8, points_earned: 14, completed_date: new Date('2025-01-22'), unapprove_reason: 'Failed to submit final report.', reflection_text: 'While I enjoyed the event, I did not complete all the required tasks.', status: 'unapproved' },
+          { studentExperienceTypeId: 4, eventId: 9, userId: 9, points_earned: 18, completed_date: new Date('2025-02-03'), unapprove_reason: null, reflection_text: 'This experience sharpened my problem-solving and critical thinking abilities.', status: 'approved' },
+          { studentExperienceTypeId: 5, eventId: 10, userId: 10, points_earned: 7, completed_date: new Date('2025-02-08'), unapprove_reason: null, reflection_text: 'I gained hands-on experience, but there was room for improvement.', status: 'in_progress' }
         ]);
 
         // Populate studentFlightPlan
@@ -519,20 +533,6 @@ module.exports = {
           { studentId: 4, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() },
           { studentId: 5, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() },
           { studentId: 5, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }
-        ]);
-
-        // Populate studentMajor
-        await queryInterface.bulkInsert('studentMajors', [
-          { studentId: 1, majorId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 2, majorId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 3, majorId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 4, majorId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 5, majorId: 5, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 6, majorId: 6, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 7, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 8, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 9, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { studentId: 10, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate taskBadge
@@ -591,6 +591,37 @@ module.exports = {
           { points_spent: 90, date_approved: new Date(), userId: 10, studentId: 10, awardId: 5, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
+        // Populate userRole
+        await queryInterface.bulkInsert('userRoles', [
+          { userId: 1, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 2, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 3, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 4, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 5, roleId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 6, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 7, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 8, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 9, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 10, roleId: 5, createdAt: new Date(), updatedAt: new Date() }
+        ]);
+      }
+
+      //Bridge Tables *
+      {
+        // Populate studentFlightPlanTasks
+        await queryInterface.bulkInsert('studentFlightPlanTasks', [
+          { studentFlightPlanId: 1, taskId: 1, userId: 1, points_earned: 10, completed_date: new Date('2025-01-15'), unapprove_reason: null, status: 'approved' },
+          { studentFlightPlanId: 2, taskId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, status: 'ready_for_review' },
+          { studentFlightPlanId: 3, taskId: 3, userId: 3, points_earned: 12, completed_date: new Date('2025-01-20'), unapprove_reason: 'Did not meet minimum criteria.', status: 'unapproved' },
+          { studentFlightPlanId: 4, taskId: 4, userId: 4, points_earned: 15, completed_date: new Date('2025-01-22'), unapprove_reason: null, status: 'approved' },
+          { studentFlightPlanId: 5, taskId: 5, userId: 5, points_earned: 5, completed_date: new Date('2025-02-10'), unapprove_reason: null, status: 'in_progress' },
+          { studentFlightPlanId: 6, taskId: 6, userId: 6, points_earned: 10, completed_date: new Date('2025-01-18'), unapprove_reason: null, status: 'approved' },
+          { studentFlightPlanId: 7, taskId: 7, userId: 7, points_earned: 9, completed_date: new Date('2025-02-05'), unapprove_reason: null, status: 'ready_for_review' },
+          { studentFlightPlanId: 8, taskId: 8, userId: 8, points_earned: 11, completed_date: new Date('2025-01-25'), unapprove_reason: null, status: 'approved' },
+          { studentFlightPlanId: 9, taskId: 9, userId: 9, points_earned: 14, completed_date: new Date('2025-01-30'), unapprove_reason: 'Failed to meet deadline.', status: 'unapproved' },
+          { studentFlightPlanId: 10, taskId: 10, userId: 10, points_earned: 6, completed_date: new Date('2025-02-08'), unapprove_reason: null, status: 'in_progress' }
+        ]);
+        
         // Populate userRolePermissions
         await queryInterface.bulkInsert('userRolePermissions', [
           { userRoleId: 1, permissionId: 1, type: 'read' },
@@ -604,37 +635,6 @@ module.exports = {
           { userRoleId: 4, permissionId: 3, type: 'delete' },
           { userRoleId: 5, permissionId: 1, type: 'read' },
           { userRoleId: 5, permissionId: 2, type: 'write' },
-        ]);
-      }
-
-      //Bridge Tables *
-      {
-        // Populate studentExperienceTypeEvents
-        await queryInterface.bulkInsert('studentExperienceTypeEvents', [
-          { studentExperienceTypeId: 1, eventId: 1, userId: 1, points_earned: 10, completed_date: new Date('2025-01-15'), unapprove_reason: null, reflection_text: 'This event helped me develop teamwork and leadership skills.', status: 'approved' },
-          { studentExperienceTypeId: 2, eventId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, reflection_text: 'I gained valuable insights into the project management process.', status: 'ready_for_review' },
-          { studentExperienceTypeId: 3, eventId: 3, userId: 3, points_earned: 15, completed_date: new Date('2025-01-30'), unapprove_reason: 'Did not meet minimum requirements.', reflection_text: 'The event was engaging, but I did not complete all the tasks.', status: 'unapproved' },
-          { studentExperienceTypeId: 4, eventId: 4, userId: 4, points_earned: 20, completed_date: new Date('2025-01-25'), unapprove_reason: null, reflection_text: 'The hands-on experience was invaluable for my learning.', status: 'approved' },
-          { studentExperienceTypeId: 5, eventId: 5, userId: 5, points_earned: 5, completed_date: new Date('2025-02-10'), unapprove_reason: null, reflection_text: 'It was a good experience, though I felt I could have done more.', status: 'in_progress' },
-          { studentExperienceTypeId: 1, eventId: 6, userId: 6, points_earned: 12, completed_date: new Date('2025-01-18'), unapprove_reason: null, reflection_text: 'This event gave me a deeper understanding of communication skills.', status: 'approved' },
-          { studentExperienceTypeId: 2, eventId: 7, userId: 7, points_earned: 9, completed_date: new Date('2025-02-05'), unapprove_reason: null, reflection_text: 'I learned a lot about data analysis and its applications.', status: 'ready_for_review' },
-          { studentExperienceTypeId: 3, eventId: 8, userId: 8, points_earned: 14, completed_date: new Date('2025-01-22'), unapprove_reason: 'Failed to submit final report.', reflection_text: 'While I enjoyed the event, I did not complete all the required tasks.', status: 'unapproved' },
-          { studentExperienceTypeId: 4, eventId: 9, userId: 9, points_earned: 18, completed_date: new Date('2025-02-03'), unapprove_reason: null, reflection_text: 'This experience sharpened my problem-solving and critical thinking abilities.', status: 'approved' },
-          { studentExperienceTypeId: 5, eventId: 10, userId: 10, points_earned: 7, completed_date: new Date('2025-02-08'), unapprove_reason: null, reflection_text: 'I gained hands-on experience, but there was room for improvement.', status: 'in_progress' }
-        ]);
-
-        // Populate studentFlightPlanTasks
-        await queryInterface.bulkInsert('studentFlightPlanTasks', [
-          { studentFlightPlanId: 1, taskId: 1, userId: 1, points_earned: 10, completed_date: new Date('2025-01-15'), unapprove_reason: null, status: 'approved' },
-          { studentFlightPlanId: 2, taskId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, status: 'ready_for_review' },
-          { studentFlightPlanId: 3, taskId: 3, userId: 3, points_earned: 12, completed_date: new Date('2025-01-20'), unapprove_reason: 'Did not meet minimum criteria.', status: 'unapproved' },
-          { studentFlightPlanId: 4, taskId: 4, userId: 4, points_earned: 15, completed_date: new Date('2025-01-22'), unapprove_reason: null, status: 'approved' },
-          { studentFlightPlanId: 5, taskId: 5, userId: 5, points_earned: 5, completed_date: new Date('2025-02-10'), unapprove_reason: null, status: 'in_progress' },
-          { studentFlightPlanId: 6, taskId: 6, userId: 6, points_earned: 10, completed_date: new Date('2025-01-18'), unapprove_reason: null, status: 'approved' },
-          { studentFlightPlanId: 7, taskId: 7, userId: 7, points_earned: 9, completed_date: new Date('2025-02-05'), unapprove_reason: null, status: 'ready_for_review' },
-          { studentFlightPlanId: 8, taskId: 8, userId: 8, points_earned: 11, completed_date: new Date('2025-01-25'), unapprove_reason: null, status: 'approved' },
-          { studentFlightPlanId: 9, taskId: 9, userId: 9, points_earned: 14, completed_date: new Date('2025-01-30'), unapprove_reason: 'Failed to meet deadline.', status: 'unapproved' },
-          { studentFlightPlanId: 10, taskId: 10, userId: 10, points_earned: 6, completed_date: new Date('2025-02-08'), unapprove_reason: null, status: 'in_progress' }
         ]);
       }
     }
@@ -654,9 +654,8 @@ module.exports = {
         await queryInterface.bulkDelete('majors', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('permissions', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('roles', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('semesters', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('users', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('semesters', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('verifications', null, { truncate: true, cascade: true, restartIdentity: true });
       }
 
@@ -664,40 +663,40 @@ module.exports = {
       {
         await queryInterface.bulkDelete('badgeExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('classes', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('documents', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('events', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('experienceTypeMajors', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('flightPlans', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('rolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('studentBadges', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('studentCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('studentExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('studentMajors', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('tasks', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('userRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('users', null, { truncate: true, cascade: true, restartIdentity: true });
       }
 
       // Bridge Tables +
       {
-        await queryInterface.bulkDelete('documents', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('eventCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('experienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('eventCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('flightPlanExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('flightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('professorClasses', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('studentBadges', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('studentClasses', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('studentCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('studentExperienceTypes', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('studentExperienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('studentFlightPlans', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('studentMajors', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('taskBadges', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('taskCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('taskMajors', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('transactions', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('userRoles', null, { truncate: true, cascade: true, restartIdentity: true });
       }
 
       // Bridge Tables *
       {
-        await queryInterface.bulkDelete('studentExperienceTypeEvents', null, { truncate: true, cascade: true, restartIdentity: true });
         await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
       }
     }
     // Resume Builder
