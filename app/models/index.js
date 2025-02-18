@@ -989,9 +989,9 @@ db.flightPlan.hasMany(db.flightPlanTask, {
   foreignKey: "flightPlanId",
   onDelete: "CASCADE"
 });
-db.flightPlanTask.belongsTo(db.student, {
-  as: "student",
-  foreignKey: "studentId",
+db.flightPlanTask.belongsTo(db.flightPlan, {
+  as: "flightPlan",
+  foreignKey: "flightPlanId",
   onDelete: "SET NULL"
 });
 

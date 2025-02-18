@@ -158,16 +158,15 @@ module.exports = {
 
         // Populate permissions
         await queryInterface.bulkInsert('permissions', [
-          { type: 'read', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'write', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'delete', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'manage_store', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'redeem_points', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'create_task', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'delete_task', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'create_event', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'delete_event', createdAt: new Date(), updatedAt: new Date() },
-          { type: 'approve_event', createdAt: new Date(), updatedAt: new Date() }
+          { type: 'user_maintenance', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'flightplan_maintenance', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'flightplan_approval', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'shop_maintenance', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'shop_approval', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'resume_reviewer', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'admin_view', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'student_view', createdAt: new Date(), updatedAt: new Date() },
+          { type: 'professor_view', createdAt: new Date(), updatedAt: new Date() },
         ]);
 
         // Populate roles
@@ -181,31 +180,17 @@ module.exports = {
 
         // Populate students
         await queryInterface.bulkInsert('students', [
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
-          { createdAt: new Date(), updatedAt: new Date() },
+          { address: '123 Main St, Springfield, IL', graduation_date: new Date('2026-05-15'), points: 500, student_issued_id: 'S1001', createdAt: new Date(), updatedAt: new Date() },
+          { address: '456 Oak Ave, Chicago, IL', graduation_date: new Date('2025-12-10'), points: 320, student_issued_id: 'S1002', createdAt: new Date(), updatedAt: new Date() },
+          { address: '789 Pine Rd, Austin, TX', graduation_date: new Date('2027-06-20'), points: 700, student_issued_id: 'S1003', createdAt: new Date(), updatedAt: new Date() },
+          { address: '101 Birch Ln, Denver, CO', graduation_date: new Date('2026-08-30'), points: 450, student_issued_id: 'S1004', createdAt: new Date(), updatedAt: new Date() },
+          { address: '202 Maple St, Seattle, WA', graduation_date: new Date('2025-11-25'), points: 600, student_issued_id: 'S1005', createdAt: new Date(), updatedAt: new Date() },
+          { address: '303 Cedar Ave, Miami, FL', graduation_date: new Date('2028-09-10'), points: 350, student_issued_id: 'S1006', createdAt: new Date(), updatedAt: new Date() },
+          { address: '404 Elm St, Boston, MA', graduation_date: new Date('2027-04-05'), points: 800, student_issued_id: 'S1007', createdAt: new Date(), updatedAt: new Date() },
+          { address: '505 Walnut Dr, Phoenix, AZ', graduation_date: new Date('2026-07-15'), points: 480, student_issued_id: 'S1008', createdAt: new Date(), updatedAt: new Date() },
+          { address: '606 Redwood Blvd, San Francisco, CA', graduation_date: new Date('2025-10-20'), points: 550, student_issued_id: 'S1009', createdAt: new Date(), updatedAt: new Date() },
+          { address: '707 Sycamore Ct, New York, NY', graduation_date: new Date('2026-12-18'), points: 620, student_issued_id: 'S1010', createdAt: new Date(), updatedAt: new Date() }
         ]);
-        /*
-        await queryInterface.bulkInsert('students', [
-          { address: '123 Main St, Cityville', graduation_date: new Date('2025-05-15'), points: 1500, student_issued_id: 'S12345', createdAt: new Date(), updatedAt: new Date() },
-          { address: '456 Oak Ave, Townsville', graduation_date: new Date('2024-12-20'), points: 1200, student_issued_id: 'S12346', createdAt: new Date(), updatedAt: new Date() },
-          { address: '789 Pine Rd, Villagecity', graduation_date: new Date('2026-05-10'), points: 1800, student_issued_id: 'S12347', createdAt: new Date(), updatedAt: new Date() },
-          { address: '321 Elm Blvd, Metropolis', graduation_date: new Date('2025-05-15'), points: 1100, student_issued_id: 'S12348', createdAt: new Date(), updatedAt: new Date() },
-          { address: '654 Maple St, Hamptontown', graduation_date: new Date('2024-12-20'), points: 1400, student_issued_id: 'S12349', createdAt: new Date(), updatedAt: new Date() },
-          { address: '987 Birch Ln, Springfield', graduation_date: new Date('2025-12-15'), points: 1600, student_issued_id: 'S12350', createdAt: new Date(), updatedAt: new Date() },
-          { address: '135 Cedar Dr, Westbury', graduation_date: new Date('2024-12-20'), points: 1300, student_issued_id: 'S12351', createdAt: new Date(), updatedAt: new Date() },
-          { address: '246 Redwood Ave, Eastside', graduation_date: new Date('2025-05-15'), points: 1250, student_issued_id: 'S12352', createdAt: new Date(), updatedAt: new Date() },
-          { address: '369 Willow Way, Greenfield', graduation_date: new Date('2026-05-10'), points: 1550, student_issued_id: 'S12353', createdAt: new Date(), updatedAt: new Date() },
-          { address: '741 Pinecrest Blvd, Hilltown', graduation_date: new Date('2025-12-15'), points: 1450, student_issued_id: 'S12354', createdAt: new Date(), updatedAt: new Date() }
-        ]);
-        */
 
         // Populate semesters
         await queryInterface.bulkInsert('semesters', [
@@ -254,17 +239,18 @@ module.exports = {
 
         // Populate classes
         await queryInterface.bulkInsert('classes', [
-          { course_number: 'CS101', course_name: 'Introduction to Computer Science', department: 'Computer Science', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'MATH201', course_name: 'Calculus II', department: 'Mathematics', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'ENG150', course_name: 'English Composition', department: 'English', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'HIST210', course_name: 'World History', department: 'History', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'PHYS101', course_name: 'Physics I', department: 'Physics', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'BIO110', course_name: 'Biology Basics', department: 'Biology', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'CHEM120', course_name: 'General Chemistry', department: 'Chemistry', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'ART105', course_name: 'Introduction to Art', department: 'Fine Arts', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'PSY200', course_name: 'Psychology Principles', department: 'Psychology', createdAt: new Date(), updatedAt: new Date() },
-          { course_number: 'ECON101', course_name: 'Microeconomics', department: 'Economics', createdAt: new Date(), updatedAt: new Date() }
+          { course_number: 'CS101', course_name: 'Introduction to Computer Science', department: 'Computer Science', semesterId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'MATH201', course_name: 'Calculus II', department: 'Mathematics', semesterId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'ENG150', course_name: 'English Composition', department: 'English', semesterId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'HIST210', course_name: 'World History', department: 'History', semesterId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'PHYS101', course_name: 'Physics I', department: 'Physics', semesterId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'BIO110', course_name: 'Biology Basics', department: 'Biology', semesterId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'CHEM120', course_name: 'General Chemistry', department: 'Chemistry', semesterId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'ART105', course_name: 'Introduction to Art', department: 'Fine Arts', semesterId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'PSY200', course_name: 'Psychology Principles', department: 'Psychology', semesterId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { course_number: 'ECON101', course_name: 'Microeconomics', department: 'Economics', semesterId: 5, createdAt: new Date(), updatedAt: new Date() }
         ]);
+
 
         // Populate documents
         await queryInterface.bulkInsert('documents', [
@@ -326,14 +312,25 @@ module.exports = {
         await queryInterface.bulkInsert('rolePermissions', [
           { roleId: 1, permissionId: 1, createdAt: new Date(), updatedAt: new Date() },
           { roleId: 1, permissionId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { roleId: 2, permissionId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { roleId: 2, permissionId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { roleId: 3, permissionId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 1, permissionId: 9, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 2, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
           { roleId: 3, permissionId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 4, permissionId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 4, permissionId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 4, permissionId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 4, permissionId: 5, createdAt: new Date(), updatedAt: new Date() },
           { roleId: 4, permissionId: 7, createdAt: new Date(), updatedAt: new Date() },
           { roleId: 4, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
-          { roleId: 5, permissionId: 9, createdAt: new Date(), updatedAt: new Date() },
-          { roleId: 5, permissionId: 10, createdAt: new Date(), updatedAt: new Date() }
+          { roleId: 5, permissionId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 5, permissionId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 5, permissionId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { roleId: 5, permissionId: 9, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate studentBadges
@@ -394,30 +391,30 @@ module.exports = {
 
         // Populate task
         await queryInterface.bulkInsert('tasks', [
-          { category: 'academic', type: 'automatic', reflection_required: true, reflection: 'Reflection on the topic learned.', schedule_type: 'semesterly', name: 'Advanced Programming', description: 'Study advanced programming concepts.', rationale: 'Important for computer science majors.', semester_from_grad: 3, completion_type: 'automatic', point_value: 100, prerequisite_task_id: null, video_link: 'http://example.com/advanced-programming', createdAt: new Date(), updatedAt: new Date() },
-          { category: 'leadership', type: 'manual', reflection_required: false, reflection: null, schedule_type: 'one_time', name: 'Leadership Seminar', description: 'Attend a leadership seminar.', rationale: 'Develop leadership skills.', semester_from_grad: 2, completion_type: 'self_reported', point_value: 50, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() },
-          { category: 'networking', type: 'semi_automatic', reflection_required: true, reflection: 'Reflection on the networking event and its impact.', schedule_type: 'special_event', name: 'Networking Event', description: 'Attend a professional networking event.', rationale: 'Expand professional network.', semester_from_grad: 1, completion_type: 'confirmed_by_oc_employee', point_value: 75, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() },
-          { category: 'strengths', type: 'manual', reflection_required: true, reflection: 'Reflect on strengths and weaknesses from the assessment.', schedule_type: 'semesterly', name: 'Strengths Assessment', description: 'Complete a strengths assessment.', rationale: 'Understand personal strengths for career development.', semester_from_grad: 1, completion_type: 'self_reported', point_value: 60, prerequisite_task_id: null, video_link: 'http://example.com/strengths-assessment', createdAt: new Date(), updatedAt: new Date() },
-          { category: 'career_prep', type: 'automatic', reflection_required: false, reflection: null, schedule_type: 'one_time', name: 'Resume Workshop', description: 'Attend a resume writing workshop.', rationale: 'Prepare a professional resume for job applications.', semester_from_grad: 2, completion_type: 'automatic', point_value: 80, prerequisite_task_id: null, video_link: 'http://example.com/resume-workshop', createdAt: new Date(), updatedAt: new Date() },
-          { category: 'mentoring', type: 'manual', reflection_required: true, reflection: 'Reflect on the mentoring experience and lessons learned.', schedule_type: 'semesterly', name: 'Mentorship Program', description: 'Participate in a mentorship program.', rationale: 'Learn from an experienced professional in the field.', semester_from_grad: 3, completion_type: 'self_reported', point_value: 90, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() },
-          { category: 'volunteer', type: 'semi_automatic', reflection_required: false, reflection: null, schedule_type: 'semesterly', name: 'Community Service', description: 'Volunteer at a local charity or event.', rationale: 'Contribute to the community.', semester_from_grad: 4, completion_type: 'confirmed_by_oc_employee', point_value: 100, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() },
-          { category: 'other', type: 'manual', reflection_required: false, reflection: null, schedule_type: 'special_event', name: 'Hackathon Participation', description: 'Participate in a hackathon event.', rationale: 'Challenge yourself with a time-sensitive programming task.', semester_from_grad: 1, completion_type: 'self_reported', point_value: 120, prerequisite_task_id: null, video_link: 'http://example.com/hackathon', createdAt: new Date(), updatedAt: new Date() },
-          { category: 'academic', type: 'automatic', reflection_required: true, reflection: 'Write a reflection on the course content.', schedule_type: 'semesterly', name: 'Machine Learning Course', description: 'Complete a machine learning course online.', rationale: 'Gain knowledge in a highly relevant field of study.', semester_from_grad: 2, completion_type: 'automatic', point_value: 150, prerequisite_task_id: null, video_link: 'http://example.com/machine-learning', createdAt: new Date(), updatedAt: new Date() },
-          { category: 'leadership', type: 'semi_automatic', reflection_required: false, reflection: null, schedule_type: 'special_event', name: 'Leadership Conference', description: 'Attend a leadership conference in person.', rationale: 'Learn from leadership experts and network with peers.', semester_from_grad: 3, completion_type: 'confirmed_by_oc_employee', point_value: 110, prerequisite_task_id: null, video_link: null, createdAt: new Date(), updatedAt: new Date() }
+          { category: 'academic', reflection_required: true, reflection: 'Reflection on the topic learned.', schedule_type: 'semesterly', name: 'Advanced Programming', description: 'Study advanced programming concepts.', rationale: 'Important for computer science majors.', semester_from_grad: 3, point_value: 100, taskId: null, verificationId: 1, video_link: 'http://example.com/advanced-programming', createdAt: new Date(), updatedAt: new Date() },
+          { category: 'leadership', reflection_required: false, reflection: null, schedule_type: 'one_time', name: 'Leadership Seminar', description: 'Attend a leadership seminar.', rationale: 'Develop leadership skills.', semester_from_grad: 2, point_value: 50, taskId: null, verificationId: 2, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+          { category: 'networking', reflection_required: true, reflection: 'Reflection on the networking event and its impact.', schedule_type: 'special_event', name: 'Networking Event', description: 'Attend a professional networking event.', rationale: 'Expand professional network.', semester_from_grad: 1, point_value: 75, taskId: null, verificationId: 3, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+          { category: 'strengths', reflection_required: true, reflection: 'Reflect on strengths and weaknesses from the assessment.', schedule_type: 'semesterly', name: 'Strengths Assessment', description: 'Complete a strengths assessment.', rationale: 'Understand personal strengths for career development.', semester_from_grad: 1, point_value: 60, taskId: null, verificationId: 4, video_link: 'http://example.com/strengths-assessment', createdAt: new Date(), updatedAt: new Date() },
+          { category: 'career_prep', reflection_required: false, reflection: null, schedule_type: 'one_time', name: 'Resume Workshop', description: 'Attend a resume writing workshop.', rationale: 'Prepare a professional resume for job applications.', semester_from_grad: 2, point_value: 80, taskId: null, verificationId: 5, video_link: 'http://example.com/resume-workshop', createdAt: new Date(), updatedAt: new Date() },
+          { category: 'mentoring', reflection_required: true, reflection: 'Reflect on the mentoring experience and lessons learned.', schedule_type: 'semesterly', name: 'Mentorship Program', description: 'Participate in a mentorship program.', rationale: 'Learn from an experienced professional in the field.', semester_from_grad: 3, point_value: 90, taskId: null, verificationId: 6, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+          { category: 'volunteer', reflection_required: false, reflection: null, schedule_type: 'semesterly', name: 'Community Service', description: 'Volunteer at a local charity or event.', rationale: 'Contribute to the community.', semester_from_grad: 4, point_value: 100, taskId: null, verificationId: 7, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+          { category: 'other', reflection_required: false, reflection: null, schedule_type: 'special_event', name: 'Hackathon Participation', description: 'Participate in a hackathon event.', rationale: 'Challenge yourself with a time-sensitive programming task.', semester_from_grad: 1, point_value: 120, taskId: null, verificationId: 8, video_link: 'http://example.com/hackathon', createdAt: new Date(), updatedAt: new Date() },
+          { category: 'academic', reflection_required: true, reflection: 'Write a reflection on the course content.', schedule_type: 'semesterly', name: 'Machine Learning Course', description: 'Complete a machine learning course online.', rationale: 'Gain knowledge in a highly relevant field of study.', semester_from_grad: 2, point_value: 150, taskId: null, verificationId: 9, video_link: 'http://example.com/machine-learning', createdAt: new Date(), updatedAt: new Date() },
+          { category: 'leadership', reflection_required: false, reflection: null, schedule_type: 'special_event', name: 'Leadership Conference', description: 'Attend a leadership conference in person.', rationale: 'Learn from leadership experts and network with peers.', semester_from_grad: 3, point_value: 110, taskId: 1, verificationId: 10, video_link: null, createdAt: new Date(), updatedAt: new Date() }
         ]);
 
         // Populate users
         await queryInterface.bulkInsert('users', [
-          { fName: 'John', lName: 'Doe', email: 'john.doe@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Jane', lName: 'Smith', email: 'jane.smith@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Alice', lName: 'Johnson', email: 'alice.johnson@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Bob', lName: 'Williams', email: 'bob.williams@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Charlie', lName: 'Brown', email: 'charlie.brown@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Dana', lName: 'Davis', email: 'dana.davis@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Grace', lName: 'Rodriguez', email: 'grace.rodriguez@example.com', createdAt: new Date(), updatedAt: new Date() },
-          { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', createdAt: new Date(), updatedAt: new Date() }
+          { fName: 'Anthony', lName: 'Pham', email: 'anthony.pham@eagles.oc.edu', phone_number: '123-456-7890', prefix: 'Mr.', studentId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Abby', lName: 'Crockett', email: 'abby.crockett@eagles.oc.edu', phone_number: '987-654-3210', prefix: 'Ms.', studentId: 2, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Bill', lName: 'Le', email: 'bill.le@eagles.oc.edu', phone_number: '555-123-4567', prefix: 'Mr.', studentId: 3, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Jenna', lName: 'Stilling', email: 'j.stilling@eagles.oc.edu', phone_number: '444-789-1234', prefix: 'Ms.', studentId: 4, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Arrian', lName: 'Taton', email: 'charlie.brown@example.com', phone_number: '222-333-4444', prefix: 'Ms.', studentId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Dana', lName: 'Davis', email: 'dana.davis@example.com', phone_number: '111-222-3333', prefix: 'Ms.', studentId: null, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', phone_number: '666-555-4444', prefix: 'Dr.', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', phone_number: '777-888-9999', prefix: 'Mr.', studentId: null, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Grace', lName: 'Rodriguez', email: 'grace.rodriguez@example.com', phone_number: '999-888-7777', prefix: 'Ms.', studentId: 7, createdAt: new Date(), updatedAt: new Date() },
+          { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', phone_number: '333-222-1111', prefix: 'Mrs.', studentId: 8, createdAt: new Date(), updatedAt: new Date() }
         ]);
       }
 
@@ -594,10 +591,10 @@ module.exports = {
         // Populate userRole
         await queryInterface.bulkInsert('userRoles', [
           { userId: 1, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 2, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 3, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 4, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
-          { userId: 5, roleId: 5, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 2, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 3, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 4, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
+          { userId: 5, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
           { userId: 6, roleId: 1, createdAt: new Date(), updatedAt: new Date() },
           { userId: 7, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
           { userId: 8, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
@@ -621,20 +618,58 @@ module.exports = {
           { studentFlightPlanId: 9, taskId: 9, userId: 9, points_earned: 14, completed_date: new Date('2025-01-30'), unapprove_reason: 'Failed to meet deadline.', status: 'unapproved' },
           { studentFlightPlanId: 10, taskId: 10, userId: 10, points_earned: 6, completed_date: new Date('2025-02-08'), unapprove_reason: null, status: 'in_progress' }
         ]);
-        
+
         // Populate userRolePermissions
         await queryInterface.bulkInsert('userRolePermissions', [
-          { userRoleId: 1, permissionId: 1, type: 'read' },
-          { userRoleId: 1, permissionId: 2, type: 'write' },
-          { userRoleId: 1, permissionId: 3, type: 'delete' },
-          { userRoleId: 2, permissionId: 1, type: 'read' },
-          { userRoleId: 2, permissionId: 2, type: 'write' },
-          { userRoleId: 3, permissionId: 1, type: 'read' },
-          { userRoleId: 3, permissionId: 2, type: 'write' },
-          { userRoleId: 4, permissionId: 1, type: 'read' },
-          { userRoleId: 4, permissionId: 3, type: 'delete' },
-          { userRoleId: 5, permissionId: 1, type: 'read' },
-          { userRoleId: 5, permissionId: 2, type: 'write' },
+          { userRoleId: 1, permissionId: 1},
+          { userRoleId: 1, permissionId: 2},
+          { userRoleId: 1, permissionId: 3},
+          { userRoleId: 1, permissionId: 4},
+          { userRoleId: 1, permissionId: 5},
+          { userRoleId: 1, permissionId: 6},
+          { userRoleId: 1, permissionId: 7},
+          { userRoleId: 1, permissionId: 8},
+          { userRoleId: 1, permissionId: 9},
+
+          { userRoleId: 2, permissionId: 1},
+          { userRoleId: 2, permissionId: 2},
+          { userRoleId: 2, permissionId: 3},
+          { userRoleId: 2, permissionId: 4},
+          { userRoleId: 2, permissionId: 5},
+          { userRoleId: 2, permissionId: 6},
+          { userRoleId: 2, permissionId: 7},
+          { userRoleId: 2, permissionId: 8},
+          { userRoleId: 2, permissionId: 9},
+          
+          { userRoleId: 3, permissionId: 1},
+          { userRoleId: 3, permissionId: 2},
+          { userRoleId: 3, permissionId: 3},
+          { userRoleId: 3, permissionId: 4},
+          { userRoleId: 3, permissionId: 5},
+          { userRoleId: 3, permissionId: 6},
+          { userRoleId: 3, permissionId: 7},
+          { userRoleId: 3, permissionId: 8},
+          { userRoleId: 3, permissionId: 9},
+          
+          { userRoleId: 4, permissionId: 1},
+          { userRoleId: 4, permissionId: 2},
+          { userRoleId: 4, permissionId: 3},
+          { userRoleId: 4, permissionId: 4},
+          { userRoleId: 4, permissionId: 5},
+          { userRoleId: 4, permissionId: 6},
+          { userRoleId: 4, permissionId: 7},
+          { userRoleId: 4, permissionId: 8},
+          { userRoleId: 4, permissionId: 9},
+          
+          { userRoleId: 5, permissionId: 1},
+          { userRoleId: 5, permissionId: 2},
+          { userRoleId: 5, permissionId: 3},
+          { userRoleId: 5, permissionId: 4},
+          { userRoleId: 5, permissionId: 5},
+          { userRoleId: 5, permissionId: 6},
+          { userRoleId: 5, permissionId: 7},
+          { userRoleId: 5, permissionId: 8},
+          { userRoleId: 5, permissionId: 9},
         ]);
       }
     }

@@ -5,11 +5,6 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        type: {
-            type: Sequelize.ENUM,
-            values: ['read', 'write', 'delete'],
-            allowNull: false,
-        }
     });
     return UserRolePermission;
 };

@@ -45,10 +45,6 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: false,
         },
-        prerequisite_task_id: {
-            type: Sequelize.INTEGER,
-            allowNull: true,
-        },
         video_link: {
             type: Sequelize.STRING,
             allowNull: true,
