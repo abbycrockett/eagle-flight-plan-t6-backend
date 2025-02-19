@@ -102,17 +102,18 @@ module.exports = {
 
         // Populate badges
         await queryInterface.bulkInsert('badges', [
-          { name: 'Beginner Explorer', description: 'Awarded for completing the first challenge.', type: 'automatic', points: 100, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Master Strategist', description: 'Given to players who complete all strategic levels.', type: 'manual', points: 500, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Speed Runner', description: 'For finishing a task under the time limit.', type: 'semi_automatic', points: 300, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Ultimate Collector', description: 'Earned by collecting all available items.', type: 'automatic', points: 700, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Team Player', description: 'Awarded for participating in a team event.', type: 'manual', points: 400, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Problem Solver', description: 'Given to those who solve a difficult puzzle.', type: 'semi_automatic', points: 350, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Perfectionist', description: 'Earned by achieving a perfect score.', type: 'automatic', points: 600, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Marathon Runner', description: 'For completing an extended challenge.', type: 'manual', points: 450, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Elite Champion', description: 'Awarded to tournament winners.', type: 'semi_automatic', points: 800, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-          { name: 'Legendary Status', description: 'The highest badge for exceptional performance.', type: 'automatic', points: 1000, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() }
+          { name: 'Beginner Explorer', description: 'Awarded for completing the first challenge.', type: 'task_completion', points: 100, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Master Strategist', description: 'Given to players who complete all strategic levels.', type: 'experience_completion', points: 500, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Speed Runner', description: 'For finishing a task under the time limit.', type: 'flightplan_completion', points: 300, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Ultimate Collector', description: 'Earned by collecting all available items.', type: 'task_completion', points: 700, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Team Player', description: 'Awarded for participating in a team event.', type: 'experience_completion', points: 400, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Problem Solver', description: 'Given to those who solve a difficult puzzle.', type: 'flightplan_completion', points: 350, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Perfectionist', description: 'Earned by achieving a perfect score.', type: 'task_completion', points: 600, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Marathon Runner', description: 'For completing an extended challenge.', type: 'experience_completion', points: 450, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Elite Champion', description: 'Awarded to tournament winners.', type: 'flightplan_completion', points: 800, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+          { name: 'Legendary Status', description: 'The highest badge for exceptional performance.', type: 'task_completion', points: 1000, image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() }
         ]);
+        
 
         // Populate cliftonStrengths
         await queryInterface.bulkInsert('cliftonStrengths', [
