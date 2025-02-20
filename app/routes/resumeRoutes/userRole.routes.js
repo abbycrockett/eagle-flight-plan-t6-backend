@@ -4,22 +4,22 @@ module.exports = (app) => {
     var router = require("express").Router();
 
     // Create new Course
-    router.post("/user/:userId/role/:roleId/userRole/", [authenticate], userRole.create);
+    router.post("/user/:userId/userRole/", [authenticate], userRole.create);
 
     // Retrieve all Courses
-    router.get("/user/:userId/role/:roleId/userRole/", [authenticate], userRole.getAll);
+    router.get("/user/:userId/userRole/", [authenticate], userRole.getAll);
 
     // Retreive a single Course with id
-    router.get("/user/:userId/role/:roleId/userRole/:id", [authenticate], userRole.getById);
+    router.get("/user/:userId/userRole/:id", [authenticate], userRole.getById);
 
     // Update a Course with id
-    router.put("/user/:userId/role/:roleId/userRole/:id", [authenticate], userRole.update);
+    router.put("/user/:userId/userRole/:id", [authenticate], userRole.update);
 
     // Delete a course with id
-    router.delete("/user/:userId/role/:roleId/userRole/:id", [authenticate], userRole.delete);
+    router.delete("/user/:userId/userRole/:id", [authenticate], userRole.delete);
 
     // Delete all Courses
-    router.delete("/user/:userId/role/:roleId/userRole/", [authenticate], userRole.deleteAll);
+    router.delete("/user/:userId/userRole/", [authenticate], userRole.deleteAll);
 
     app.use("/resume-t6", router);
 };
