@@ -1,5 +1,3 @@
-const { ideahub } = require("googleapis/build/src/apis/ideahub");
-
 module.exports = (sequelize, Sequelize) => {
     const RolePermission = sequelize.define("rolePermission", {
         id: {

@@ -1,4 +1,3 @@
-
 const db = require("../../models/index.js");
 const ResumeEducation = db.resumeEducation;
 const genericController = require('../genericController.js');
