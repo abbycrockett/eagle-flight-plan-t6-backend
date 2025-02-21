@@ -7,6 +7,9 @@ module.exports = (app) => {
     router.post("/user/:userId/userRole/", [authenticate], userRole.create);
 
     // Retrieve all Courses
+    router.get("/userRole/", [authenticate], userRole.getAll);
+
+    // Retrieve all Courses
     router.get("/user/:userId/userRole/", [authenticate], userRole.getAll);
 
     // Retreive a single Course with id

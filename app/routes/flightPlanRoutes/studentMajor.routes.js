@@ -1,6 +1,6 @@
 module.exports = (app) => {
     const genericRouter = require('../genericRoutes.js');
-     studentMajorController = require('../../controllers/flightPlanController/studentMajor.controller.js');
+    const studentMajorController = require('../../controllers/flightPlanController/studentMajor.controller.js');
 
     const router = genericRouter(studentMajorController, [
         { name: "student", key: "studentId" },
