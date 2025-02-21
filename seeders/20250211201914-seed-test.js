@@ -432,7 +432,7 @@ module.exports = {
             { fName: 'Abby', lName: 'Crockett', email: 'abby.crockett@eagles.oc.edu', phone_number: '987-654-3210', prefix: 'Ms.', studentId: 2, reviewerId: 2, adminId: 2, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Bill', lName: 'Le', email: 'bill.le@eagles.oc.edu', phone_number: '555-123-4567', prefix: 'Mr.', studentId: 3, reviewerId: 3, adminId: 3, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Jenna', lName: 'Stilling', email: 'j.stilling@eagles.oc.edu', phone_number: '444-789-1234', prefix: 'Ms.', studentId: 4, reviewerId: 4, adminId: 4, createdAt: new Date(), updatedAt: new Date() },
-            { fName: 'Arrian', lName: 'Taton', email: 'arriannaomi.a.taton@eagles.oc.edu', phone_number: '222-333-4444', prefix: 'Ms.', studentId: 5, reviewerId: 5, adminId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { fName: 'Arrian', lName: 'Taton', email: 'arrian.taton@eagles.oc.edu', phone_number: '222-333-4444', prefix: 'Ms.', studentId: 5, reviewerId: 5, adminId: 5, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Dana', lName: 'Davis', email: 'dana.davis@example.com', phone_number: '111-222-3333', prefix: 'Ms.', studentId: null, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', phone_number: '666-555-4444', prefix: 'Dr.', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', phone_number: '777-888-9999', prefix: 'Mr.', studentId: null, createdAt: new Date(), updatedAt: new Date() },
