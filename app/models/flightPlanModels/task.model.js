@@ -15,10 +15,6 @@ module.exports = (sequelize, Sequelize) => {
             defaultValue: false,
             allowNull: false,
         },
-        reflection: {
-            type: Sequelize.TEXT,
-            allowNull: true,
-        },
         schedule_type: {
             type: Sequelize.ENUM,
             // Scheduling type (one time, semesterly, special event, etc.)

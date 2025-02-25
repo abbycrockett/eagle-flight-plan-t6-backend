@@ -22,6 +22,10 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             defaultValue: 'in_progress',
         },
+        reflection: {
+            type: Sequelize.TEXT,
+            allowNull: true,
+        },
     });
     return StudentFlightPlanTask;
 };
