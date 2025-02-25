@@ -1,5 +1,7 @@
 'use strict';
 
+const { content_v2_1 } = require('googleapis');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -66,26 +68,45 @@ module.exports = {
       {
         // Nondependent Tables
         {
-
+          await queryInterface.bulkDelete('adminRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('reviewerRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('roles', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
         }
-        // Bridge Tables
+        // Bridge Tables that have one FK
         {
-
+          await queryInterface.bulkDelete('certifications', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('education', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('experiences', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('interests', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('links', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('projects', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeReviews', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('skills', null, { truncate: true, cascade: true, restartIdentity: true });
         }
-        // Bridge Tables +
+        // Bridge Tables + that have two FKs
         {
-
+          await queryInterface.bulkDelete('courses', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumes', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeCertifications', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeEducations', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeExperiences', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeInterests', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeLinks', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeProjects', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('resumeSkills', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('userResumeReviews', null, { truncate: true, cascade: true, restartIdentity: true });
         }
-        // Bridge Tables *
+        // Bridge Tables * that have three FKs
         {
-
+          await queryInterface.bulkDelete('resumeCourses', null, { truncate: true, cascade: true, restartIdentity: true });
         }
       }
     }
     // Populate Tables
     {
       {
-        // temp seeder data for resume builder
+        // Temp seeder data for resume builder
         // Populate reviewerRoles
         await queryInterface.bulkInsert('reviewerRoles', [
           { createdAt: new Date(), updatedAt: new Date() },
@@ -110,16 +131,16 @@ module.exports = {
         {
           // Populate awards
           await queryInterface.bulkInsert('awards', [
-            { name: 'Excellence in Innovation', description: 'Awarded for outstanding innovative solutions.', cost: 500, redemption_type: 'online', redemption_info: 'Redeem via email confirmation.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Leadership Award', description: 'Recognizing exceptional leadership qualities.', cost: 700, redemption_type: 'in_person', redemption_info: 'Available at the front desk.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Community Impact Award', description: 'For making a significant impact in the community.', cost: 1000, redemption_type: 'online', redemption_info: 'Will be mailed to the recipient.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Employee of the Month', description: 'Awarded to the best-performing employee of the month.', cost: 300, redemption_type: 'in_person', redemption_info: 'Collect at HR office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Customer Service Excellence', description: 'Recognizing outstanding customer service skills.', cost: 450, redemption_type: 'online', redemption_info: 'E-certificate will be emailed.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Top Performer Award', description: 'Awarded to top-performing employees annually.', cost: 800, redemption_type: 'in_person', redemption_info: 'To be awarded at the annual ceremony.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Best Team Player', description: 'Given to individuals who demonstrate teamwork and collaboration.', cost: 600, redemption_type: 'online', redemption_info: 'E-certificate and gift card via email.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Dedication Award', description: 'For employees who have shown dedication over the years.', cost: 750, redemption_type: 'in_person', redemption_info: 'Receive at the annual gala.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Innovation Challenge Winner', description: 'For employees who contribute the best ideas in company challenges.', cost: 950, redemption_type: 'online', redemption_info: 'Cash prize and certificate sent via email.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Most Valuable Player', description: 'Awarded to the most impactful contributor in a given year.', cost: 1200, redemption_type: 'in_person', redemption_info: 'Presented at the annual award ceremony.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() }
+            { name: 'Professional Attire Package', description: 'Includes a blazer, pants, and tie.', cost: 500, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Professional Headshot', description: 'Receive a professional headshot session.', cost: 300, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'OC Water Bottle', description: 'High-quality OC water bottle.', cost: 150, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Dawson Hollow Concert Ticket', description: 'Includes tickets to the Dawson Hollow concert.', cost: 200, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Business Attire Complete Set', description: 'Includes blazer, pants, tie, and a professional headshot.', cost: 800, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Stylish Blazer', description: 'Receive a stylish and professional blazer.', cost: 400, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Formal Pants', description: 'Classic formal pants suitable for business settings.', cost: 300, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Formal Tie', description: 'Elegant tie to complement your business attire.', cost: 100, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Formal Pencil Skirt', description: 'Classy skirt for warm days.', cost: 250, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Complete Professional Package', description: 'All items including attire, headshot, and concert ticket.', cost: 1200, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate badges
@@ -198,21 +219,7 @@ module.exports = {
             { role_type: 'student', createdAt: new Date(), updatedAt: new Date() },
             { role_type: 'reviewer', createdAt: new Date(), updatedAt: new Date() },
             { role_type: 'student_worker', createdAt: new Date(), updatedAt: new Date() },
-            { role_type: 'professor', createdAt: new Date(), updatedAt: new Date() },
-          ]);
-
-          // Populate students
-          await queryInterface.bulkInsert('students', [
-            { address: '123 Main St, Springfield, IL', graduation_date: new Date('2026-05-15'), points: 500, student_issued_id: 'S1001', createdAt: new Date(), updatedAt: new Date() },
-            { address: '456 Oak Ave, Chicago, IL', graduation_date: new Date('2025-12-10'), points: 320, student_issued_id: 'S1002', createdAt: new Date(), updatedAt: new Date() },
-            { address: '789 Pine Rd, Austin, TX', graduation_date: new Date('2027-06-20'), points: 700, student_issued_id: 'S1003', createdAt: new Date(), updatedAt: new Date() },
-            { address: '101 Birch Ln, Denver, CO', graduation_date: new Date('2026-08-30'), points: 450, student_issued_id: 'S1004', createdAt: new Date(), updatedAt: new Date() },
-            { address: '202 Maple St, Seattle, WA', graduation_date: new Date('2025-11-25'), points: 600, student_issued_id: 'S1005', createdAt: new Date(), updatedAt: new Date() },
-            { address: '303 Cedar Ave, Miami, FL', graduation_date: new Date('2028-09-10'), points: 350, student_issued_id: 'S1006', createdAt: new Date(), updatedAt: new Date() },
-            { address: '404 Elm St, Boston, MA', graduation_date: new Date('2027-04-05'), points: 800, student_issued_id: 'S1007', createdAt: new Date(), updatedAt: new Date() },
-            { address: '505 Walnut Dr, Phoenix, AZ', graduation_date: new Date('2026-07-15'), points: 480, student_issued_id: 'S1008', createdAt: new Date(), updatedAt: new Date() },
-            { address: '606 Redwood Blvd, San Francisco, CA', graduation_date: new Date('2025-10-20'), points: 550, student_issued_id: 'S1009', createdAt: new Date(), updatedAt: new Date() },
-            { address: '707 Sycamore Ct, New York, NY', graduation_date: new Date('2026-12-18'), points: 620, student_issued_id: 'S1010', createdAt: new Date(), updatedAt: new Date() }
+            { role_type: 'professor', createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate semesters
@@ -700,19 +707,316 @@ module.exports = {
       {
         // Nondependent Tables
         {
-
+          //roles are in flight-plan section, so only students is needed here
+          // Populate students
+            await queryInterface.bulkInsert('students', [
+            { address: '123 Magnolia St, New Orelans, LA', graduation_date: new Date('2026-05-02'), points: 78, student_issued_id: '128456', createdAt: new Date(), updatedAt: new Date() },
+            { address: '456 Elm St, Metropolis, NY', graduation_date: new Date('2025-12-13'), points: 78, student_issued_id: '134567', createdAt: new Date(), updatedAt: new Date() },
+            { address: '789 Maple Ave, Gotham, NJ', graduation_date: new Date('2027-04-25'), points: 78, student_issued_id: '145678', createdAt: new Date(), updatedAt: new Date() },
+            { address: '101 Oak Blvd, Star City, CA', graduation_date: new Date('2026-12-13'), points: 78, student_issued_id: '156789', createdAt: new Date(), updatedAt: new Date() },
+            { address: '202 Pine Rd, Central City, TX', graduation_date: new Date('2025-05-02'), points: 78, student_issued_id: '167890', createdAt: new Date(), updatedAt: new Date() },
+            { address: '303 Cedar Ln, Coast City, FL', graduation_date: new Date('2027-12-13'), points: 78, student_issued_id: '178901', createdAt: new Date(), updatedAt: new Date() },
+            { address: '404 Birch Dr, Fawcett City, OH', graduation_date: new Date('2026-04-25'), points: 78, student_issued_id: '189012', createdAt: new Date(), updatedAt: new Date() },
+            { address: '505 Spruce Ct, Gateway City, AZ', graduation_date: new Date('2025-04-25'), points: 78, student_issued_id: '190123', createdAt: new Date(), updatedAt: new Date() },
+            { address: '606 Ash Ave, Ivy Town, WA', graduation_date: new Date('2027-05-02'), points: 78, student_issued_id: '201234', createdAt: new Date(), updatedAt: new Date() },
+            { address: '707 Sycamore Pl, Midway City, CO', graduation_date: new Date('2026-12-13'), points: 78, student_issued_id: '212345', createdAt: new Date(), updatedAt: new Date() }
+            ]);
         }
         // Bridge Tables
         {
+          //certifications, education, experiences, interests, links, projects, resumeReviews, skills
 
+          // Populate certifications
+          await queryInterface.bulkInsert('certifications', [
+            { studentId: 1, name: 'Security+', company: 'CompTIA', date_acquired: new Date('2024-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, name: 'Network+', company: 'CompTIA', date_acquired: new Date('2023-12-13'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, name: 'A+', company: 'CompTIA', date_acquired: new Date('2025-02-25'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, name: 'CCNA', company: 'Cisco', date_acquired: new Date('2024-12-13'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, name: 'CEH', company: 'EC-Council', date_acquired: new Date('2023-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, name: 'CISSP', company: 'ISC2', date_acquired: new Date('2025-01-13'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, name: 'PMP', company: 'PMI', date_acquired: new Date('2024-04-25'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, name: 'CAPM', company: 'PMI', date_acquired: new Date('2023-04-25'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, name: 'ITIL', company: 'AXELOS', date_acquired: new Date('2025-01-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, name: 'AWS Certified Solutions Architect', company: 'Amazon Web Services', date_acquired: new Date('2024-12-13'), createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate education
+          await queryInterface.bulkInsert('education', [
+            { studentId: 1, degree: 'BS in Computer Science with Cybersecurity', institution: 'Oklahoma Christian University', gpa: 4.0, graduation_date: new Date('2025-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, degree: 'BS in Computer Science with Cybersecurity', institution: 'Oklahoma Christian University', gpa: 3.9, graduation_date: new Date('2024-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, degree: 'MS in Computer Science', institution: 'Oklahoma Christian University', gpa: 4.0, graduation_date: new Date('2025-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, degree: 'MS in Computer Science', institution: 'Oklahoma Christian University', gpa: 4.0, graduation_date: new Date('2025-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, degree: 'MS in Computer Science', institution: 'Oklahoma Christian University', gpa: 3.6, graduation_date: new Date('2024-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, degree: 'BS in Cybersecurity', institution: 'University of Florida', gpa: 3.8, graduation_date: new Date('2026-12-13'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, degree: 'BS in Project Management', institution: 'University of Miami', gpa: 3.9, graduation_date: new Date('2025-04-25'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, degree: 'BS in Business Administration', institution: 'University of South Florida', gpa: 3.7, graduation_date: new Date('2023-12-13'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, degree: 'BS in Information Systems Management', institution: 'University of Texas at Dallas', gpa: 3.6, graduation_date: new Date('2026-05-02'), createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, degree: 'BS in Computer Science with Software Engineering', institution: 'University of Washington', gpa: 3.8, graduation_date: new Date('2024-12-13'), createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate experiences
+          await queryInterface.bulkInsert('experiences', [
+            { studentId: 1, role: 'Cybersecurity Analyst', company: 'Tinker AFB', start_date: new Date('2025-05-02'), end_date: new Date('2026-05-02'), job_description: 'Analyzed and monitored network traffic for potential security threats.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, role: 'Network Engineer', company: 'Boeing', start_date: new Date('2024-12-13'), end_date: new Date('2025-12-13'), job_description: 'Designed and implemented network infrastructure for new office buildings.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, role: 'Software Developer', company: 'Google', start_date: new Date('2026-04-25'), end_date: new Date('2027-04-25'), job_description: 'Developed new features for Google Chrome browser.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, role: 'Data Analyst', company: 'NASA', start_date: new Date('2025-12-13'), end_date: new Date('2026-12-13'), job_description: 'Analyzed data from Mars Rover missions to identify patterns and trends.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, role: 'Software Engineer', company: 'Microsoft', start_date: new Date('2024-05-02'), end_date: new Date('2025-05-02'), job_description: 'Developed new features for Windows operating system.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, role: 'Cybersecurity Analyst', company: 'Lockheed Martin', start_date: new Date('2026-12-13'), end_date: new Date('2027-12-13'), job_description: 'Conducted security assessments and penetration testing on client networks.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, role: 'Project Manager', company: 'Booz Allen Hamilton', start_date: new Date('2025-04-25'), end_date: new Date('2026-04-25'), job_description: 'Managed multiple projects for government clients.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, role: 'Business Analyst', company: 'Deloitte', start_date: new Date('2023-12-13'), end_date: new Date('2024-12-13'), job_description: 'Analyzed business processes and recommended improvements.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, role: 'Systems Analyst', company: 'Accenture', start_date: new Date('2026-05-02'), end_date: new Date('2027-05-02'), job_description: 'Designed and implemented new systems for client organizations.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, role: 'Software Developer', company: 'Amazon', start_date: new Date('2024-12-13'), end_date: new Date('2025-12-13'), job_description: 'Developed new features for Amazon Web Services cloud platform.', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate interests
+          await queryInterface.bulkInsert('interests', [
+            { studentId: 1, name: 'Cybersecurity', description: 'Interested in learning about the latest cybersecurity threats and defenses.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, name: 'Networking', description: 'Passionate about designing and implementing network infrastructure.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, name: 'Software Development', description: 'Enjoys coding and building new software applications.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, name: 'Data Analysis', description: 'Fascinated by data and its potential to drive decision-making.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, name: 'Software Engineering', description: 'Loves designing and building software systems.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, name: 'Penetration Testing', description: 'Enjoys finding and fixing security vulnerabilities in networks.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, name: 'Project Management', description: 'Passionate about leading teams and delivering successful projects.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, name: 'Business Analysis', description: 'Interested in analyzing business processes and improving efficiency.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, name: 'Systems Analysis', description: 'Enjoys designing and implementing new systems for organizations.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, name: 'Cloud Computing', description: 'Passionate about building and managing cloud-based services.', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate links
+          await queryInterface.bulkInsert('links', [
+            { studentId: 1, name: 'LinkedIn', link: 'https://www.linkedin.com/in/anthonypham', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, name: 'GitHub', link: 'https://www.github.com/abbycrockett', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, name: 'Portfolio', link: 'https://www.bill-le.com', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, name: 'LinkedIn', link: 'https://www.linkedin.com/in/jennastilling', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, name: 'GitHub', link: 'https://www.github.com/arriantaton', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, name: 'Portfolio', link: 'https://www.danadavis.com', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, name: 'LinkedIn', link: 'https://www.linkedin.com/in/evemartin', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, name: 'GitHub', link: 'https://www.github.com/frankg', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, name: 'Portfolio', link: 'https://www.gracer.com', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, name: 'LinkedIn', link: 'https://www.linkedin.com/in/hannah-martinez', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate projects
+          await queryInterface.bulkInsert('projects', [
+            { studentId: 1, name: 'Network Security Project', description: 'Designed & implemented a secure network for a small business.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, name: 'Web Development Project', description: 'Built a responsive website for a local nonprofit organization.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, name: 'Machine Learning Project', description: 'Developed a model to predict stock prices using historical data.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, name: 'Data Analysis Project', description: 'Analyzed customer data to identify trends and improve marketing strategies.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, name: 'Software Development Project', description: 'Built a mobile app for tracking fitness goals and progress.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, name: 'Penetration Testing Project', description: 'Conducted security assessments on a client network to identify vulnerabilities.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, name: 'Project Management Project', description: 'Led a team to successfully deliver a software development project on time and within budget.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, name: 'Business Analysis Project', description: 'Analyzed business processes to identify inefficiencies and recommend improvements.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, name: 'Systems Analysis Project', description: 'Designed and implemented a new system for managing customer data.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, name: 'Cloud Computing Project', description: 'Built a cloud-based application for storing and sharing files.', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeReviews?
+          await queryInterface.bulkInsert('resumeReviews', [
+            { studentId: 1, notes: 'Is this resume good for intership at Paycom?', suggestion: 'Great resume! Very well-organized and easy to read.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, notes: 'Is this resume good for intership at Google?', suggestion: 'Good resume. Could use more details about projects and experiences.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, notes: 'Is this resume good for intership at Microsoft?', suggestion: 'Needs improvement. Work on formatting and content.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, notes: 'Is this resume good for intership at Amazon?', suggestion: 'Excellent resume! Very impressive experiences and projects.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, notes: 'Is this resume good for intership at Facebook?', suggestion: 'Good start. Add more details about skills and certifications.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, notes: 'Is this resume good for intership at Apple?', suggestion: 'Needs work. Focus on highlighting key experiences and skills.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, notes: 'Is this resume good for intership at Tesla?', suggestion: 'Great resume! Very well-organized and easy to read.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, notes: 'Is this resume good for intership at SpaceX?', suggestion: 'Good resume. Could use more details about projects and experiences.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, notes: 'Is this resume good for intership at IBM?', suggestion: 'Needs improvement. Work on formatting and content.', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, notes: 'Is this resume good for intership at Intel?', suggestion: 'Excellent resume! Very impressive experiences and projects.', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate skills
+          await queryInterface.bulkInsert('skills', [
+            { studentId: 1, name: 'Network Security', description: 'Expert', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 2, name: 'Web Development', description: 'Advanced', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 3, name: 'Machine Learning', description: 'Intermediate', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 4, name: 'Data Analysis', description: 'Expert', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 5, name: 'Software Development', description: 'Beginner', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 6, name: 'Penetration Testing', description: 'Expert', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 7, name: 'Project Management', description: 'Advanced', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 8, name: 'Business Analysis', description: 'Beginner', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 9, name: 'Systems Analysis', description: 'Intermediate', createdAt: new Date(), updatedAt: new Date() },
+            { studentId: 10, name: 'Cloud Computing', description: 'Advanced', createdAt: new Date(), updatedAt: new Date() }
+          ]);
         }
         // Bridge Tables +
         {
+          //courses, resumes, resumeCertifications, resumeEducations, resumeExperiences, resumeInterests
+          //resumeLinks, resumeProjects, resumeSkills, & userResumeReviews
 
+          // Populate courses
+          await queryInterface.bulkInsert('courses', [
+            { educationId: 1, studentId: 1, name: 'Introduction to Cybersecurity', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 1, studentId: 1, name: 'Network Security', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 1, studentId: 1, name: 'Parallel Programming', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 2, studentId: 2, name: 'Parallel Programming', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 2, studentId: 2, name: 'Network Security', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 2, studentId: 2, name: 'Software Engineering IV', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 3, studentId: 3, name: 'Data Structures & Algorithms', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 3, studentId: 3, name: 'Data Mining', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 3, studentId: 3, name: 'Machine Learning', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 4, studentId: 4, name: 'Data Mining', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 4, studentId: 4, name: 'Data Structures & Algorithms', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 4, studentId: 4, name: 'Software Engineering IV', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 5, studentId: 5, name: 'Software Engineering III', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 5, studentId: 5, name: 'Introudction to AI', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 6, studentId: 6, name: 'Penetration Testing', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 7, studentId: 7, name: 'Project Management', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 8, studentId: 8, name: 'Business Analysis', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 9, studentId: 9, name: 'Systems Analysis', grade: 'A', createdAt: new Date(), updatedAt: new Date() },
+            { educationId: 10, studentId: 10, name: 'Cloud Computing', grade: 'A', createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumes
+          await queryInterface.bulkInsert('resumes', [
+            { resumeReviewId: 1, studentId: 1, name: 'Anthony Pham Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 2, studentId: 2, name: 'Abby Crockett Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 3, studentId: 3, name: 'Bill Le Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 4, studentId: 4, name: 'Jenna Stilling Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 5, studentId: 5, name: 'Arrian Taton Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 6, studentId: 6, name: 'Dana Davis Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 7, studentId: 7, name: 'Eve Martin Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 8, studentId: 8, name: 'Frank G Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 9, studentId: 9, name: 'Grace R Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeReviewId: 10, studentId: 10, name: 'Hannah Martinez Resume', template_type: 1, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeCertifications
+          await queryInterface.bulkInsert('resumeCertifications', [
+            { resumeId: 1, certificationId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 1, certificationId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, certificationId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, certificationId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, certificationId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, certificationId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, certificationId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, certificationId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, certificationId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, certificationId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, certificationId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, certificationId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, certificationId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, certificationId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, certificationId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, certificationId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, certificationId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, certificationId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, certificationId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, certificationId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeEducations
+          await queryInterface.bulkInsert('resumeEducations', [
+            { resumeId: 1, educationId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, educationId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, educationId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, educationId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, educationId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, educationId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, educationId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, educationId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, educationId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, educationId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeExperiences
+          await queryInterface.bulkInsert('resumeExperiences', [
+            { resumeId: 1, experienceId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, experienceId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, experienceId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, experienceId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, experienceId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, experienceId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, experienceId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, experienceId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, experienceId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, experienceId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeInterests
+          await queryInterface.bulkInsert('resumeInterests', [
+            { resumeId: 1, interestId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, interestId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, interestId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, interestId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, interestId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, interestId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, interestId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, interestId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, interestId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, interestId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeLinks
+          await queryInterface.bulkInsert('resumeLinks', [
+            { resumeId: 1, linkId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, linkId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, linkId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, linkId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, linkId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, linkId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, linkId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, linkId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, linkId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, linkId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeProjects
+          await queryInterface.bulkInsert('resumeProjects', [
+            { resumeId: 1, projectId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, projectId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, projectId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, projectId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, projectId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, projectId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, projectId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, projectId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, projectId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, projectId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate resumeSkills
+          await queryInterface.bulkInsert('resumeSkills', [
+            { resumeId: 1, skillId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, skillId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, skillId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, skillId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, skillId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, skillId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, skillId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, skillId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, skillId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, skillId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate userResumeReviews
+          await queryInterface.bulkInsert('userResumeReviews', [
+            {userId: 1, resumeReviewId: 1, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 2, resumeReviewId: 2, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 3, resumeReviewId: 3, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 4, resumeReviewId: 4, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 5, resumeReviewId: 5, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 6, resumeReviewId: 6, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 7, resumeReviewId: 7, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 8, resumeReviewId: 8, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 9, resumeReviewId: 9, createdAt: new Date(), updatedAt: new Date() },
+            {userId: 10, resumeReviewId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
         }
         // Bridge Tables *
         {
-
+          //resumeCourses
+          await queryInterface.bulkInsert('resumeCourses', [
+            { resumeId: 1, educationId: 1, courseId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 2, educationId: 2, courseId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 3, educationId: 3, courseId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 4, educationId: 4, courseId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 5, educationId: 5, courseId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 6, educationId: 6, courseId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 7, educationId: 7, courseId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 8, educationId: 8, courseId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 9, educationId: 9, courseId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { resumeId: 10, educationId: 10, courseId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
         }
       }
     }
@@ -781,22 +1085,40 @@ module.exports = {
     {
       // Nondependent Tables
       {
-
+        await queryInterface.bulkDelete('adminRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('reviewerRoles', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('roles', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('students', null, { truncate: true, cascade: true, restartIdentity: true });
       }
       // Bridge Tables
       {
-
+        await queryInterface.bulkDelete('certifications', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('education', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('experiences', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('interests', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('links', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('projects', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeReviews', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('skills', null, { truncate: true, cascade: true, restartIdentity: true });
       }
       // Bridge Tables +
       {
-
+        await queryInterface.bulkDelete('courses', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumes', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeCertifications', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeEducations', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeExperiences', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeInterests', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeLinks', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeProjects', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('resumeSkills', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('userResumeReviews', null, { truncate: true, cascade: true, restartIdentity: true });
       }
       // Bridge Tables *
       {
-
+        await queryInterface.bulkDelete('resumeCourses', null, { truncate: true, cascade: true, restartIdentity: true });
       }
     }
-
     await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
   }
 };
