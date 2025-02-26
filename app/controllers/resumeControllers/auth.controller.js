@@ -1,13 +1,15 @@
 const db = require("../../models");
 const authconfig = require("../../config/auth.config");
-const User = db.user;
 const Student = db.student;
 const Reviewer = db.reviewerRole;
 const Admin = db.adminRole;
-const Role = db.role;
-const UserRole = db.userRole;
 const Session = db.session;
 const Op = db.Sequelize.Op;
+const RolePermission = db.rolePermission;
+const Role = db.role;
+const UserRolePermission = db.userRolePermission;
+const UserRole = db.userRole;
+const User = db.user;
 
 const { google } = require("googleapis");
 
@@ -94,6 +96,7 @@ exports.login = async (req, res) => {
     let admin = {};
     let reviewer = {};
     let role = {};
+    let rolePermissions = {};
 
     // Splices the email to only get the domain
     let emailDomain = user.email.slice(
@@ -102,7 +105,6 @@ exports.login = async (req, res) => {
     );
 
     // area for each individual specific email address for testing -- make sure to delete all student ones (Arrian, Abby, Anthony, Bill, Jenna) for actual production if deployed
-    
     if (
       user.email === "charlotte.hamil@oc.edu" ||
       user.email === "david.north@oc.edu" ||
@@ -123,35 +125,11 @@ exports.login = async (req, res) => {
           res.status(500).send({ message: err.message });
         });
 
-      role = {
-        role_type: "admin",
-      };
-      await Role.create(role)
-        .then((data) => {
-          console.log("role was registered");
-          role = data.dataValues;
-        })
-        .catch((err) => {
-          res.status(500).send({ message: err.message });
-        });
-
       // Create role for reviewer
       await Reviewer.create(reviewer)
         .then((data) => {
           console.log("reviewer was registered");
           reviewer = data.dataValues;
-        })
-        .catch((err) => {
-          res.status(500).send({ message: err.message });
-        });
-
-      role = {
-        role_type: "reviewer",
-      };
-      await Role.create(role)
-        .then((data) => {
-          console.log("role was registered");
-          role = data.dataValues;
         })
         .catch((err) => {
           res.status(500).send({ message: err.message });
@@ -167,14 +145,9 @@ exports.login = async (req, res) => {
           res.status(500).send({ message: err.message });
         });
 
-      role = {
-        role_type: "student",
-      };
-      await Role.create(role)
-        .then((data) => {
-          console.log("role was registered");
-          role = data.dataValues;
-        })
+      role = await Role.findOne({
+        where: { role_type: "admin" }
+      })
         .catch((err) => {
           res.status(500).send({ message: err.message });
         });
@@ -203,15 +176,10 @@ exports.login = async (req, res) => {
           res.status(500).send({ message: err.message });
         });
 
-      // Create role with student as role
-      role = {
-        role_type: "student",
-      };
-      await Role.create(role)
-        .then((data) => {
-          console.log("role was registered");
-          role = data.dataValues;
-        })
+      // Find role with student as role
+      role = await Role.findOne({
+        where: { role_type: "student" }
+      }).then(console.log("CONFIRMED LOGGED AS STUDENT"))
         .catch((err) => {
           res.status(500).send({ message: err.message });
         });
@@ -235,14 +203,9 @@ exports.login = async (req, res) => {
         });
 
       // Create role for admin/teacher - this will be the reviwerer role by default
-      role = {
-        role_type: "reviewer",
-      }; // change this to reviewer
-      await Role.create(role)
-        .then((data) => {
-          console.log("role was registered");
-          role = data.dataValues;
-        })
+      role = await Role.findOne({
+        where: { role_type: "professor" }
+      })
         .catch((err) => {
           res.status(500).send({ message: err.message });
         });
@@ -255,38 +218,6 @@ exports.login = async (req, res) => {
         reviewerId: reviewer.id,
       };
     } else {
-      /* admin specific code
-await Admin.create(admin)
-      .then((data) => {
-        console.log("admin was registered");
-        admin = data.dataValues;
-      })
-      .catch((err) => {
-        res.status(500).send({ message: err.message });
-      });
-
-      // Create role for admin/teacher - this will be the reviwerer role by default
-      role = {
-        role_type: 'admin',
-      } // change this to reviewer
-      await Role.create(role)
-      .then((data) => {
-        console.log("role was registered");
-        role = data.dataValues;
-      })
-      .catch((err) => {
-        res.status(500).send({ message: err.message });
-      });
-
-      // add to user the reviewer Id
-      user = {
-        fName: firstName,
-        lName: lastName,
-        email: email,
-        reviewerId: reviewer.id,
-        adminId: admin.id
-      };
-      */
       // Will need to add an error that is passed to the frontend when they use an unvalid email
       console.log("The Email you used is not permitted on this website");
     }
@@ -319,6 +250,29 @@ await Admin.create(admin)
       .catch((err) => {
         res.status(500).send({ message: err.message });
       });
+      
+      // get all permissions for role
+    rolePermissions = await RolePermission.findAll({
+      where: { roleId: userRole.roleId }
+    })
+      .catch((err) => {
+        res.status(500).send({ message: err.message });
+      });
+
+      // create userRolePermissions for each permission
+      for (const rolePermission of rolePermissions) { 
+        let userRolePermission = {
+          userRoleId: userRole.id,
+          permissionId: rolePermission.permissionId
+        };
+
+        try {
+          await UserRolePermission.create(userRolePermission);
+        } catch (err) {
+          res.status(500).send({ message: err.message });
+        }
+      }
+
   } else {
     console.log(user);
     // doing this to ensure that the user's name is the one listed with Google
