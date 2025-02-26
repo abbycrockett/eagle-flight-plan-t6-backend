@@ -12,6 +12,7 @@ module.exports = (sequelize, Sequelize) => {
         template_type: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            defaultValue: 1,
         },
         image: {
             type: Sequelize.TEXT('long'),

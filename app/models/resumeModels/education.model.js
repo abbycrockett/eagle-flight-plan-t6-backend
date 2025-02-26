@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         degree: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         institution: {
             type: Sequelize.STRING,
@@ -19,7 +19,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         graduation_date: {
             type: Sequelize.STRING, // Might consider changing this in the future
-            allowNull: false,
+            allowNull: true,
         },
     });
     return Education;
