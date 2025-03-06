@@ -15,7 +15,11 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true,
         },
         image: {
-            type: Sequelize.BLOB,
+            type: Sequelize.BLOB("long"),
+            allowNull: true,
+        },
+        image_type: {
+            type: Sequelize.STRING, // Image file type
             allowNull: true,
         },
         name: {
