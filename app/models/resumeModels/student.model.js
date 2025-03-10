@@ -17,6 +17,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             allowNull: true,
         },
+        total_points: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+        },
         student_issued_id: {
             type: Sequelize.STRING,
             allowNull: true,
