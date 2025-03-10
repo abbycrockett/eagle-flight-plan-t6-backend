@@ -23,9 +23,13 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         image: {
-            type: Sequelize.BLOB,
+            type: Sequelize.BLOB("long"),
             allowNull: true,
-        }
+        },
+        image_type: {
+            type: Sequelize.STRING, // Image file type
+            allowNull: true,
+        },
     });
     return Badge;
 };
