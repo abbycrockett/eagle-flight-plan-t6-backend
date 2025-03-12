@@ -322,16 +322,16 @@ module.exports = {
 
           // Populate events
           await queryInterface.bulkInsert('events', [
-            { name: 'Tech Career Fair', description: 'Meet top tech companies', event_type: 'career_fair', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Main Hall', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 1, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'AI Workshop', description: 'Learn AI fundamentals', event_type: 'mentoring', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Room 101', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 15, verificationId: 2, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Resume Review', description: 'Get feedback on your resume', event_type: 'career_services', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Career Center', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 5, verificationId: 3, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Networking Lunch', description: 'Connect with professionals', event_type: 'lunch_and_learn', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Cafeteria', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 8, verificationId: 4, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Coding Bootcamp', description: 'Intensive coding session', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Lab 202', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 20, verificationId: 5, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Leadership Seminar', description: 'Develop leadership skills', event_type: 'galup_strengths_class', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Auditorium', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 12, verificationId: 6, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Startup Pitch Night', description: 'Present your startup ideas', event_type: 'club', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Innovation Hub', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 18, verificationId: 7, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Financial Literacy Workshop', description: 'Learn financial skills', event_type: 'mentoring', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Room 305', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 8, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Career Coaching', description: 'One-on-one career coaching', event_type: 'career_services', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Career Office', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 6, verificationId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Tech Talk Series', description: 'Hear from industry leaders', event_type: 'lunch_and_learn', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Lecture Hall', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 14, verificationId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { name: 'Tech Career Fair', description: 'Meet top tech companies', event_type: 'career_fair', date: new Date('2025-04-25'), start_date_time: new Date('2025-04-25T10:00:00'), end_date_time: new Date('2025-04-25T15:00:00'), location: 'Main Hall', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'AI Workshop', description: 'Learn AI fundamentals', event_type: 'mentoring', date: new Date('2027-07-12'), start_date_time: new Date('2027-07-12T14:00:00'), end_date_time: new Date('2027-07-12T16:00:00'), location: 'Room 101', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 15, verificationId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Resume Review', description: 'Get feedback on your resume', event_type: 'career_services', date: new Date('2025-04-09'), start_date_time: new Date('2025-04-09T09:00:00'), end_date_time: new Date('2025-04-09T12:00:00'), location: 'Career Center', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 5, verificationId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Lunch & Learn', description: 'Join us for HR hiring practices with Dr. Shawn Hamill', event_type: 'lunch_and_learn', date: new Date('2025-05-14'), start_date_time: new Date('2025-05-14T12:00:00'), end_date_time: new Date('2025-05-14T13:30:00'), location: 'Duncan Room (caf)', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 8, verificationId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Coding Bootcamp', description: 'Intensive coding session', event_type: 'extra_curricular', date: new Date('2026-06-19'), start_date_time: new Date('2026-06-19T09:00:00'), end_date_time: new Date('2026-06-19T17:00:00'), location: 'Lab 202', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 20, verificationId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Leadership Seminar', description: 'Develop leadership skills', event_type: 'galup_strengths_class', date: new Date('2027-03-08'), start_date_time: new Date('2027-03-08T11:00:00'), end_date_time: new Date('2027-03-08T12:30:00'), location: 'Auditorium', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 12, verificationId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Startup Pitch Night', description: 'Present your startup ideas', event_type: 'club', date: new Date('2026-09-30'), start_date_time: new Date('2026-09-30T18:00:00'), end_date_time: new Date('2026-09-30T21:00:00'), location: 'Innovation Hub', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 18, verificationId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Financial Literacy Workshop', description: 'Learn financial skills', event_type: 'mentoring', date: new Date('2027-11-14'), start_date_time: new Date('2027-11-14T13:00:00'), end_date_time: new Date('2027-11-14T15:00:00'), location: 'Room 305', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Career Coaching', description: 'One-on-one career coaching', event_type: 'career_services', date: new Date('2028-01-19'), start_date_time: new Date('2028-01-19T09:00:00'), end_date_time: new Date('2028-01-19T12:00:00'), location: 'Career Office', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 6, verificationId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Tech Talk Series', description: 'Hear from industry leaders', event_type: 'lunch_and_learn', date: new Date('2026-08-22'), start_date_time: new Date('2026-08-22T12:00:00'), end_date_time: new Date('2026-08-22T13:30:00'), location: 'Lecture Hall', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 14, verificationId: 10, createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate experienceTypeMajor
@@ -449,7 +449,7 @@ module.exports = {
             { category: 'leadership', reflection_required: false, schedule_type: 'one_time', name: 'Leadership Seminar', description: 'Attend a leadership seminar.', rationale: 'Develop leadership skills.', semester_from_grad: 2, point_value: 50, taskId: null, verificationId: 2, video_link: null, createdAt: new Date(), updatedAt: new Date() },
             { category: 'networking', reflection_required: true, schedule_type: 'special_event', name: 'Networking Event', description: 'Attend a professional networking event.', rationale: 'Expand professional network.', semester_from_grad: 1, point_value: 75, taskId: null, verificationId: 3, video_link: null, createdAt: new Date(), updatedAt: new Date() },
             { category: 'strengths', reflection_required: true, schedule_type: 'semesterly', name: 'Strengths Assessment', description: 'Complete a strengths assessment.', rationale: 'Understand personal strengths for career development.', semester_from_grad: 1, point_value: 60, taskId: null, verificationId: 4, video_link: 'http://example.com/strengths-assessment', createdAt: new Date(), updatedAt: new Date() },
-            { category: 'career_prep', reflection_required: false, schedule_type: 'one_time', name: 'Resume Workshop', description: 'Attend a resume writing workshop.', rationale: 'Prepare a professional resume for job applications.', semester_from_grad: 2, point_value: 80, taskId: null, verificationId: 5, video_link: 'http://example.com/resume-workshop', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'career_prep', reflection_required: false, schedule_type: 'one_time', name: 'Resume Workshop', description: 'Attend a resume writing workshop.', rationale: 'Prepare a professional resume for job applications.', semester_from_grad: 2, point_value: 80, taskId: null, verificationId: 5, video_link: 'https://youtu.be/rMzXigTdZrQ?si=_XIzDZn23PLSHP2l', createdAt: new Date(), updatedAt: new Date() },
             { category: 'mentoring', reflection_required: true, schedule_type: 'semesterly', name: 'Mentorship Program', description: 'Participate in a mentorship program.', rationale: 'Learn from an experienced professional in the field.', semester_from_grad: 3, point_value: 90, taskId: null, verificationId: 6, video_link: null, createdAt: new Date(), updatedAt: new Date() },
             { category: 'volunteer', reflection_required: false, schedule_type: 'semesterly', name: 'Community Service', description: 'Volunteer at a local charity or event.', rationale: 'Contribute to the community.', semester_from_grad: 4, point_value: 100, taskId: null, verificationId: 7, video_link: null, createdAt: new Date(), updatedAt: new Date() },
             { category: 'other', reflection_required: false, schedule_type: 'special_event', name: 'Hackathon Participation', description: 'Participate in a hackathon event.', rationale: 'Challenge yourself with a time-sensitive programming task.', semester_from_grad: 1, point_value: 120, taskId: null, verificationId: 8, video_link: 'http://example.com/hackathon', createdAt: new Date(), updatedAt: new Date() },
@@ -468,7 +468,10 @@ module.exports = {
             { fName: 'Eve', lName: 'Martin', email: 'eve.martin@example.com', phone_number: '666-555-4444', prefix: 'Dr.', studentId: 6, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Frank', lName: 'Garcia', email: 'frank.garcia@example.com', phone_number: '777-888-9999', prefix: 'Mr.', studentId: null, createdAt: new Date(), updatedAt: new Date() },
             { fName: 'Grace', lName: 'Rodriguez', email: 'grace.rodriguez@example.com', phone_number: '999-888-7777', prefix: 'Ms.', studentId: 7, createdAt: new Date(), updatedAt: new Date() },
-            { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', phone_number: '333-222-1111', prefix: 'Mrs.', studentId: 8, createdAt: new Date(), updatedAt: new Date() }
+            { fName: 'Hannah', lName: 'Martinez', email: 'hannah.martinez@example.com', phone_number: '333-222-1111', prefix: 'Mrs.', studentId: 8, createdAt: new Date(), updatedAt: new Date() },
+            // New users
+            { fName: 'Adam', lName: 'Nguyen', email: 'adam.nguyen@example.com', phone_number: '123-345-4312', prefix: 'Mr.', studentId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { fName: 'Jacob', lName: 'Doe', email: 'jacob.doe@example.com', phone_number: '645-854-8765', prefix: 'Mr.', studentId: 10, createdAt: new Date(), updatedAt: new Date() }
           ]);
         }
 
@@ -527,7 +530,41 @@ module.exports = {
             { flightPlanId: 7, taskId: 7, createdAt: new Date(), updatedAt: new Date() },
             { flightPlanId: 8, taskId: 8, createdAt: new Date(), updatedAt: new Date() },
             { flightPlanId: 9, taskId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { flightPlanId: 10, taskId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { flightPlanId: 10, taskId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 3, createdAt: new Date(), updatedAt: new Date() }, 
+            { flightPlanId: 1, taskId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 1, taskId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 2, taskId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 3, taskId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { flightPlanId: 4, taskId: 8, createdAt: new Date(), updatedAt: new Date() },
           ]);
 
           // Populate professorClass
@@ -574,16 +611,69 @@ module.exports = {
 
           // Populate studentFlightPlan
           await queryInterface.bulkInsert('studentFlightPlans', [
-            { studentId: 1, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 1, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 2, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 2, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 3, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 3, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 4, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 4, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 5, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { studentId: 5, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { studentId: 8, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //1
+            { studentId: 8, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //2
+            { studentId: 8, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //3
+            // Flight Plan 4 is Spring 2025
+            { studentId: 1, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //4
+            { studentId: 2, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //5
+            { studentId: 3, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //6
+            { studentId: 4, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //7
+            { studentId: 5, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //8
+            // Flight Plan 5 is Fall 2025
+            { studentId: 1, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //9
+            { studentId: 2, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //10
+            { studentId: 3, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //11
+            { studentId: 4, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //12
+            { studentId: 5, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //13
+            // Flight Plan 6 is Spring 2026
+            { studentId: 1, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() }, //14
+            { studentId: 2, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() }, //15
+            { studentId: 3, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() }, //16
+            { studentId: 4, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() }, //17
+            { studentId: 5, flightPlanId: 6, createdAt: new Date(), updatedAt: new Date() }, //18
+            // Flight Plan 7 is Fall 2026 
+            { studentId: 1, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() }, //19
+            { studentId: 2, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() }, //20
+            { studentId: 3, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() }, //21
+            { studentId: 4, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() }, //22
+            { studentId: 5, flightPlanId: 7, createdAt: new Date(), updatedAt: new Date() }, //23
+            // Flight Plan 8 is Spring 2027
+            { studentId: 1, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() }, //24
+            { studentId: 2, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() }, //25
+            { studentId: 3, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() }, //26
+            { studentId: 4, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() }, //27
+            { studentId: 5, flightPlanId: 8, createdAt: new Date(), updatedAt: new Date() }, //28
+            // FLight Plan 9 is Fall 2027
+            { studentId: 1, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() }, //29
+            { studentId: 2, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() }, //30
+            { studentId: 3, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() }, //31
+            { studentId: 4, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() }, //32
+            { studentId: 5, flightPlanId: 9, createdAt: new Date(), updatedAt: new Date() }, //33
+            // Flight Plan 10 is Spring 2028
+            { studentId: 1, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }, //34
+            { studentId: 2, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }, //35
+            { studentId: 3, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }, //36
+            { studentId: 4, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }, //37
+            { studentId: 5, flightPlanId: 10, createdAt: new Date(), updatedAt: new Date() }, //38
+            // Flight Plan 1 is Fall 2023
+            { studentId: 1, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //39
+            { studentId: 2, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //40
+            { studentId: 3, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //41
+            { studentId: 4, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //42
+            { studentId: 5, flightPlanId: 1, createdAt: new Date(), updatedAt: new Date() }, //43
+            // Flight Plan 2 is Spring 2024
+            { studentId: 1, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //44
+            { studentId: 2, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //45
+            { studentId: 3, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //46
+            { studentId: 4, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //47
+            { studentId: 5, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //48
+            // Flight Plan 3 is Fall 2024
+            { studentId: 1, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //49
+            { studentId: 2, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //50
+            { studentId: 3, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //51
+            { studentId: 4, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //52
+            { studentId: 5, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() } //53
           ]);
 
           // Populate taskBadge
@@ -653,7 +743,10 @@ module.exports = {
             { userId: 7, roleId: 2, createdAt: new Date(), updatedAt: new Date() },
             { userId: 8, roleId: 3, createdAt: new Date(), updatedAt: new Date() },
             { userId: 9, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
-            { userId: 10, roleId: 5, createdAt: new Date(), updatedAt: new Date() }
+            { userId: 10, roleId: 5, createdAt: new Date(), updatedAt: new Date() },
+            // New User Roles
+            { userId: 11, roleId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { userId: 12, roleId: 4, createdAt: new Date(), updatedAt: new Date() }
           ]);
         }
 
@@ -663,14 +756,65 @@ module.exports = {
           await queryInterface.bulkInsert('studentFlightPlanTasks', [
             { studentFlightPlanId: 1, taskId: 1, userId: 1, points_earned: 10, completed_date: new Date('2025-01-15'), unapprove_reason: null, status: 'approved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 1' },
             { studentFlightPlanId: 2, taskId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, status: 'ready_for_review', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 2' },
-            { studentFlightPlanId: 3, taskId: 3, userId: 3, points_earned: 12, completed_date: new Date('2025-01-20'), unapprove_reason: 'Did not meet minimum criteria.', status: 'unapproved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 3' },
             { studentFlightPlanId: 4, taskId: 4, userId: 4, points_earned: 15, completed_date: new Date('2025-01-22'), unapprove_reason: null, status: 'approved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 4'},
-            { studentFlightPlanId: 5, taskId: 5, userId: 5, points_earned: 5, completed_date: new Date('2025-02-10'), unapprove_reason: null, status: 'in_progress', createdAt: new Date(), updatedAt: new Date(), reflection: null },
             { studentFlightPlanId: 6, taskId: 6, userId: 6, points_earned: 10, completed_date: new Date('2025-01-18'), unapprove_reason: null, status: 'approved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 6' },
             { studentFlightPlanId: 7, taskId: 7, userId: 7, points_earned: 9, completed_date: new Date('2025-02-05'), unapprove_reason: null, status: 'ready_for_review', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 7' },
             { studentFlightPlanId: 8, taskId: 8, userId: 8, points_earned: 11, completed_date: new Date('2025-01-25'), unapprove_reason: null, status: 'approved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 8' },
             { studentFlightPlanId: 9, taskId: 9, userId: 9, points_earned: 14, completed_date: new Date('2025-01-30'), unapprove_reason: 'Failed to meet deadline.', status: 'unapproved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 9' },
-            { studentFlightPlanId: 10, taskId: 10, userId: 10, points_earned: 6, completed_date: new Date('2025-02-08'), unapprove_reason: null, status: 'in_progress', createdAt: new Date(), updatedAt: new Date(), reflection: null }
+            { studentFlightPlanId: 2, taskId: 2, userId: 2, points_earned: 8, completed_date: new Date('2025-02-01'), unapprove_reason: null, status: 'ready_for_review', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 2' },
+            { studentFlightPlanId: 2, taskId: 3, userId: 2, points_earned: 12, completed_date: new Date('2025-02-05'), unapprove_reason: 'Did not meet minimum criteria.', status: 'unapproved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 3' },
+            { studentFlightPlanId: 2, taskId: 4, userId: 2, points_earned: 15, completed_date: new Date('2025-02-10'), unapprove_reason: null, status: 'in_progress', createdAt: new Date(), updatedAt: new Date(), reflection: null },
+            { studentFlightPlanId: 2, taskId: 5, userId: 2, points_earned: 10, completed_date: new Date('2025-02-15'), unapprove_reason: 'Incomplete submission.', status: 'unapproved', createdAt: new Date(), updatedAt: new Date(), reflection: 'Reflection 5' },
+            { studentFlightPlanId: 2, taskId: 6, userId: 2, points_earned: 20, completed_date: new Date('2025-02-20'), unapprove_reason: null, status: 'in_progress', createdAt: new Date(), updatedAt: new Date(), reflection: null },
+            // New Tasks
+            // - Strengths Assessment
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 4, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 4, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 4, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 4, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 4, userId: 5},
+
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 1, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 10, taskId: 1, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 1, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 1, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 1, userId: 5},
+
+            // More Tasks for each team member
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 2, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 3, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 5, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 6, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 10, taskId: 7, userId: 2},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 5, taskId: 8, userId: 2},
+
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 2, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 3, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 5, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 6, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 7, userId: 1},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 4, taskId: 8, userId: 1},
+
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 2, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 3, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 5, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 6, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 7, userId: 3},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 6, taskId: 8, userId: 3},
+
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 2, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 3, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 5, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 6, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 7, userId: 4},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 7, taskId: 8, userId: 4},
+
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 2, userId: 5},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 3, userId: 5},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 5, userId: 5},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 6, userId: 5},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 7, userId: 5},
+            { points_earned: 0, completed_date: null, unapprove_reason: null, status: 'in_progress', reflection: null, createdAt: new Date(), updatedAt: new Date(), studentFlightPlanId: 8, taskId: 8, userId: 5},
           ]);
 
           // Populate userRolePermissions
@@ -724,6 +868,13 @@ module.exports = {
             { userRoleId: 5, permissionId: 7, createdAt: new Date(), updatedAt: new Date() },
             { userRoleId: 5, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
             { userRoleId: 5, permissionId: 9, createdAt: new Date(), updatedAt: new Date() },
+
+            //New Permissions
+            { userRoleId: 7, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { userRoleId: 9, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { userRoleId: 10, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { userRoleId: 11, permissionId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { userRoleId: 12, permissionId: 8, createdAt: new Date(), updatedAt: new Date() }
           ]);
         }
       }
