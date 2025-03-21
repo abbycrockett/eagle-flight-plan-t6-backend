@@ -131,18 +131,119 @@ module.exports = {
         {
           // Populate awards
           await queryInterface.bulkInsert('awards', [
-            { name: 'Professional Attire Package', description: 'Includes a blazer, pants, and tie.', cost: 500, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Professional Headshot', description: 'Receive a professional headshot session.', cost: 300, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'OC Water Bottle', description: 'High-quality OC water bottle.', cost: 150, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Dawson Hollow Concert Ticket', description: 'Includes tickets to the Dawson Hollow concert.', cost: 200, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Business Attire Complete Set', description: 'Includes blazer, pants, tie, and a professional headshot.', cost: 800, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Stylish Blazer', description: 'Receive a stylish and professional blazer.', cost: 400, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Formal Pants', description: 'Classic formal pants suitable for business settings.', cost: 300, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Formal Tie', description: 'Elegant tie to complement your business attire.', cost: 100, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Formal Pencil Skirt', description: 'Classy skirt for warm days.', cost: 250, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Complete Professional Package', description: 'All items including attire, headshot, and concert ticket.', cost: 1200, redemption_type: 'in_person', redemption_info: 'Pick up at Career Services office.', image: Buffer.from('sample image data'), createdAt: new Date(), updatedAt: new Date() }
+            { 
+              name: 'Professional Attire Package', 
+              description: 'Includes a blazer, pants, and tie.', 
+              cost: 500, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', // Default value added
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Professional Headshot', 
+              description: 'Receive a professional headshot session.', 
+              cost: 300, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'OC Water Bottle', 
+              description: 'High-quality OC water bottle.', 
+              cost: 150, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Dawson Hollow Concert Ticket', 
+              description: 'Includes tickets to the Dawson Hollow concert.', 
+              cost: 200, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Business Attire Complete Set', 
+              description: 'Includes blazer, pants, tie, and a professional headshot.', 
+              cost: 800, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Stylish Blazer', 
+              description: 'Receive a stylish and professional blazer.', 
+              cost: 400, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Formal Pants', 
+              description: 'Classic formal pants suitable for business settings.', 
+              cost: 300, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Formal Tie', 
+              description: 'Elegant tie to complement your business attire.', 
+              cost: 100, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Formal Pencil Skirt', 
+              description: 'Classy skirt for warm days.', 
+              cost: 250, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            },
+            { 
+              name: 'Complete Professional Package', 
+              description: 'All items including attire, headshot, and concert ticket.', 
+              cost: 1200, 
+              redemption_type: 'in_person', 
+              redemption_info: 'Pick up at Career Services office.', 
+              image: Buffer.from('sample image data'), 
+              image_type: 'png', 
+              createdAt: new Date(), 
+              updatedAt: new Date() 
+            }
           ]);
-
+          
+          
           // Populate badges
           await queryInterface.bulkInsert('badges', [
             { name: 'Beginner Explorer', description: 'Awarded for completing the first challenge.', type: 'task_completion', points: 100, image: null, image_type: null, createdAt: new Date(), updatedAt: new Date() },
@@ -321,18 +422,37 @@ module.exports = {
           ]);
 
           // Populate events
+          // await queryInterface.bulkInsert('events', [
+          //   { name: 'Tech Career Fair', description: 'Meet top tech companies', event_type: 'career_fair', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Main Hall', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 1, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'AI Workshop', description: 'Learn AI fundamentals', event_type: 'mentoring', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Room 101', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 15, verificationId: 2, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Resume Review', description: 'Get feedback on your resume', event_type: 'career_services', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Career Center', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 5, verificationId: 3, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Networking Lunch', description: 'Connect with professionals', event_type: 'lunch_and_learn', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Cafeteria', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 8, verificationId: 4, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Coding Bootcamp', description: 'Intensive coding session', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Lab 202', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 20, verificationId: 5, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Leadership Seminar', description: 'Develop leadership skills', event_type: 'galup_strengths_class', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Auditorium', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 12, verificationId: 6, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Startup Pitch Night', description: 'Present your startup ideas', event_type: 'club', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Innovation Hub', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 18, verificationId: 7, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Financial Literacy Workshop', description: 'Learn financial skills', event_type: 'mentoring', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Room 305', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 8, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Career Coaching', description: 'One-on-one career coaching', event_type: 'career_services', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Career Office', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 6, verificationId: 9, createdAt: new Date(), updatedAt: new Date() },
+          //   { name: 'Tech Talk Series', description: 'Hear from industry leaders', event_type: 'lunch_and_learn', date: new Date(), start_date_time: new Date(), end_date_time: new Date(), location: 'Lecture Hall', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 14, verificationId: 10, createdAt: new Date(), updatedAt: new Date() }
+          // ]);
+
           await queryInterface.bulkInsert('events', [
-            { name: 'Tech Career Fair', description: 'Meet top tech companies', event_type: 'career_fair', date: new Date('2025-04-25'), start_date_time: new Date('2025-04-25T10:00:00'), end_date_time: new Date('2025-04-25T15:00:00'), location: 'Main Hall', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 1, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'AI Workshop', description: 'Learn AI fundamentals', event_type: 'mentoring', date: new Date('2027-07-12'), start_date_time: new Date('2027-07-12T14:00:00'), end_date_time: new Date('2027-07-12T16:00:00'), location: 'Room 101', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 15, verificationId: 2, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Resume Review', description: 'Get feedback on your resume', event_type: 'career_services', date: new Date('2025-04-09'), start_date_time: new Date('2025-04-09T09:00:00'), end_date_time: new Date('2025-04-09T12:00:00'), location: 'Career Center', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 5, verificationId: 3, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Lunch & Learn', description: 'Join us for HR hiring practices with Dr. Shawn Hamill', event_type: 'lunch_and_learn', date: new Date('2025-05-14'), start_date_time: new Date('2025-05-14T12:00:00'), end_date_time: new Date('2025-05-14T13:30:00'), location: 'Duncan Room (caf)', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 8, verificationId: 4, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Coding Bootcamp', description: 'Intensive coding session', event_type: 'extra_curricular', date: new Date('2026-06-19'), start_date_time: new Date('2026-06-19T09:00:00'), end_date_time: new Date('2026-06-19T17:00:00'), location: 'Lab 202', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 20, verificationId: 5, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Leadership Seminar', description: 'Develop leadership skills', event_type: 'galup_strengths_class', date: new Date('2027-03-08'), start_date_time: new Date('2027-03-08T11:00:00'), end_date_time: new Date('2027-03-08T12:30:00'), location: 'Auditorium', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 12, verificationId: 6, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Startup Pitch Night', description: 'Present your startup ideas', event_type: 'club', date: new Date('2026-09-30'), start_date_time: new Date('2026-09-30T18:00:00'), end_date_time: new Date('2026-09-30T21:00:00'), location: 'Innovation Hub', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 18, verificationId: 7, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Financial Literacy Workshop', description: 'Learn financial skills', event_type: 'mentoring', date: new Date('2027-11-14'), start_date_time: new Date('2027-11-14T13:00:00'), end_date_time: new Date('2027-11-14T15:00:00'), location: 'Room 305', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 8, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Career Coaching', description: 'One-on-one career coaching', event_type: 'career_services', date: new Date('2028-01-19'), start_date_time: new Date('2028-01-19T09:00:00'), end_date_time: new Date('2028-01-19T12:00:00'), location: 'Career Office', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 6, verificationId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Tech Talk Series', description: 'Hear from industry leaders', event_type: 'lunch_and_learn', date: new Date('2026-08-22'), start_date_time: new Date('2026-08-22T12:00:00'), end_date_time: new Date('2026-08-22T13:30:00'), location: 'Lecture Hall', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 14, verificationId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { name: 'Public Speaking Workshop', description: 'Enhance your presentation skills', event_type: 'career_services', date: new Date(), start_date_time: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 9 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000), location: 'Room 150', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 16, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Art Therapy Session', description: 'De-stress through creative expression', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 11.5 * 60 * 60 * 1000), location: 'Wellness Center', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 8, verificationId: 17, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Business Networking Social', description: 'Meet professionals in finance & marketing', event_type: 'mentoring', date: new Date(), start_date_time: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000 + 13 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000 + 15 * 60 * 60 * 1000), location: 'Downtown Café', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 12, verificationId: 18, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Environmental Sustainability Panel', description: 'Discuss climate change solutions', event_type: 'career_services', date: new Date(), start_date_time: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 8 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000), location: 'Lecture Hall A', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 15, verificationId: 19, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Music Appreciation Night', description: 'Explore different music genres', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000 + 16.5 * 60 * 60 * 1000), location: 'Campus Auditorium', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 10, verificationId: 20, createdAt: new Date(), updatedAt: new Date() }
           ]);
+          
+          await queryInterface.bulkInsert('events', [
+            { name: 'Cybersecurity Panel', description: 'Discuss latest cybersecurity trends', event_type: 'career_services', date: new Date(), start_date_time: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 8 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), location: 'Auditorium', attendance_type: 'online', registration: 'in_app', custom: false, status: 'scheduled', point_value: 12, verificationId: 11, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Cloud Computing Workshop', description: 'Learn about AWS, Azure, and GCP', event_type: 'career_services', date: new Date(), start_date_time: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000), location: 'Room 204', attendance_type: 'in_person', registration: 'handshake', custom: false, status: 'scheduled', point_value: 15, verificationId: 12, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Game Development Jam', description: 'Create a game in 24 hours', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000 + 12 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000 + 36 * 60 * 60 * 1000), location: 'Lab 303', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 25, verificationId: 13, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Soft Skills Training', description: 'Enhance communication & teamwork', event_type: 'career_services', date: new Date(), start_date_time: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 9 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000 + 12 * 60 * 60 * 1000), location: 'Career Center', attendance_type: 'online', registration: 'handshake', custom: false, status: 'scheduled', point_value: 10, verificationId: 14, createdAt: new Date(), updatedAt: new Date() },
+            { name: 'Hackathon Bootcamp', description: 'Prep for an upcoming hackathon', event_type: 'extra_curricular', date: new Date(), start_date_time: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000), end_date_time: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000 + 15 * 60 * 60 * 1000), location: 'Innovation Lab', attendance_type: 'in_person', registration: 'in_app', custom: false, status: 'scheduled', point_value: 18, verificationId: 15, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+          
+          
+          
 
           // Populate experienceTypeMajor
           await queryInterface.bulkInsert('experienceTypeMajors', [
