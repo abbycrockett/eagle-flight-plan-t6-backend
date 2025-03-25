@@ -91,6 +91,7 @@ require("./app/routes/flightPlanRoutes/eventCliftonStrength.routes")(app);
 require("./app/routes/flightPlanRoutes/experienceType.routes")(app);
 require("./app/routes/flightPlanRoutes/experienceTypeEvent.routes")(app);
 require("./app/routes/flightPlanRoutes/experienceTypeMajor.routes")(app);
+require("./app/routes/flightPlanRoutes/experienceTypeCliftonStrength.routes")(app);
 require("./app/routes/flightPlanRoutes/flightPlan.routes")(app);
 require("./app/routes/flightPlanRoutes/flightPlanExperienceType.routes")(app);
 require("./app/routes/flightPlanRoutes/flightPlanTask.routes")(app);
