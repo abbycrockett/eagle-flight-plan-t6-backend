@@ -31,6 +31,7 @@ module.exports = {
           await queryInterface.bulkDelete('documents', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('events', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('experienceTypeMajors', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('experienceTypeCliftonStrengths', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('flightPlans', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('rolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
           await queryInterface.bulkDelete('studentBadges', null, { truncate: true, cascade: true, restartIdentity: true });
