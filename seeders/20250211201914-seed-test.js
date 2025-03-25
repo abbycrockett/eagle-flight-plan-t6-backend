@@ -193,7 +193,8 @@ module.exports = {
             { name: 'Self-Assurance', description: 'People exceptionally talented in the Self-Assurance theme feel confident in their ability to take risks and manage their own lives. They have an inner compass that gives them certainty in their decisions.', category: 'influencing', createdAt: new Date(), updatedAt: new Date() },
             { name: 'Significance', description: 'People exceptionally talented in the Significance theme want to make a big impact. They are independent and prioritize projects based on how much influence they will have on their organization or people around them.', category: 'influencing', createdAt: new Date(), updatedAt: new Date() },
             { name: 'Strategic', description: 'People exceptionally talented in the Strategic theme create alternative ways to proceed. Faced with any given scenario, they can quickly spot the relevant patterns and issues.', category: 'strategic_thinking', createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Woo', description: 'People exceptionally talented in the Woo theme love the challenge of meeting new people and winning them over. They derive satisfaction from breaking the ice and making a connection with someone.', category: 'influencing', createdAt: new Date(), updatedAt: new Date() }
+            { name: 'Woo', description: 'People exceptionally talented in the Woo theme love the challenge of meeting new people and winning them over. They derive satisfaction from breaking the ice and making a connection with someone.', category: 'influencing', createdAt: new Date(), updatedAt: new Date() },
+            { name: 'All', description: 'All of the Clifton Strengths in the System', category: 'N/A', createdAt: new Date(), updatedAt: new Date() },
           ]);
 
           // Populate experienceType
@@ -207,7 +208,17 @@ module.exports = {
             { category: 'volunteer', type: 'automatic', req_reflection: true, schedule_type: 'one_time', name: 'Community Service', description: 'Engage in a one-time community service project.', rational: 'Encourages civic responsibility.', createdAt: new Date(), updatedAt: new Date() },
             { category: 'academic', type: 'manual', req_reflection: false, schedule_type: 'every_semester', name: 'Honors Program', description: 'Participate in an academic honors program.', rational: 'Enhances academic achievement.', createdAt: new Date(), updatedAt: new Date() },
             { category: 'leadership', type: 'automatic', req_reflection: true, schedule_type: 'special_event', name: 'Leadership Summit', description: 'Attend a leadership development summit.', rational: 'Develops advanced leadership skills.', createdAt: new Date(), updatedAt: new Date() },
-            { category: 'networking', type: 'manual', req_reflection: false, schedule_type: 'one_time', name: 'Alumni Mixer', description: 'Connect with alumni from your program.', rational: 'Builds professional relationships.', createdAt: new Date(), updatedAt: new Date() }
+            { category: 'networking', type: 'manual', req_reflection: false, schedule_type: 'one_time', name: 'Alumni Mixer', description: 'Connect with alumni from your program.', rational: 'Builds professional relationships.', createdAt: new Date(), updatedAt: new Date() }, 
+            { category: 'academic', type: 'automatic', req_reflection: true, schedule_type: 'one_time', name: 'Experience 11', description: 'Participate in a faculty-led research project.', rational: 'Enhances critical thinking and research skills.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'leadership', type: 'manual', req_reflection: true, schedule_type: 'every_semester', name: 'Experience 12', description: 'Serve in a leadership role in student government.', rational: 'Develops leadership and organizational skills.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'networking', type: 'automatic', req_reflection: false, schedule_type: 'special_event', name: 'Experience 13', description: 'Attend a professional networking event.', rational: 'Expands professional connections.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'strengths', type: 'manual', req_reflection: true, schedule_type: 'one_time', name: 'Experience 14', description: 'Complete a strengths-based assessment.', rational: 'Helps identify personal strengths and growth areas.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'career_prep', type: 'automatic', req_reflection: false, schedule_type: 'one_time', name: 'Experience 15', description: 'Participate in a resume-building workshop.', rational: 'Improves job application materials.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'mentoring', type: 'manual', req_reflection: true, schedule_type: 'every_semester', name: 'Experience 16', description: 'Serve as a mentor for a fellow student.', rational: 'Fosters leadership and interpersonal skills.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'volunteer', type: 'automatic', req_reflection: true, schedule_type: 'one_time', name: 'Experience 17', description: 'Engage in a one-time community service project.', rational: 'Encourages civic responsibility.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'academic', type: 'manual', req_reflection: false, schedule_type: 'every_semester', name: 'Experience 18', description: 'Participate in an academic honors program.', rational: 'Enhances academic achievement.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'leadership', type: 'automatic', req_reflection: true, schedule_type: 'special_event', name: 'Experience 19', description: 'Attend a leadership development summit.', rational: 'Develops advanced leadership skills.', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'networking', type: 'manual', req_reflection: false, schedule_type: 'one_time', name: 'Experience 20', description: 'Connect with alumni from your program.', rational: 'Builds professional relationships.', createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate majors
@@ -221,7 +232,8 @@ module.exports = {
             { name: 'Mathematics', description: 'Study of mathematical theories, structures, and applications.', department: 'Science', createdAt: new Date(), updatedAt: new Date() },
             { name: 'Chemistry', description: 'Study of chemical reactions, substances, and molecular structures.', department: 'Science', createdAt: new Date(), updatedAt: new Date() },
             { name: 'English Literature', description: 'Study of English language and literary works.', department: 'Humanities', createdAt: new Date(), updatedAt: new Date() },
-            { name: 'Political Science', description: 'Study of government systems, politics, and international relations.', department: 'Humanities', createdAt: new Date(), updatedAt: new Date() }
+            { name: 'Political Science', description: 'Study of government systems, politics, and international relations.', department: 'Humanities', createdAt: new Date(), updatedAt: new Date() },
+            { name: 'All', description: 'All Majors in the System', department: 'N/A', createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate permissions
@@ -345,7 +357,41 @@ module.exports = {
             { experienceTypeId: 7, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
             { experienceTypeId: 8, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
             { experienceTypeId: 9, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { experienceTypeId: 10, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { experienceTypeId: 10, majorId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 11, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { experienceTypeId: 12, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { experienceTypeId: 13, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { experienceTypeId: 14, majorId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 15, majorId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 16, majorId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 17, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 18, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 19, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 20, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
+          ]);
+
+          // Populate expetienceTypeCliftonStrength
+          await queryInterface.bulkInsert('experienceTypeCliftonStrengths', [
+            { experienceTypeId: 1, cliftonStrengthId: 1, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 2, cliftonStrengthId: 2, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 3, cliftonStrengthId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 4, cliftonStrengthId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 5, cliftonStrengthId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 6, cliftonStrengthId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 7, cliftonStrengthId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 8, cliftonStrengthId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 9, cliftonStrengthId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 10, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 11, cliftonStrengthId: 11, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 12, cliftonStrengthId: 12, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 13, cliftonStrengthId: 13, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 14, cliftonStrengthId: 14, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 15, cliftonStrengthId: 15, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 16, cliftonStrengthId: 16, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 17, cliftonStrengthId: 17, createdAt: new Date(), updatedAt: new Date() },
+            { experienceTypeId: 18, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Clifton Strength
+            { experienceTypeId: 19, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Clifton Strength
+            { experienceTypeId: 20, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }  // Testing 'All' Clifton Strength
           ]);
 
           // Populate flightPlans
@@ -454,6 +500,16 @@ module.exports = {
             { category: 'volunteer', reflection_required: false, schedule_type: 'semesterly', name: 'Community Service', description: 'Volunteer at a local charity or event.', rationale: 'Contribute to the community.', semester_from_grad: 4, point_value: 100, taskId: null, verificationId: 7, video_link: null, createdAt: new Date(), updatedAt: new Date() },
             { category: 'other', reflection_required: false, schedule_type: 'special_event', name: 'Hackathon Participation', description: 'Participate in a hackathon event.', rationale: 'Challenge yourself with a time-sensitive programming task.', semester_from_grad: 1, point_value: 120, taskId: null, verificationId: 8, video_link: 'http://example.com/hackathon', createdAt: new Date(), updatedAt: new Date() },
             { category: 'academic', reflection_required: true, schedule_type: 'semesterly', name: 'Machine Learning Course', description: 'Complete a machine learning course online.', rationale: 'Gain knowledge in a highly relevant field of study.', semester_from_grad: 2, point_value: 150, taskId: null, verificationId: 9, video_link: 'http://example.com/machine-learning', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'leadership', reflection_required: false, schedule_type: 'special_event', name: 'Task 11', description: 'Attend a leadership conference in person.', rationale: 'Learn from leadership experts and network with peers.', semester_from_grad: 3, point_value: 110, taskId: 1, verificationId: 10, video_link: null, createdAt: new Date(), updatedAt: new Date() }, 
+            { category: 'academic', reflection_required: true, schedule_type: 'semesterly', name: 'Task 12', description: 'Study advanced programming concepts.', rationale: 'Important for computer science majors.', semester_from_grad: 3, point_value: 100, taskId: null, verificationId: 1, video_link: 'http://example.com/advanced-programming', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'leadership', reflection_required: false, schedule_type: 'one_time', name: 'Task 13', description: 'Attend a leadership seminar.', rationale: 'Develop leadership skills.', semester_from_grad: 2, point_value: 50, taskId: null, verificationId: 2, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+            { category: 'networking', reflection_required: true, schedule_type: 'special_event', name: 'Task 14', description: 'Attend a professional networking event.', rationale: 'Expand professional network.', semester_from_grad: 1, point_value: 75, taskId: null, verificationId: 3, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+            { category: 'strengths', reflection_required: true, schedule_type: 'semesterly', name: 'Task 15', description: 'Complete a strengths assessment.', rationale: 'Understand personal strengths for career development.', semester_from_grad: 1, point_value: 60, taskId: null, verificationId: 4, video_link: 'http://example.com/strengths-assessment', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'career_prep', reflection_required: false, schedule_type: 'one_time', name: 'Task 16', description: 'Attend a resume writing workshop.', rationale: 'Prepare a professional resume for job applications.', semester_from_grad: 2, point_value: 80, taskId: null, verificationId: 5, video_link: 'https://youtu.be/rMzXigTdZrQ?si=_XIzDZn23PLSHP2l', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'mentoring', reflection_required: true, schedule_type: 'semesterly', name: 'Task 17', description: 'Participate in a mentorship program.', rationale: 'Learn from an experienced professional in the field.', semester_from_grad: 3, point_value: 90, taskId: null, verificationId: 6, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+            { category: 'volunteer', reflection_required: false, schedule_type: 'semesterly', name: 'Task 18', description: 'Volunteer at a local charity or event.', rationale: 'Contribute to the community.', semester_from_grad: 4, point_value: 100, taskId: null, verificationId: 7, video_link: null, createdAt: new Date(), updatedAt: new Date() },
+            { category: 'other', reflection_required: false, schedule_type: 'special_event', name: 'Task 19', description: 'Participate in a hackathon event.', rationale: 'Challenge yourself with a time-sensitive programming task.', semester_from_grad: 1, point_value: 120, taskId: null, verificationId: 8, video_link: 'http://example.com/hackathon', createdAt: new Date(), updatedAt: new Date() },
+            { category: 'academic', reflection_required: true, schedule_type: 'semesterly', name: 'Task 20', description: 'Complete a machine learning course online.', rationale: 'Gain knowledge in a highly relevant field of study.', semester_from_grad: 2, point_value: 150, taskId: null, verificationId: 9, video_link: 'http://example.com/machine-learning', createdAt: new Date(), updatedAt: new Date() },
             { category: 'leadership', reflection_required: false, schedule_type: 'special_event', name: 'Leadership Conference', description: 'Attend a leadership conference in person.', rationale: 'Learn from leadership experts and network with peers.', semester_from_grad: 3, point_value: 110, taskId: 1, verificationId: 10, video_link: null, createdAt: new Date(), updatedAt: new Date() }
           ]);
 
@@ -615,11 +671,11 @@ module.exports = {
             { studentId: 8, flightPlanId: 2, createdAt: new Date(), updatedAt: new Date() }, //2
             { studentId: 8, flightPlanId: 3, createdAt: new Date(), updatedAt: new Date() }, //3
             // Flight Plan 4 is Spring 2025
-            { studentId: 1, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //4
-            { studentId: 2, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //5
-            { studentId: 3, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //6
-            { studentId: 4, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //7
-            { studentId: 5, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //8
+            // { studentId: 1, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //4
+            // { studentId: 2, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //5
+            // { studentId: 3, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //6
+            // { studentId: 4, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //7
+            // { studentId: 5, flightPlanId: 4, createdAt: new Date(), updatedAt: new Date() }, //8
             // Flight Plan 5 is Fall 2025
             { studentId: 1, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //9
             { studentId: 2, flightPlanId: 5, createdAt: new Date(), updatedAt: new Date() }, //10
@@ -701,7 +757,17 @@ module.exports = {
             { taskId: 7, cliftonStrengthId: 7, createdAt: new Date(), updatedAt: new Date() },
             { taskId: 8, cliftonStrengthId: 8, createdAt: new Date(), updatedAt: new Date() },
             { taskId: 9, cliftonStrengthId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { taskId: 10, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { taskId: 10, cliftonStrengthId: 10, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 11, cliftonStrengthId: 11, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 12, cliftonStrengthId: 12, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 13, cliftonStrengthId: 13, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 14, cliftonStrengthId: 14, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 15, cliftonStrengthId: 15, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 16, cliftonStrengthId: 16, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 17, cliftonStrengthId: 17, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 18, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Clifton Strength
+            { taskId: 19, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Clifton Strength
+            { taskId: 20, cliftonStrengthId: 35, createdAt: new Date(), updatedAt: new Date() }  // Testing 'All' Clifton Strength
           ]);
 
           // Populate taskMajor
@@ -715,7 +781,17 @@ module.exports = {
             { taskId: 7, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
             { taskId: 8, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
             { taskId: 9, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
-            { taskId: 10, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
+            { taskId: 10, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { taskId: 11, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { taskId: 12, majorId: 11, createdAt: new Date(), updatedAt: new Date() }, // Testing 'All' Major
+            { taskId: 13, majorId: 3, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 14, majorId: 4, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 15, majorId: 5, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 16, majorId: 6, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 17, majorId: 7, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 18, majorId: 8, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 19, majorId: 9, createdAt: new Date(), updatedAt: new Date() },
+            { taskId: 20, majorId: 10, createdAt: new Date(), updatedAt: new Date() }
           ]);
 
           // Populate transactions
