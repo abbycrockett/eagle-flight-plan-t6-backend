@@ -4,14 +4,12 @@ const Student = db.student;
 const Event = db.event;
 const genericController = require("../genericController.js");
 
-// Get the base controller
 const studentEventController = genericController(
   StudentEvent,
   [],
   ["studentId", "eventId"]
 );
 
-// Add custom route to find students by event ID
 studentEventController.findStudentsByEventId = async (req, res) => {
   try {
     const eventId = req.params.eventId;
@@ -28,12 +26,11 @@ studentEventController.findStudentsByEventId = async (req, res) => {
     res.send(students);
   } catch (err) {
     res.status(500).send({
-      message: err.message || "Some error occurred while retrieving students."
+      message: err.message || "Error occurred while retrieving students."
     });
   }
 };
 
-// Add custom route to find events by student ID
 studentEventController.findEventsByStudentId = async (req, res) => {
   try {
     const studentId = req.params.studentId;
@@ -50,7 +47,7 @@ studentEventController.findEventsByStudentId = async (req, res) => {
     res.send(events);
   } catch (err) {
     res.status(500).send({
-      message: err.message || "Some error occurred while retrieving events."
+      message: err.message || "Error occurred while retrieving events."
     });
   }
 };

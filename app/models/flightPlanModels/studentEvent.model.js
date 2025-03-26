@@ -5,22 +5,6 @@ module.exports = (sequelize, Sequelize) => {
       autoIncrement: true,
       primaryKey: true,
     },
-    // studentId: {
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'students',
-    //         key: 'id'
-    //     }
-    // },
-    // eventId: {
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //         model: 'events',
-    //         key: 'id'
-    //     }
-    // }
   });
 
   return StudentEvent;
