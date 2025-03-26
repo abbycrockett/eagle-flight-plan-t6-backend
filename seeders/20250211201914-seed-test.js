@@ -209,16 +209,9 @@ module.exports = {
 
         // Bridge Tables *
         {
-          await queryInterface.bulkDelete("studentFlightPlanTasks", null, {
-            truncate: true,
-            cascade: true,
-            restartIdentity: true,
-          });
-          await queryInterface.bulkDelete("userRolePermissions", null, {
-            truncate: true,
-            cascade: true,
-            restartIdentity: true,
-          });
+          await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete('studentEvents', null, {truncate: true, cascade: true, restartIdentity: true });
         }
       }
       // Resume Builder
@@ -5445,7 +5438,80 @@ module.exports = {
               updatedAt: new Date(),
             },
           ]);
-        }
+
+          await queryInterface.bulkInsert('studentEvents', [
+            // 3 students interested in event 1
+            {
+              studentId: 1,
+              eventId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 2,
+              eventId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 3,
+              eventId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            
+            // 4 students interested in event 2
+            {
+              studentId: 1,
+              eventId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 2,
+              eventId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 3,
+              eventId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 4,
+              eventId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+
+            // 2 students interested in event 3
+            {
+              studentId: 5,
+              eventId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+            {
+              studentId: 6,
+              eventId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            },
+
+            // 1 student interested in event 4
+            {
+              studentId: 7,
+              eventId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date()
+            }
+          ], 
+        {});
+
+      }
+        
       }
       // Resume Builder
       {
@@ -7333,16 +7399,9 @@ module.exports = {
 
       // Bridge Tables *
       {
-        await queryInterface.bulkDelete("studentFlightPlanTasks", null, {
-          truncate: true,
-          cascade: true,
-          restartIdentity: true,
-        });
-        await queryInterface.bulkDelete("userRolePermissions", null, {
-          truncate: true,
-          cascade: true,
-          restartIdentity: true,
-        });
+        await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete("studentEvents", null, { truncate: true, cascade: true, restartIdentity: true});
       }
     }
     // Resume Builder
