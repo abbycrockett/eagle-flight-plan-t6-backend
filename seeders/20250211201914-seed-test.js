@@ -7399,16 +7399,9 @@ module.exports = {
 
       // Bridge Tables *
       {
-        await queryInterface.bulkDelete("studentFlightPlanTasks", null, {
-          truncate: true,
-          cascade: true,
-          restartIdentity: true,
-        });
-        await queryInterface.bulkDelete("userRolePermissions", null, {
-          truncate: true,
-          cascade: true,
-          restartIdentity: true,
-        });
+        await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
+        await queryInterface.bulkDelete("studentEvents", null, { truncate: true, cascade: true, restartIdentity: true});
       }
     }
     // Resume Builder
