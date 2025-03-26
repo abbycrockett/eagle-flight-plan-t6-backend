@@ -70,6 +70,7 @@ db.studentExperienceTypeEvent = require("./flightPlanModels/studentExperienceTyp
 db.studentFlightPlan = require("./flightPlanModels/studentFlightPlan.model.js")(sequelize, Sequelize);
 db.studentFlightPlanTask = require("./flightPlanModels/studentFlightPlanTask.model.js")(sequelize, Sequelize);
 db.studentMajor = require("./flightPlanModels/studentMajor.model.js")(sequelize, Sequelize);
+db.studentEvent = require("./flightPlanModels/studentEvent.model.js")(sequelize, Sequelize);
 db.task = require("./flightPlanModels/task.model.js")(sequelize, Sequelize);
 db.taskBadge = require("./flightPlanModels/taskBadge.model.js")(sequelize, Sequelize);
 db.taskCliftonStrength = require("./flightPlanModels/taskCliftonStrength.model.js")(sequelize, Sequelize);
@@ -892,6 +893,30 @@ db.event.belongsTo(db.verification, {
   onDelete: "SET NULL"
 });
 
+db.event.hasMany(db.studentEvent, {
+  as: "studentEvent",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+
+db.studentEvent.belongsTo(db.event, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL"
+});
+
+db.student.hasMany(db.studentEvent, {
+  as: "studentEvent",
+  foreignKey: "studentId",
+  onDelete: "CASCADE"
+});
+
+db.student.belongsTo(db.student, {
+  as: "student",
+  foreignKey: "studentId",
+  onDelete: "SET NULL"
+});
+
 // EventCliftonStrength
 db.event.hasMany(db.eventCliftonStrength, {
   as: "eventCliftonStrength",
@@ -1086,6 +1111,8 @@ db.studentFlightPlanTask.belongsTo(db.user, {
   foreignKey: "userId",
   onDelete: "SET NULL"
 });
+
+
 
 // Transaction
 db.user.hasMany(db.transaction, {
