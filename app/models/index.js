@@ -911,12 +911,6 @@ db.student.hasMany(db.studentEvent, {
   onDelete: "CASCADE"
 });
 
-db.student.belongsTo(db.student, {
-  as: "student",
-  foreignKey: "studentId",
-  onDelete: "SET NULL"
-});
-
 // EventCliftonStrength
 db.event.hasMany(db.eventCliftonStrength, {
   as: "eventCliftonStrength",

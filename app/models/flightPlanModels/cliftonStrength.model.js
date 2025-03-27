@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         category: {
             type: Sequelize.ENUM,
-            values: ['executing', 'influencing', 'relationship_building', 'strategic_thinking'],
+            values: ['executing', 'influencing', 'relationship_building', 'strategic_thinking', 'all'],
             allowNull: false,
         }
     });
