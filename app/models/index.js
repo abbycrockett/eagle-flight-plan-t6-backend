@@ -50,6 +50,7 @@ db.cliftonStrength = require("./flightPlanModels/cliftonStrength.model.js")(sequ
 db.document = require("./flightPlanModels/document.model.js")(sequelize, Sequelize);
 db.event = require("./flightPlanModels/event.model.js")(sequelize, Sequelize);
 db.eventCliftonStrength = require("./flightPlanModels/eventCliftonStrength.model.js")(sequelize, Sequelize);
+db.eventMajor = require("./flightPlanModels/eventMajor.model.js")(sequelize, Sequelize);
 db.experienceType = require("./flightPlanModels/experienceType.model.js")(sequelize, Sequelize);
 db.experienceTypeEvent = require("./flightPlanModels/experienceTypeEvent.model.js")(sequelize, Sequelize);
 db.experienceTypeMajor = require("./flightPlanModels/experienceTypeMajor.model.js")(sequelize, Sequelize);
@@ -932,6 +933,29 @@ db.eventCliftonStrength.belongsTo(db.cliftonStrength, {
   as: "cliftonStrength",
   foreignKey: "cliftonStrengthId",
   onDelete: "SET NULL"
+});
+
+// EventMajor
+db.event.hasMany(db.eventMajor, {
+  as: "eventMajor",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+db.eventMajor.belongsTo(db.experienceType, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL",
+});
+
+db.major.hasMany(db.eventMajor, {
+  as: "eventMajor",
+  foreignKey: "majorId",
+  onDelete: "CASCADE",
+});
+db.eventMajor.belongsTo(db.major, {
+  as: "major",
+  foreignKey: "majorId",
+  onDelete: "SET NULL",
 });
 
 // ExperienceTypeEvent
