@@ -150,6 +150,11 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
+            await queryInterface.bulkDelete("eventMajors", null, {
+            truncate: true,
+            cascade: true,
+            restartIdentity: true,
+          });
           await queryInterface.bulkDelete("flightPlanExperienceTypes", null, {
             truncate: true,
             cascade: true,
@@ -3065,6 +3070,70 @@ module.exports = {
             {
               eventId: 10,
               cliftonStrengthId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+
+           // Populate eventMajors
+          await queryInterface.bulkInsert("eventMajors", [
+            {
+              eventId: 1,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 2,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 4,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              majorId: 10,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -7336,6 +7405,11 @@ module.exports = {
           restartIdentity: true,
         });
         await queryInterface.bulkDelete("eventCliftonStrengths", null, {
+          truncate: true,
+          cascade: true,
+          restartIdentity: true,
+        });
+        await queryInterface.bulkDelete("eventMajors", null, {
           truncate: true,
           cascade: true,
           restartIdentity: true,
