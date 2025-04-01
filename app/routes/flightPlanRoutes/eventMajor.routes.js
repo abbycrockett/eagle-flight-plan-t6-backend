@@ -11,5 +11,11 @@ module.exports = (app) => {
     "eventMajor"
   );
 
+    // List of majors by event id
+  router.get("/event/:eventId/majors", eventMajorController.findMajorsByEventId);
+
+  // List of events by major id
+  router.get("/major/:majorId/events", eventMajorController.findEventsByMajorId);
+
   app.use("/flightPlan-t6", router);
 };
