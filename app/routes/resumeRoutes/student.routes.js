@@ -21,7 +21,7 @@ module.exports = (app) => {
     // Delete all Courses
     router.delete("/", [authenticate], student.deleteAll);
 
-    // Get matching events based on student's majors and clifton strengths
+    // Get recommended events based on student's majors and clifton strengths
     router.get("/:id/recommended-events", [authenticate], student.findRecommendedEvents);
 
     // Get events student has signed up for
