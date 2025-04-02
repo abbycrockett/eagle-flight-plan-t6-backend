@@ -91,11 +91,15 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
-          await queryInterface.bulkDelete('experienceTypeCliftonStrengths', null, { 
-            truncate: true, 
-            cascade: true, 
-            restartIdentity: true 
-          });
+          await queryInterface.bulkDelete(
+            "experienceTypeCliftonStrengths",
+            null,
+            {
+              truncate: true,
+              cascade: true,
+              restartIdentity: true,
+            }
+          );
           await queryInterface.bulkDelete("flightPlans", null, {
             truncate: true,
             cascade: true,
@@ -150,7 +154,7 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
-            await queryInterface.bulkDelete("eventMajors", null, {
+          await queryInterface.bulkDelete("eventMajors", null, {
             truncate: true,
             cascade: true,
             restartIdentity: true,
@@ -214,9 +218,21 @@ module.exports = {
 
         // Bridge Tables *
         {
-          await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
-          await queryInterface.bulkDelete('studentEvents', null, {truncate: true, cascade: true, restartIdentity: true });
+          await queryInterface.bulkDelete("studentFlightPlanTasks", null, {
+            truncate: true,
+            cascade: true,
+            restartIdentity: true,
+          });
+          await queryInterface.bulkDelete("userRolePermissions", null, {
+            truncate: true,
+            cascade: true,
+            restartIdentity: true,
+          });
+          await queryInterface.bulkDelete("studentEvents", null, {
+            truncate: true,
+            cascade: true,
+            restartIdentity: true,
+          });
         }
       }
       // Resume Builder
@@ -872,14 +888,13 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { 
-              name: 'All', 
-              description: 
-                'All of the Clifton Strengths in the System', 
-              category: 'all', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }
+            {
+              name: "All",
+              description: "All of the Clifton Strengths in the System",
+              category: "all",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate experienceType
@@ -994,114 +1009,116 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { 
-              category: 'academic', 
-              type: 'automatic', 
-              req_reflection: true, 
-              schedule_type: 'one_time', 
-              name: 'Experience 11', 
-              description: 'Participate in a faculty-led research project.', 
-              rational: 'Enhances critical thinking and research skills.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "academic",
+              type: "automatic",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Experience 11",
+              description: "Participate in a faculty-led research project.",
+              rational: "Enhances critical thinking and research skills.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'leadership', 
-              type: 'manual', 
-              req_reflection: true, 
-              schedule_type: 'every_semester', 
-              name: 'Experience 12', 
-              description: 'Serve in a leadership role in student government.', 
-              rational: 'Develops leadership and organizational skills.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "leadership",
+              type: "manual",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Experience 12",
+              description: "Serve in a leadership role in student government.",
+              rational: "Develops leadership and organizational skills.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'networking', 
-              type: 'automatic', 
-              req_reflection: false, 
-              schedule_type: 'special_event', 
-              name: 'Experience 13', 
-              description: 'Attend a professional networking event.', 
-              rational: 'Expands professional connections.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "networking",
+              type: "automatic",
+              req_reflection: false,
+              schedule_type: "special_event",
+              name: "Experience 13",
+              description: "Attend a professional networking event.",
+              rational: "Expands professional connections.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'strengths', 
-              type: 'manual', 
-              req_reflection: true, 
-              schedule_type: 'one_time', 
-              name: 'Experience 14', 
-              description: 'Complete a strengths-based assessment.', 
-              rational: 'Helps identify personal strengths and growth areas.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "strengths",
+              type: "manual",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Experience 14",
+              description: "Complete a strengths-based assessment.",
+              rational: "Helps identify personal strengths and growth areas.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'career_prep', 
-              type: 'automatic', 
-              req_reflection: false, 
-              schedule_type: 'one_time', name: 'Experience 15', 
-              description: 'Participate in a resume-building workshop.', 
-              rational: 'Improves job application materials.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "career_prep",
+              type: "automatic",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "Experience 15",
+              description: "Participate in a resume-building workshop.",
+              rational: "Improves job application materials.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'mentoring', 
-              type: 'manual', 
-              req_reflection: true, 
-              schedule_type: 'every_semester', 
-              name: 'Experience 16', 
-              description: 'Serve as a mentor for a fellow student.', 
-              rational: 'Fosters leadership and interpersonal skills.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() },
-            { 
-              category: 'volunteer', 
-              type: 'automatic', 
-              req_reflection: true, 
-              schedule_type: 'one_time', 
-              name: 'Experience 17', 
-              description: 'Engage in a one-time community service project.', 
-              rational: 'Encourages civic responsibility.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "mentoring",
+              type: "manual",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Experience 16",
+              description: "Serve as a mentor for a fellow student.",
+              rational: "Fosters leadership and interpersonal skills.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'academic', 
-              type: 'manual', 
-              req_reflection: false, 
-              schedule_type: 'every_semester', 
-              name: 'Experience 18', 
-              description: 'Participate in an academic honors program.', 
-              rational: 'Enhances academic achievement.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "volunteer",
+              type: "automatic",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Experience 17",
+              description: "Engage in a one-time community service project.",
+              rational: "Encourages civic responsibility.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'leadership', 
-              type: 'automatic',
-              req_reflection: true, 
-              schedule_type: 'special_event', 
-              name: 'Experience 19', 
-              description: 'Attend a leadership development summit.', 
-              rational: 'Develops advanced leadership skills.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "academic",
+              type: "manual",
+              req_reflection: false,
+              schedule_type: "every_semester",
+              name: "Experience 18",
+              description: "Participate in an academic honors program.",
+              rational: "Enhances academic achievement.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'networking', 
-              type: 'manual', 
-              req_reflection: false, 
-              schedule_type: 'one_time', 
-              name: 'Experience 20', 
-              description: 'Connect with alumni from your program.', 
-              rational: 'Builds professional relationships.', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }
+            {
+              category: "leadership",
+              type: "automatic",
+              req_reflection: true,
+              schedule_type: "special_event",
+              name: "Experience 19",
+              description: "Attend a leadership development summit.",
+              rational: "Develops advanced leadership skills.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "networking",
+              type: "manual",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "Experience 20",
+              description: "Connect with alumni from your program.",
+              rational: "Builds professional relationships.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate majors
@@ -1182,13 +1199,13 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { 
-              name: 'All', 
-              description: 'All Majors in the System', 
-              department: 'N/A', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }
+            {
+              name: "All",
+              description: "All Majors in the System",
+              department: "N/A",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate permissions
@@ -1651,17 +1668,52 @@ module.exports = {
               updatedAt: new Date(),
             },
           ]);
-
-          // Populate events
           await queryInterface.bulkInsert("events", [
             {
-              name: "Public Speaking Workshop",
-              description: "Enhance your presentation skills",
-              event_type: "career_services",
-              date: new Date("2025-04-02"),
-              start_date_time: new Date("2025-04-02T09:00:00"),
-              end_date_time: new Date("2025-04-02T11:00:00"),
-              location: "Room 150",
+              name: "Tech Industry Career Fair",
+              description:
+                "Meet top tech companies and explore job opportunities.",
+              event_type: "career_fair",
+              date: new Date("2025-04-15"),
+              start_date_time: new Date("2025-04-15T10:00:00"),
+              end_date_time: new Date("2025-04-15T16:00:00"),
+              location: "University Expo Center",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 15,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Leadership in Mentorship",
+              description:
+                "How to be an effective mentor and guide for others.",
+              event_type: "mentoring",
+              date: new Date("2025-04-20"),
+              start_date_time: new Date("2025-04-20T14:00:00"),
+              end_date_time: new Date("2025-04-20T16:00:00"),
+              location: "Student Leadership Center",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 12,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Networking Lunch with Alumni",
+              description:
+                "Connect with successful alumni and grow your professional network.",
+              event_type: "lunch_and_learn",
+              date: new Date("2025-04-22"),
+              start_date_time: new Date("2025-04-22T12:00:00"),
+              end_date_time: new Date("2025-04-22T13:30:00"),
+              location: "Alumni Hall",
               attendance_type: "in_person",
               registration: "handshake",
               custom: false,
@@ -1672,13 +1724,85 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Art Therapy Session",
-              description: "De-stress through creative expression",
+              name: "Personal Branding Workshop",
+              description:
+                "Learn how to build and showcase your personal brand.",
+              event_type: "career_services",
+              date: new Date("2025-04-25"),
+              start_date_time: new Date("2025-04-25T15:00:00"),
+              end_date_time: new Date("2025-04-25T17:00:00"),
+              location: "Career Services Center",
+              attendance_type: "online",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 8,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Strengths-Based Leadership",
+              description:
+                "Discover and develop your strengths to become a better leader.",
+              event_type: "galup_strengths_class",
+              date: new Date("2025-05-01"),
+              start_date_time: new Date("2025-05-01T13:00:00"),
+              end_date_time: new Date("2025-05-01T15:00:00"),
+              location: "Leadership Academy",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 11,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Women in STEM Club Meeting",
+              description:
+                "Join us for discussions and networking with women in STEM fields.",
+              event_type: "club",
+              date: new Date("2025-04-17"),
+              start_date_time: new Date("2025-04-17T18:00:00"),
+              end_date_time: new Date("2025-04-17T20:00:00"),
+              location: "Engineering Lounge",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 9,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Resume Review & Critique",
+              description: "Have your resume reviewed by career professionals.",
+              event_type: "career_services",
+              date: new Date("2025-04-19"),
+              start_date_time: new Date("2025-04-19T10:00:00"),
+              end_date_time: new Date("2025-04-19T12:00:00"),
+              location: "Career Center",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 7,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Public Speaking for Career Success",
+              description:
+                "Improve your public speaking skills to stand out in your career.",
               event_type: "extra_curricular",
-              date: new Date("2025-04-03"),
-              start_date_time: new Date("2025-04-03T10:00:00"),
-              end_date_time: new Date("2025-04-03T11:30:00"),
-              location: "Wellness Center",
+              date: new Date("2025-04-29"),
+              start_date_time: new Date("2025-04-29T16:00:00"),
+              end_date_time: new Date("2025-04-29T18:00:00"),
+              location: "Communication Studies Hall",
               attendance_type: "in_person",
               registration: "in_app",
               custom: false,
@@ -1689,13 +1813,50 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Business Networking Social",
-              description: "Meet professionals in finance & marketing",
-              event_type: "mentoring",
-              date: new Date("2025-04-04"),
-              start_date_time: new Date("2025-04-04T13:00:00"),
-              end_date_time: new Date("2025-04-04T15:00:00"),
-              location: "Downtown Café",
+              name: "Financial Literacy for Students",
+              description:
+                "Learn essential financial skills, from budgeting to investing.",
+              event_type: "lunch_and_learn",
+              date: new Date("2025-04-24"),
+              start_date_time: new Date("2025-04-24T12:30:00"),
+              end_date_time: new Date("2025-04-24T13:30:00"),
+              location: "Student Union",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Building a Career in Esports",
+              description:
+                "Explore career opportunities in the growing esports industry.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-03"),
+              start_date_time: new Date("2025-05-03T14:00:00"),
+              end_date_time: new Date("2025-05-03T16:00:00"),
+              location: "Gaming Innovation Hub",
+              attendance_type: "online",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 12,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "AI & Ethics Panel Discussion",
+              description:
+                "Explore the ethical implications of artificial intelligence.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-07"),
+              start_date_time: new Date("2025-05-07T15:00:00"),
+              end_date_time: new Date("2025-05-07T17:00:00"),
+              location: "Tech Ethics Hall",
               attendance_type: "in_person",
               registration: "handshake",
               custom: false,
@@ -1706,30 +1867,32 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Environmental Sustainability Panel",
-              description: "Discuss climate change solutions",
-              event_type: "career_services",
-              date: new Date("2025-04-05"),
-              start_date_time: new Date("2025-04-05T08:00:00"),
-              end_date_time: new Date("2025-04-05T11:00:00"),
-              location: "Lecture Hall A",
+              name: "Cybersecurity Careers: Industry Insights",
+              description:
+                "Learn about career opportunities in the growing field of cybersecurity.",
+              event_type: "career_fair",
+              date: new Date("2025-04-30"),
+              start_date_time: new Date("2025-04-30T10:00:00"),
+              end_date_time: new Date("2025-04-30T14:00:00"),
+              location: "Cybersecurity Innovation Center",
               attendance_type: "online",
-              registration: "in_app",
+              registration: "handshake",
               custom: false,
               status: "scheduled",
-              point_value: 15,
+              point_value: 14,
               verificationId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              name: "Music Appreciation Night",
-              description: "Explore different music genres",
-              event_type: "extra_curricular",
-              date: new Date("2025-04-06"),
-              start_date_time: new Date("2025-04-06T14:00:00"),
-              end_date_time: new Date("2025-04-06T16:30:00"),
-              location: "Campus Auditorium",
+              name: "Mastering LinkedIn for Career Growth",
+              description:
+                "Learn how to optimize your LinkedIn profile and network effectively.",
+              event_type: "career_services",
+              date: new Date("2025-05-02"),
+              start_date_time: new Date("2025-05-02T13:00:00"),
+              end_date_time: new Date("2025-05-02T14:30:00"),
+              location: "Career Center",
               attendance_type: "in_person",
               registration: "in_app",
               custom: false,
@@ -1739,19 +1902,143 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-          ]);
-
-          await queryInterface.bulkInsert("events", [
             {
-              name: "Cybersecurity Panel",
-              description: "Discuss latest cybersecurity trends",
-              event_type: "career_services",
-              date: new Date("2025-04-02"),
-              start_date_time: new Date("2025-04-02T08:00:00"),
-              end_date_time: new Date("2025-04-02T10:00:00"),
-              location: "Auditorium",
+              name: "Strengths-Based Teamwork Workshop",
+              description:
+                "Discover how to apply Gallup Strengths in team settings.",
+              event_type: "galup_strengths_class",
+              date: new Date("2025-05-05"),
+              start_date_time: new Date("2025-05-05T14:00:00"),
+              end_date_time: new Date("2025-05-05T16:00:00"),
+              location: "Leadership Development Room",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 9,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Future of Space Exploration",
+              description:
+                "Join experts in discussing upcoming space missions and technologies.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-10"),
+              start_date_time: new Date("2025-05-10T16:00:00"),
+              end_date_time: new Date("2025-05-10T18:00:00"),
+              location: "Astronomy Center",
               attendance_type: "online",
               registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 13,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Film Studies Club: The Art of Storytelling",
+              description:
+                "A deep dive into cinematic storytelling techniques.",
+              event_type: "club",
+              date: new Date("2025-04-28"),
+              start_date_time: new Date("2025-04-28T18:30:00"),
+              end_date_time: new Date("2025-04-28T20:30:00"),
+              location: "Student Film Center",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 8,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "How to Ace Technical Interviews",
+              description:
+                "Strategies and practice questions for software engineering interviews.",
+              event_type: "career_services",
+              date: new Date("2025-05-08"),
+              start_date_time: new Date("2025-05-08T14:00:00"),
+              end_date_time: new Date("2025-05-08T16:00:00"),
+              location: "Engineering Career Center",
+              attendance_type: "online",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 11,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Leadership in Community Service",
+              description:
+                "How leadership skills can be applied to community service initiatives.",
+              event_type: "mentoring",
+              date: new Date("2025-05-06"),
+              start_date_time: new Date("2025-05-06T15:30:00"),
+              end_date_time: new Date("2025-05-06T17:00:00"),
+              location: "Community Engagement Office",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Startup Pitch Competition",
+              description:
+                "Compete or watch as students pitch innovative startup ideas.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-12"),
+              start_date_time: new Date("2025-05-12T17:00:00"),
+              end_date_time: new Date("2025-05-12T19:00:00"),
+              location: "Entrepreneurship Hub",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 14,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Effective Time Management for Students",
+              description:
+                "Learn practical strategies to better manage your time and workload.",
+              event_type: "lunch_and_learn",
+              date: new Date("2025-05-04"),
+              start_date_time: new Date("2025-05-04T12:30:00"),
+              end_date_time: new Date("2025-05-04T13:30:00"),
+              location: "Student Success Center",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 8,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "AI and Society: A Roundtable Discussion",
+              description:
+                "Discuss the role of artificial intelligence in shaping our future society.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-15"),
+              start_date_time: new Date("2025-05-15T14:00:00"),
+              end_date_time: new Date("2025-05-15T16:00:00"),
+              location: "Technology Ethics Lab",
+              attendance_type: "in_person",
+              registration: "handshake",
               custom: false,
               status: "scheduled",
               point_value: 12,
@@ -1760,15 +2047,106 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Cloud Computing Workshop",
-              description: "Learn about AWS, Azure, and GCP",
+              name: "Navigating the Future of Green Technologies",
+              description:
+                "Explore advancements in sustainable tech and their impact on the future.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-20"),
+              start_date_time: new Date("2025-05-20T13:00:00"),
+              end_date_time: new Date("2025-05-20T15:00:00"),
+              location: "Sustainability Lab",
+              attendance_type: "online",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 13,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Social Media Marketing Strategies for Entrepreneurs",
+              description:
+                "Learn to leverage social media for building a strong brand presence.",
               event_type: "career_services",
-              date: new Date("2025-04-03"),
-              start_date_time: new Date("2025-04-03T11:00:00"),
-              end_date_time: new Date("2025-04-03T14:00:00"),
-              location: "Room 204",
+              date: new Date("2025-05-18"),
+              start_date_time: new Date("2025-05-18T10:00:00"),
+              end_date_time: new Date("2025-05-18T12:00:00"),
+              location: "Entrepreneurship Center",
               attendance_type: "in_person",
               registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 11,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Building a Personal Brand Online",
+              description:
+                "Discover strategies to build a personal brand for your career or business.",
+              event_type: "lunch_and_learn",
+              date: new Date("2025-05-13"),
+              start_date_time: new Date("2025-05-13T12:00:00"),
+              end_date_time: new Date("2025-05-13T13:00:00"),
+              location: "Student Lounge",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Understanding Blockchain Technology",
+              description:
+                "Learn the basics of blockchain and its applications in various industries.",
+              event_type: "extra_curricular",
+              date: new Date("2025-05-21"),
+              start_date_time: new Date("2025-05-21T14:00:00"),
+              end_date_time: new Date("2025-05-21T16:00:00"),
+              location: "Tech Lab 1",
+              attendance_type: "online",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 14,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Writing Effective Resumes & Cover Letters",
+              description:
+                "Tips and tricks for crafting standout resumes and cover letters.",
+              event_type: "career_services",
+              date: new Date("2025-05-16"),
+              start_date_time: new Date("2025-05-16T10:00:00"),
+              end_date_time: new Date("2025-05-16T12:00:00"),
+              location: "Career Services Office",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 9,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Career Opportunities in Biomedical Engineering",
+              description:
+                "Explore the latest trends in biomedical engineering and career paths.",
+              event_type: "career_fair",
+              date: new Date("2025-05-25"),
+              start_date_time: new Date("2025-05-25T09:00:00"),
+              end_date_time: new Date("2025-05-25T12:00:00"),
+              location: "Biotech Center",
+              attendance_type: "in_person",
+              registration: "in_app",
               custom: false,
               status: "scheduled",
               point_value: 15,
@@ -1777,31 +2155,177 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Game Development Jam",
-              description: "Create a game in 24 hours",
+              name: "The Future of Renewable Energy",
+              description:
+                "Join experts as they discuss advancements in renewable energy technologies.",
               event_type: "extra_curricular",
-              date: new Date("2025-04-04"),
-              start_date_time: new Date("2025-04-04T12:00:00"),
-              end_date_time: new Date("2025-04-05T12:00:00"),
-              location: "Lab 303",
-              attendance_type: "in_person",
+              date: new Date("2025-05-30"),
+              start_date_time: new Date("2025-05-30T11:00:00"),
+              end_date_time: new Date("2025-05-30T13:00:00"),
+              location: "Green Energy Auditorium",
+              attendance_type: "online",
               registration: "in_app",
               custom: false,
               status: "scheduled",
-              point_value: 25,
+              point_value: 13,
               verificationId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              name: "Soft Skills Training",
-              description: "Enhance communication & teamwork",
+              name: "Exploring Careers in Data Science",
+              description:
+                "Learn about opportunities and career paths in data science.",
+              event_type: "career_fair",
+              date: new Date("2025-06-02"),
+              start_date_time: new Date("2025-06-02T09:00:00"),
+              end_date_time: new Date("2025-06-02T12:00:00"),
+              location: "Data Science Center",
+              attendance_type: "online",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 14,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Building a Career in Digital Marketing",
+              description:
+                "Explore strategies and job opportunities in digital marketing.",
+              event_type: "mentoring",
+              date: new Date("2025-06-03"),
+              start_date_time: new Date("2025-06-03T16:00:00"),
+              end_date_time: new Date("2025-06-03T18:00:00"),
+              location: "Marketing Hub",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 1,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "AI & Robotics Club Meetup",
+              description:
+                "Join the AI & Robotics Club to discuss advancements in robotics and AI technologies.",
+              event_type: "club",
+              date: new Date("2025-04-20"),
+              start_date_time: new Date("2025-04-20T15:00:00"),
+              end_date_time: new Date("2025-04-20T17:00:00"),
+              location: "Engineering Building, Room 105",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 8,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Leadership and Communication Skills Workshop",
+              description:
+                "Enhance your leadership and communication skills with this workshop.",
+              event_type: "extra_curricular",
+              date: new Date("2025-04-22"),
+              start_date_time: new Date("2025-04-22T10:00:00"),
+              end_date_time: new Date("2025-04-22T12:00:00"),
+              location: "Student Center",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Annual Career Fair",
+              description:
+                "Meet with top companies looking to hire interns and full-time employees.",
+              event_type: "career_fair",
+              date: new Date("2025-04-23"),
+              start_date_time: new Date("2025-04-23T09:00:00"),
+              end_date_time: new Date("2025-04-23T14:00:00"),
+              location: "Convention Center",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 15,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Mentoring Session: Software Development",
+              description:
+                "Connect with mentors in the software development field for guidance and advice.",
+              event_type: "mentoring",
+              date: new Date("2025-04-25"),
+              start_date_time: new Date("2025-04-25T13:00:00"),
+              end_date_time: new Date("2025-04-25T15:00:00"),
+              location: "Career Center",
+              attendance_type: "in_person",
+              registration: "handshake",
+              custom: false,
+              status: "scheduled",
+              point_value: 12,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Career Services: Interview Prep Workshop",
+              description:
+                "Prepare for your upcoming job interviews with expert tips and mock sessions.",
               event_type: "career_services",
-              date: new Date("2025-04-05"),
-              start_date_time: new Date("2025-04-05T09:00:00"),
-              end_date_time: new Date("2025-04-05T12:00:00"),
+              date: new Date("2025-04-27"),
+              start_date_time: new Date("2025-04-27T11:00:00"),
+              end_date_time: new Date("2025-04-27T13:00:00"),
               location: "Career Center",
               attendance_type: "online",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Lunch & Learn: Effective Networking",
+              description:
+                "Learn how to network effectively in professional settings while enjoying lunch.",
+              event_type: "lunch_and_learn",
+              date: new Date("2025-04-29"),
+              start_date_time: new Date("2025-04-29T12:00:00"),
+              end_date_time: new Date("2025-04-29T13:30:00"),
+              location: "Student Center",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 8,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Galup Strengths Class: Discover Your Strengths",
+              description:
+                "Take the Gallup StrengthsFinder assessment and learn how to leverage your strengths.",
+              event_type: "galup_strengths_class",
+              date: new Date("2025-05-01"),
+              start_date_time: new Date("2025-05-01T14:00:00"),
+              end_date_time: new Date("2025-05-01T16:00:00"),
+              location: "Career Center",
+              attendance_type: "in_person",
               registration: "handshake",
               custom: false,
               status: "scheduled",
@@ -1811,18 +2335,55 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              name: "Hackathon Bootcamp",
-              description: "Prep for an upcoming hackathon",
+              name: "Volunteering: Community Cleanup",
+              description:
+                "Join us in cleaning up the community and making a difference.",
               event_type: "extra_curricular",
-              date: new Date("2025-04-06"),
-              start_date_time: new Date("2025-04-06T10:00:00"),
-              end_date_time: new Date("2025-04-06T15:00:00"),
-              location: "Innovation Lab",
+              date: new Date("2025-05-03"),
+              start_date_time: new Date("2025-05-03T08:00:00"),
+              end_date_time: new Date("2025-05-03T12:00:00"),
+              location: "City Park",
               attendance_type: "in_person",
               registration: "in_app",
               custom: false,
               status: "scheduled",
-              point_value: 18,
+              point_value: 6,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Networking Night: Meet the Professionals",
+              description:
+                "Meet industry professionals and learn about career opportunities in various fields.",
+              event_type: "career_fair",
+              date: new Date("2025-05-05"),
+              start_date_time: new Date("2025-05-05T17:00:00"),
+              end_date_time: new Date("2025-05-05T19:00:00"),
+              location: "Alumni Hall",
+              attendance_type: "in_person",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 12,
+              verificationId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              name: "Tech Career Workshop: Building a Portfolio",
+              description:
+                "Learn how to build a compelling portfolio that highlights your tech skills and projects.",
+              event_type: "career_services",
+              date: new Date("2025-05-07"),
+              start_date_time: new Date("2025-05-07T10:00:00"),
+              end_date_time: new Date("2025-05-07T12:00:00"),
+              location: "Tech Center",
+              attendance_type: "online",
+              registration: "in_app",
+              custom: false,
+              status: "scheduled",
+              point_value: 10,
               verificationId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -1952,129 +2513,132 @@ module.exports = {
               updatedAt: new Date(),
             },
           ]);
-            
+
           // Populate experienceTypeCliftonStrength
-          await queryInterface.bulkInsert('experienceTypeCliftonStrengths', [
-            { 
-              experienceTypeId: 1, 
-              cliftonStrengthId: 1, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 2,
-              cliftonStrengthId: 2, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 3, 
-              cliftonStrengthId: 3, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 4, 
-              cliftonStrengthId: 4, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 5, 
-              cliftonStrengthId: 5, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 6, 
-              cliftonStrengthId: 6, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 7, 
-              cliftonStrengthId: 7, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 8, 
-              cliftonStrengthId: 8, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 9, 
-              cliftonStrengthId: 9, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 10, 
-              cliftonStrengthId: 10, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 11, 
-              cliftonStrengthId: 11, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 12, 
-              cliftonStrengthId: 12, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            },
-            { 
-              experienceTypeId: 13, 
-              cliftonStrengthId: 13, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+          await queryInterface.bulkInsert("experienceTypeCliftonStrengths", [
+            {
+              experienceTypeId: 1,
+              cliftonStrengthId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
             {
-              experienceTypeId: 14, 
-              cliftonStrengthId: 14, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+              experienceTypeId: 2,
+              cliftonStrengthId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              experienceTypeId: 15, 
-              cliftonStrengthId: 15, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              experienceTypeId: 3,
+              cliftonStrengthId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              experienceTypeId: 16, 
-              cliftonStrengthId: 16, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              experienceTypeId: 4,
+              cliftonStrengthId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              experienceTypeId: 17, 
-              cliftonStrengthId: 17, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              experienceTypeId: 5,
+              cliftonStrengthId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { // Testing 'All' Clifton Strength
-              experienceTypeId: 18, 
-              cliftonStrengthId: 35, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }, 
-            { // Testing 'All' Clifton Strength
-              experienceTypeId: 19, 
-              cliftonStrengthId: 35, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }, 
-            { // Testing 'All' Clifton Strength
-              experienceTypeId: 20, 
-              cliftonStrengthId: 35, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }  
+            {
+              experienceTypeId: 6,
+              cliftonStrengthId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 7,
+              cliftonStrengthId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 8,
+              cliftonStrengthId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 9,
+              cliftonStrengthId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 10,
+              cliftonStrengthId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 11,
+              cliftonStrengthId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 12,
+              cliftonStrengthId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 13,
+              cliftonStrengthId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 14,
+              cliftonStrengthId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 15,
+              cliftonStrengthId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 16,
+              cliftonStrengthId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              experienceTypeId: 17,
+              cliftonStrengthId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              // Testing 'All' Clifton Strength
+              experienceTypeId: 18,
+              cliftonStrengthId: 35,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              // Testing 'All' Clifton Strength
+              experienceTypeId: 19,
+              cliftonStrengthId: 35,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              // Testing 'All' Clifton Strength
+              experienceTypeId: 20,
+              cliftonStrengthId: 35,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate flightPlans
@@ -2423,65 +2987,305 @@ module.exports = {
             },
           ]);
 
-          // Populate studentMajor
-          await queryInterface.bulkInsert("studentMajors", [
+          // Populate studentCliftonStrengths
+          await queryInterface.bulkInsert("studentCliftonStrengths", [
             {
               studentId: 1,
-              majorId: 1,
+              cliftonStrengthId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              cliftonStrengthId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              cliftonStrengthId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              cliftonStrengthId: 22,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              cliftonStrengthId: 30,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 2,
-              majorId: 2,
+              cliftonStrengthId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              cliftonStrengthId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              cliftonStrengthId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              cliftonStrengthId: 25,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              cliftonStrengthId: 33,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 3,
-              majorId: 3,
+              cliftonStrengthId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              cliftonStrengthId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              cliftonStrengthId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              cliftonStrengthId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              cliftonStrengthId: 29,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 4,
-              majorId: 4,
+              cliftonStrengthId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              cliftonStrengthId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              cliftonStrengthId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              cliftonStrengthId: 21,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              cliftonStrengthId: 32,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 5,
-              majorId: 5,
+              cliftonStrengthId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              cliftonStrengthId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              cliftonStrengthId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              cliftonStrengthId: 26,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              cliftonStrengthId: 34,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 6,
-              majorId: 6,
+              cliftonStrengthId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              cliftonStrengthId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              cliftonStrengthId: 18,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              cliftonStrengthId: 24,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              cliftonStrengthId: 30,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 7,
-              majorId: 7,
+              cliftonStrengthId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              cliftonStrengthId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              cliftonStrengthId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              cliftonStrengthId: 23,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              cliftonStrengthId: 31,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 8,
-              majorId: 8,
+              cliftonStrengthId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              cliftonStrengthId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              cliftonStrengthId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              cliftonStrengthId: 22,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              cliftonStrengthId: 28,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 9,
-              majorId: 9,
+              cliftonStrengthId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              cliftonStrengthId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              cliftonStrengthId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              cliftonStrengthId: 27,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              cliftonStrengthId: 33,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               studentId: 10,
-              majorId: 10,
+              cliftonStrengthId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              cliftonStrengthId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              cliftonStrengthId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              cliftonStrengthId: 25,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              cliftonStrengthId: 34,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -2514,7 +3318,7 @@ module.exports = {
               semester_from_grad: 2,
               point_value: 50,
               taskId: null,
-              verificationId: 2,
+              verificationId: 1,
               video_link: null,
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -2529,7 +3333,7 @@ module.exports = {
               semester_from_grad: 1,
               point_value: 75,
               taskId: null,
-              verificationId: 3,
+              verificationId: 1,
               video_link: null,
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -2642,171 +3446,175 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { 
-              category: 'leadership', 
-              reflection_required: false, 
-              schedule_type: 'special_event', 
-              name: 'Task 11', 
-              description: 'Attend a leadership conference in person.', 
-              rationale: 'Learn from leadership experts and network with peers.', 
-              semester_from_grad: 3, 
-              point_value: 110, 
-              taskId: 1, 
-              verificationId: 10, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }, 
-            { 
-              category: 'academic', 
-              reflection_required: true, 
-              schedule_type: 'semesterly', 
-              name: 'Task 12', 
-              description: 'Study advanced programming concepts.', 
-              rationale: 'Important for computer science majors.', 
-              semester_from_grad: 3, 
-              point_value: 100, 
-              taskId: null, 
-              verificationId: 1, 
-              video_link: 'http://example.com/advanced-programming', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "leadership",
+              reflection_required: false,
+              schedule_type: "special_event",
+              name: "Task 11",
+              description: "Attend a leadership conference in person.",
+              rationale:
+                "Learn from leadership experts and network with peers.",
+              semester_from_grad: 3,
+              point_value: 110,
+              taskId: 1,
+              verificationId: 10,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'leadership', 
-              reflection_required: false, 
-              schedule_type: 'one_time', 
-              name: 'Task 13', 
-              description: 'Attend a leadership seminar.', 
-              rationale: 'Develop leadership skills.', 
-              semester_from_grad: 2, 
-              point_value: 50, 
-              taskId: null, 
-              verificationId: 2, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "academic",
+              reflection_required: true,
+              schedule_type: "semesterly",
+              name: "Task 12",
+              description: "Study advanced programming concepts.",
+              rationale: "Important for computer science majors.",
+              semester_from_grad: 3,
+              point_value: 100,
+              taskId: null,
+              verificationId: 1,
+              video_link: "http://example.com/advanced-programming",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'networking', 
-              reflection_required: true, 
-              schedule_type: 'special_event', 
-              name: 'Task 14', 
-              description: 'Attend a professional networking event.', 
-              rationale: 'Expand professional network.', 
-              semester_from_grad: 1, 
-              point_value: 75, 
-              taskId: null, 
-              verificationId: 3, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "leadership",
+              reflection_required: false,
+              schedule_type: "one_time",
+              name: "Task 13",
+              description: "Attend a leadership seminar.",
+              rationale: "Develop leadership skills.",
+              semester_from_grad: 2,
+              point_value: 50,
+              taskId: null,
+              verificationId: 1,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'strengths', 
-              reflection_required: true, 
-              schedule_type: 'semesterly', 
-              name: 'Task 15', 
-              description: 'Complete a strengths assessment.', 
-              rationale: 'Understand personal strengths for career development.', 
+            {
+              category: "networking",
+              reflection_required: true,
+              schedule_type: "special_event",
+              name: "Task 14",
+              description: "Attend a professional networking event.",
+              rationale: "Expand professional network.",
+              semester_from_grad: 1,
+              point_value: 75,
+              taskId: null,
+              verificationId: 1,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "strengths",
+              reflection_required: true,
+              schedule_type: "semesterly",
+              name: "Task 15",
+              description: "Complete a strengths assessment.",
+              rationale:
+                "Understand personal strengths for career development.",
               semester_from_grad: 1,
               point_value: 60,
-              taskId: null, 
-              verificationId: 4, 
-              video_link: 'http://example.com/strengths-assessment', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+              taskId: null,
+              verificationId: 4,
+              video_link: "http://example.com/strengths-assessment",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'career_prep', 
-              reflection_required: false, 
-              schedule_type: 'one_time', 
-              name: 'Task 16', 
-              description: 'Attend a resume writing workshop.', 
-              rationale: 'Prepare a professional resume for job applications.', 
-              semester_from_grad: 2, 
-              point_value: 80, 
-              taskId: null, 
-              verificationId: 5, 
-              video_link: 'https://youtu.be/rMzXigTdZrQ?si=_XIzDZn23PLSHP2l', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "career_prep",
+              reflection_required: false,
+              schedule_type: "one_time",
+              name: "Task 16",
+              description: "Attend a resume writing workshop.",
+              rationale: "Prepare a professional resume for job applications.",
+              semester_from_grad: 2,
+              point_value: 80,
+              taskId: null,
+              verificationId: 5,
+              video_link: "https://youtu.be/rMzXigTdZrQ?si=_XIzDZn23PLSHP2l",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'mentoring', 
-              reflection_required: true, 
-              schedule_type: 'semesterly', 
-              name: 'Task 17', 
-              description: 'Participate in a mentorship program.', 
-              rationale: 'Learn from an experienced professional in the field.', 
-              semester_from_grad: 3, 
-              point_value: 90, 
-              taskId: null, 
-              verificationId: 6, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "mentoring",
+              reflection_required: true,
+              schedule_type: "semesterly",
+              name: "Task 17",
+              description: "Participate in a mentorship program.",
+              rationale: "Learn from an experienced professional in the field.",
+              semester_from_grad: 3,
+              point_value: 90,
+              taskId: null,
+              verificationId: 6,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'volunteer', 
-              reflection_required: false, 
-              schedule_type: 'semesterly', 
-              name: 'Task 18', 
-              description: 'Volunteer at a local charity or event.', 
-              rationale: 'Contribute to the community.', 
-              semester_from_grad: 4, 
-              point_value: 100, 
-              taskId: null, 
-              verificationId: 7, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "volunteer",
+              reflection_required: false,
+              schedule_type: "semesterly",
+              name: "Task 18",
+              description: "Volunteer at a local charity or event.",
+              rationale: "Contribute to the community.",
+              semester_from_grad: 4,
+              point_value: 100,
+              taskId: null,
+              verificationId: 7,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'other', 
-              reflection_required: false, 
-              schedule_type: 'special_event', 
-              name: 'Task 19', 
-              description: 'Participate in a hackathon event.', 
-              rationale: 'Challenge yourself with a time-sensitive programming task.', 
-              semester_from_grad: 1, 
-              point_value: 120, 
-              taskId: null, 
-              verificationId: 8, 
-              video_link: 'http://example.com/hackathon', 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
+            {
+              category: "other",
+              reflection_required: false,
+              schedule_type: "special_event",
+              name: "Task 19",
+              description: "Participate in a hackathon event.",
+              rationale:
+                "Challenge yourself with a time-sensitive programming task.",
+              semester_from_grad: 1,
+              point_value: 120,
+              taskId: null,
+              verificationId: 8,
+              video_link: "http://example.com/hackathon",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'academic', 
-              reflection_required: true, 
-              schedule_type: 'semesterly', 
-              name: 'Task 20', 
-              description: 'Complete a machine learning course online.', 
-              rationale: 'Gain knowledge in a highly relevant field of study.', 
-              semester_from_grad: 2, 
-              point_value: 150, 
-              taskId: null, 
-              verificationId: 9, 
-              video_link: 'http://example.com/machine-learning', 
-              createdAt: new Date(), 
-              updatedAt: new Date()
+            {
+              category: "academic",
+              reflection_required: true,
+              schedule_type: "semesterly",
+              name: "Task 20",
+              description: "Complete a machine learning course online.",
+              rationale: "Gain knowledge in a highly relevant field of study.",
+              semester_from_grad: 2,
+              point_value: 150,
+              taskId: null,
+              verificationId: 9,
+              video_link: "http://example.com/machine-learning",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
-            { 
-              category: 'leadership', 
-              reflection_required: false, 
-              schedule_type: 'special_event', 
-              name: 'Leadership Conference', 
-              description: 'Attend a leadership conference in person.', 
-              rationale: 'Learn from leadership experts and network with peers.', 
-              semester_from_grad: 3, 
-              point_value: 110, 
-              taskId: 1, 
-              verificationId: 10, 
-              video_link: null, 
-              createdAt: new Date(), 
-              updatedAt: new Date() 
-            }
+            {
+              category: "leadership",
+              reflection_required: false,
+              schedule_type: "special_event",
+              name: "Leadership Conference",
+              description: "Attend a leadership conference in person.",
+              rationale:
+                "Learn from leadership experts and network with peers.",
+              semester_from_grad: 3,
+              point_value: 110,
+              taskId: 1,
+              verificationId: 10,
+              video_link: null,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate users
@@ -3011,23 +3819,65 @@ module.exports = {
             },
           ]);
 
-          // Populate eventCliftonStrength
+          // Populate eventCliftonStrengths
           await queryInterface.bulkInsert("eventCliftonStrengths", [
             {
               eventId: 1,
-              cliftonStrengthId: 1,
+              cliftonStrengthId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 1,
+              cliftonStrengthId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 1,
+              cliftonStrengthId: 12,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               eventId: 2,
-              cliftonStrengthId: 2,
+              cliftonStrengthId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 2,
+              cliftonStrengthId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 2,
+              cliftonStrengthId: 14,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               eventId: 3,
-              cliftonStrengthId: 3,
+              cliftonStrengthId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              cliftonStrengthId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              cliftonStrengthId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              cliftonStrengthId: 19,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -3038,48 +3888,162 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              eventId: 5,
-              cliftonStrengthId: 5,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              eventId: 6,
-              cliftonStrengthId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              eventId: 7,
-              cliftonStrengthId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              eventId: 8,
+              eventId: 4,
               cliftonStrengthId: 8,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              eventId: 9,
+              eventId: 4,
+              cliftonStrengthId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              cliftonStrengthId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              cliftonStrengthId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              cliftonStrengthId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              cliftonStrengthId: 26,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              cliftonStrengthId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              cliftonStrengthId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              cliftonStrengthId: 18,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
+              cliftonStrengthId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
               cliftonStrengthId: 9,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
+              eventId: 7,
+              cliftonStrengthId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
+              cliftonStrengthId: 23,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              cliftonStrengthId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              cliftonStrengthId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              cliftonStrengthId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              cliftonStrengthId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              cliftonStrengthId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              cliftonStrengthId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
               eventId: 10,
-              cliftonStrengthId: 10,
+              cliftonStrengthId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              cliftonStrengthId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              cliftonStrengthId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              cliftonStrengthId: 25,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
           ]);
 
-           // Populate eventMajors
+          // Populate eventMajors
           await queryInterface.bulkInsert("eventMajors", [
             {
               eventId: 1,
               majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 1,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 1,
+              majorId: 5,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -3090,8 +4054,38 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
+              eventId: 2,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 2,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
               eventId: 3,
               majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 3,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 4,
+              majorId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -3102,20 +4096,74 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
+              eventId: 4,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
               eventId: 5,
               majorId: 5,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              eventId: 6,
+              eventId: 5,
               majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 5,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 6,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
+              majorId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               eventId: 7,
               majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 7,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 8,
+              majorId: 5,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -3127,13 +4175,577 @@ module.exports = {
             },
             {
               eventId: 9,
-              majorId: 9,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 9,
+              majorId: 10,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               eventId: 10,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 10,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 11,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 11,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 11,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 12,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 12,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 12,
               majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 13,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 13,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 13,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 14,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 14,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 14,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 15,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 15,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 15,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 16,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 16,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 16,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 17,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 17,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 17,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 18,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 18,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 18,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 19,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 19,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 19,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 20,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 20,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 20,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 21,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 21,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 21,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 22,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 22,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 22,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 23,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 23,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 23,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 24,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 24,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 24,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 25,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 25,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 25,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 26,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 26,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 26,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 27,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 27,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 27,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 28,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 28,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 28,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 29,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 29,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 29,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 30,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 30,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 30,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 31,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 31,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 31,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 32,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 32,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 32,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 33,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 33,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 33,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 34,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 34,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 34,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 35,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 35,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 35,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 36,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 36,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 36,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 37,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 37,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 37,
+              majorId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 38,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 38,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 38,
+              majorId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 39,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 39,
+              majorId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 39,
+              majorId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 40,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 40,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              eventId: 40,
+              majorId: 8,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -4243,19 +5855,22 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Clifton Strength
+            {
+              // Testing 'All' Clifton Strength
               taskId: 18,
               cliftonStrengthId: 35,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Clifton Strength
+            {
+              // Testing 'All' Clifton Strength
               taskId: 19,
               cliftonStrengthId: 35,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Clifton Strength
+            {
+              // Testing 'All' Clifton Strength
               taskId: 20,
               cliftonStrengthId: 35,
               createdAt: new Date(),
@@ -4367,19 +5982,22 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Major
+            {
+              // Testing 'All' Major
               taskId: 18,
               majorId: 11,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Major
+            {
+              // Testing 'All' Major
               taskId: 19,
               majorId: 11,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            { // Testing 'All' Major
+            {
+              // Testing 'All' Major
               taskId: 20,
               majorId: 11,
               createdAt: new Date(),
@@ -5508,51 +7126,51 @@ module.exports = {
             },
           ]);
 
-          await queryInterface.bulkInsert('studentEvents', [
+          await queryInterface.bulkInsert("studentEvents", [
             // 3 students interested in event 1
             {
               studentId: 1,
               eventId: 1,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 2,
               eventId: 1,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 3,
               eventId: 1,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
-            
+
             // 4 students interested in event 2
             {
               studentId: 1,
               eventId: 2,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 2,
               eventId: 2,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 3,
               eventId: 2,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 4,
               eventId: 2,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
 
             // 2 students interested in event 3
@@ -5560,27 +7178,730 @@ module.exports = {
               studentId: 5,
               eventId: 3,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
             {
               studentId: 6,
               eventId: 3,
               createdAt: new Date(),
-              updatedAt: new Date()
+              updatedAt: new Date(),
             },
 
-            // 1 student interested in event 4
+            // 3 students interested in event 4
             {
               studentId: 7,
               eventId: 4,
               createdAt: new Date(),
-              updatedAt: new Date()
-            }
-          ], 
-        {});
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
 
-      }
-        
+            // 2 students interested in event 5
+            {
+              studentId: 1,
+              eventId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 6
+            {
+              studentId: 3,
+              eventId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 7
+            {
+              studentId: 7,
+              eventId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 7,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 8
+            {
+              studentId: 1,
+              eventId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 8,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 9
+            {
+              studentId: 3,
+              eventId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 9,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 10
+            {
+              studentId: 7,
+              eventId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 11
+            {
+              studentId: 1,
+              eventId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 11,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 12
+            {
+              studentId: 3,
+              eventId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 12,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 13
+            {
+              studentId: 7,
+              eventId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 13,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 14
+            {
+              studentId: 1,
+              eventId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 14,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 15
+            {
+              studentId: 3,
+              eventId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 15,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 16
+            {
+              studentId: 6,
+              eventId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              eventId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 16,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 17
+            {
+              studentId: 1,
+              eventId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              eventId: 17,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 18
+            {
+              studentId: 4,
+              eventId: 18,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 18,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 19
+            {
+              studentId: 6,
+              eventId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              eventId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 19,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 20
+            {
+              studentId: 9,
+              eventId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              eventId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              eventId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 20,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              eventId: 21,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 21,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              eventId: 21,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 22
+            {
+              studentId: 4,
+              eventId: 22,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 22,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 23
+            {
+              studentId: 6,
+              eventId: 23,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              eventId: 23,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 23,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 24
+            {
+              studentId: 9,
+              eventId: 24,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              eventId: 24,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 25
+            {
+              studentId: 1,
+              eventId: 25,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 25,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              eventId: 25,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 26
+            {
+              studentId: 4,
+              eventId: 26,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 26,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 27
+            {
+              studentId: 6,
+              eventId: 27,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              eventId: 27,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 27,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 28
+            {
+              studentId: 9,
+              eventId: 28,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              eventId: 28,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              eventId: 28,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 28,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 29
+            {
+              studentId: 3,
+              eventId: 29,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 29,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 29,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 30
+            {
+              studentId: 6,
+              eventId: 30,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              eventId: 30,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 31
+            {
+              studentId: 8,
+              eventId: 31,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 31,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              eventId: 31,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 32
+            {
+              studentId: 1,
+              eventId: 32,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 32,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 33
+            {
+              studentId: 3,
+              eventId: 33,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 33,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 33,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 33,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 34
+            {
+              studentId: 7,
+              eventId: 34,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 34,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 34,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 35
+            {
+              studentId: 10,
+              eventId: 35,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              eventId: 35,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 36
+            {
+              studentId: 2,
+              eventId: 36,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              eventId: 36,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              eventId: 36,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 2 students interested in event 37
+            {
+              studentId: 5,
+              eventId: 37,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 37,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 38
+            {
+              studentId: 7,
+              eventId: 38,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              eventId: 38,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              eventId: 38,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 4 students interested in event 39
+            {
+              studentId: 10,
+              eventId: 39,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 1,
+              eventId: 39,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              eventId: 39,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              eventId: 39,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+
+            // 3 students interested in event 40
+            {
+              studentId: 4,
+              eventId: 40,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              eventId: 40,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              eventId: 40,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+        }
       }
       // Resume Builder
       {
@@ -7473,9 +9794,21 @@ module.exports = {
 
       // Bridge Tables *
       {
-        await queryInterface.bulkDelete('studentFlightPlanTasks', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete('userRolePermissions', null, { truncate: true, cascade: true, restartIdentity: true });
-        await queryInterface.bulkDelete("studentEvents", null, { truncate: true, cascade: true, restartIdentity: true});
+        await queryInterface.bulkDelete("studentFlightPlanTasks", null, {
+          truncate: true,
+          cascade: true,
+          restartIdentity: true,
+        });
+        await queryInterface.bulkDelete("userRolePermissions", null, {
+          truncate: true,
+          cascade: true,
+          restartIdentity: true,
+        });
+        await queryInterface.bulkDelete("studentEvents", null, {
+          truncate: true,
+          cascade: true,
+          restartIdentity: true,
+        });
       }
     }
     // Resume Builder
