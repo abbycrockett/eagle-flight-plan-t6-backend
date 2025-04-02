@@ -116,6 +116,7 @@ require("./app/routes/flightPlanRoutes/transaction.routes")(app);
 require("./app/routes/flightPlanRoutes/userRolePermission.routes")(app);
 require("./app/routes/flightPlanRoutes/verification.routes")(app);
 require("./app/routes/flightPlanRoutes/studentEvent.routes")(app);
+require("./app/routes/flightPlanRoutes/quizResult.routes")(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

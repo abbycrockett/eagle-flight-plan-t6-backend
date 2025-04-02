@@ -79,6 +79,8 @@ db.transaction = require("./flightPlanModels/transaction.model.js")(sequelize, S
 db.userRolePermission = require("./flightPlanModels/userRolePermission.model.js")(sequelize, Sequelize);
 db.verification = require("./flightPlanModels/verification.model.js")(sequelize, Sequelize);
 
+db.quizResult = require("./flightPlanModels/quizResult.modal.js")(sequelize, Sequelize);
+
 // Role hasMany UserRole
 db.role.hasMany(db.userRole, {
   as: "userRole",
