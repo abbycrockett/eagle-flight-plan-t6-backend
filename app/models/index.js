@@ -941,7 +941,7 @@ db.event.hasMany(db.eventMajor, {
   foreignKey: "eventId",
   onDelete: "CASCADE"
 });
-db.eventMajor.belongsTo(db.experienceType, {
+db.eventMajor.belongsTo(db.event, {
   as: "event",
   foreignKey: "eventId",
   onDelete: "SET NULL",

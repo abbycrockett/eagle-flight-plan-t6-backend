@@ -1363,8 +1363,8 @@ module.exports = {
           // Populate verifications
           await queryInterface.bulkInsert("verifications", [
             {
-              type: "automatic",
-              google_form_url: "http://example.com/verification-form1",
+              type: "manual",
+              google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },

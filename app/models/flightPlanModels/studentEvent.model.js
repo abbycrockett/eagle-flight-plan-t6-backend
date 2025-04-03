@@ -10,6 +10,11 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
       defaultValue: 'registered',
     },
+    verification_status: {
+      type: Sequelize.ENUM('approved', 'in_progress', 'denied', 'n/a'),
+      allowNull: false,
+      defaultValue: 'n/a'
+    }
   });
 
   return StudentEvent;
