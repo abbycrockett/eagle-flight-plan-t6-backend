@@ -3697,31 +3697,31 @@ module.exports = {
             // Flight Plan 4 is Spring 2025
             {
               studentId: 1,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //4
             {
               studentId: 2,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //5
             {
               studentId: 3,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //6
             {
               studentId: 4,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //7
             {
               studentId: 5,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //8
@@ -5108,14 +5108,14 @@ module.exports = {
               taskId: 5,
             },
             {
-              status: "approved",
+              status: "ready_for_review",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 16,
               taskId: 6,
             },
             {
-              status: "approved",
+              status: "unapproved",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 16,
@@ -5143,14 +5143,14 @@ module.exports = {
               taskId: 10,
             },
             {
-              status: "approved",
+              status: "ready_for_review",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 17,
               taskId: 6,
             },
             {
-              status: "approved",
+              status: "unapproved",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 17,
@@ -5178,14 +5178,14 @@ module.exports = {
               taskId: 10,
             },
             {
-              status: "approved",
+              status: "ready_for_review",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 18,
               taskId: 6,
             },
             {
-              status: "approved",
+              status: "unapproved",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 18,
@@ -5213,14 +5213,14 @@ module.exports = {
               taskId: 10,
             },
             {
-              status: "approved",
+              status: "ready_for_review",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 19,
               taskId: 6,
             },
             {
-              status: "approved",
+              status: "unapproved",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 19,
@@ -5248,14 +5248,14 @@ module.exports = {
               taskId: 10,
             },
             {
-              status: "approved",
+              status: "ready_for_review",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 20,
               taskId: 6,
             },
             {
-              status: "approved",
+              status: "unapproved",
               createdAt: new Date(),
               updatedAt: new Date(),
               studentFlightPlanId: 20,
