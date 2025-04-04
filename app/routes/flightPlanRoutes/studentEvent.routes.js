@@ -17,5 +17,11 @@ module.exports = (app) => {
   // List of events by student id
   router.get("/student/:studentId/events", studentEventController.findEventsByStudentId);
 
+  // Get verification for event
+  router.get("/event/:eventId/verification", studentEventController.getEventVerification);
+
+  // Get specific student event by student id and event id
+  router.get("/student/:studentId/event/:eventId", studentEventController.findStudentEventByEventId);
+
   app.use("/flightPlan-t6", router);
 };
