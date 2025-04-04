@@ -3697,31 +3697,31 @@ module.exports = {
             // Flight Plan 4 is Spring 2025
             {
               studentId: 1,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //4
             {
               studentId: 2,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //5
             {
               studentId: 3,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //6
             {
               studentId: 4,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //7
             {
               studentId: 5,
-              flightPlanId: 4,
+              flightPlanId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //8
@@ -3738,272 +3738,77 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             }, //10
+            // student flight plans for students 1-5, for semesters 1, 3, flight plans 11-20
             {
-              studentId: 3,
-              flightPlanId: 5,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //11
-            {
-              studentId: 4,
-              flightPlanId: 5,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //12
-            {
-              studentId: 5,
-              flightPlanId: 5,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //13
-            // Flight Plan 6 is Spring 2026
-            {
-              studentId: 1,
-              flightPlanId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //14
-            {
-              studentId: 2,
-              flightPlanId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //15
-            {
-              studentId: 3,
-              flightPlanId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //16
-            {
-              studentId: 4,
-              flightPlanId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //17
-            {
-              studentId: 5,
-              flightPlanId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //18
-            // Flight Plan 7 is Fall 2026
-            {
-              studentId: 1,
-              flightPlanId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //19
-            {
-              studentId: 2,
-              flightPlanId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //20
-            {
-              studentId: 3,
-              flightPlanId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //21
-            {
-              studentId: 4,
-              flightPlanId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //22
-            {
-              studentId: 5,
-              flightPlanId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //23
-            // Flight Plan 8 is Spring 2027
-            {
-              studentId: 1,
-              flightPlanId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //24
-            {
-              studentId: 2,
-              flightPlanId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //25
-            {
-              studentId: 3,
-              flightPlanId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //26
-            {
-              studentId: 4,
-              flightPlanId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //27
-            {
-              studentId: 5,
-              flightPlanId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //28
-            // FLight Plan 9 is Fall 2027
-            {
-              studentId: 1,
-              flightPlanId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //29
-            {
-              studentId: 2,
-              flightPlanId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //30
-            {
-              studentId: 3,
-              flightPlanId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //31
-            {
-              studentId: 4,
-              flightPlanId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //32
-            {
-              studentId: 5,
-              flightPlanId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //33
-            // Flight Plan 10 is Spring 2028
-            {
-              studentId: 1,
-              flightPlanId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //34
-            {
-              studentId: 2,
-              flightPlanId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //35
-            {
-              studentId: 3,
-              flightPlanId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //36
-            {
-              studentId: 4,
-              flightPlanId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //37
-            {
-              studentId: 5,
-              flightPlanId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //38
-            // Flight Plan 1 is Fall 2023
-            {
+              id: 11,
               studentId: 1,
               flightPlanId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //39
+            },
             {
+              id: 12,
               studentId: 2,
               flightPlanId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //40
+            },
             {
+              id: 13,
               studentId: 3,
               flightPlanId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //41
+            },
             {
+              id: 14,
               studentId: 4,
               flightPlanId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //42
+            },
             {
+              id: 15,
               studentId: 5,
               flightPlanId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //43
-            // Flight Plan 2 is Spring 2024
+            },
             {
-              studentId: 1,
-              flightPlanId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //44
-            {
-              studentId: 2,
-              flightPlanId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //45
-            {
-              studentId: 3,
-              flightPlanId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //46
-            {
-              studentId: 4,
-              flightPlanId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //47
-            {
-              studentId: 5,
-              flightPlanId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            }, //48
-            // Flight Plan 3 is Fall 2024
-            {
+              id: 16,
               studentId: 1,
               flightPlanId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //49
+            },
             {
+              id: 17,
               studentId: 2,
               flightPlanId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //50
+            },
             {
+              id: 18,
               studentId: 3,
               flightPlanId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //51
+            },
             {
+              id: 19,
               studentId: 4,
               flightPlanId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //52
+            },
             {
+              id: 20,
               studentId: 5,
               flightPlanId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
-            }, //53
+            },
           ]);
 
           // Populate taskBadge
@@ -5126,6 +4931,356 @@ module.exports = {
               studentFlightPlanId: 8,
               taskId: 8,
               userId: 5,
+            },
+            // student flight plan tasks for students 1-5, for semesters 1, 3, flight plans 11-20
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 11,
+              taskId: 1,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 11,
+              taskId: 2,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 11,
+              taskId: 3,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 11,
+              taskId: 4,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 11,
+              taskId: 5,
+            }, {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 12,
+              taskId: 1,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 12,
+              taskId: 2,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 12,
+              taskId: 3,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 12,
+              taskId: 4,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 12,
+              taskId: 5,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 13,
+              taskId: 1,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 13,
+              taskId: 2,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 13,
+              taskId: 3,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 13,
+              taskId: 4,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 13,
+              taskId: 5,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 14,
+              taskId: 1,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 14,
+              taskId: 2,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 14,
+              taskId: 3,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 14,
+              taskId: 4,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 14,
+              taskId: 5,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 15,
+              taskId: 1,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 15,
+              taskId: 2,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 15,
+              taskId: 3,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 15,
+              taskId: 4,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 15,
+              taskId: 5,
+            },
+            {
+              status: "ready_for_review",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 16,
+              taskId: 6,
+            },
+            {
+              status: "unapproved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 16,
+              taskId: 7,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 16,
+              taskId: 8,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 16,
+              taskId: 9,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 16,
+              taskId: 10,
+            },
+            {
+              status: "ready_for_review",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 17,
+              taskId: 6,
+            },
+            {
+              status: "unapproved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 17,
+              taskId: 7,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 17,
+              taskId: 8,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 17,
+              taskId: 9,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 17,
+              taskId: 10,
+            },
+            {
+              status: "ready_for_review",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 18,
+              taskId: 6,
+            },
+            {
+              status: "unapproved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 18,
+              taskId: 7,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 18,
+              taskId: 8,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 18,
+              taskId: 9,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 18,
+              taskId: 10,
+            },
+            {
+              status: "ready_for_review",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 19,
+              taskId: 6,
+            },
+            {
+              status: "unapproved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 19,
+              taskId: 7,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 19,
+              taskId: 8,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 19,
+              taskId: 9,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 19,
+              taskId: 10,
+            },
+            {
+              status: "ready_for_review",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 20,
+              taskId: 6,
+            },
+            {
+              status: "unapproved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 20,
+              taskId: 7,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 20,
+              taskId: 8,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 20,
+              taskId: 9,
+            },
+            {
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              studentFlightPlanId: 20,
+              taskId: 10,
             },
           ]);
 
