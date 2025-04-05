@@ -2,10 +2,37 @@
 
 const { content_v2_1 } = require("googleapis");
 
+// This gets images from the internet and converts them to a buffer
+const https = require('https');
+
+function fetchImage(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      const chunks = [];
+      res.on('data', chunk => chunks.push(chunk));
+      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('error', reject);
+    }).on('error', reject);
+  });
+}
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.sequelize.query("SET FOREIGN_KEY_CHECKS = 0");
+
+    // Award Images:
+    const blazerImageBuffer = await fetchImage('https://i.imgur.com/LXXSNlO.png'); 
+    const tieImageBuffer = await fetchImage('https://i.imgur.com/VJ18kVB.png'); 
+    const skirtImageBuffer = await fetchImage('https://i.imgur.com/jmHijMS.png'); 
+    const headshotImageBuffer = await fetchImage('https://i.imgur.com/X89m7yD.png');
+    const concertImageBuffer = await fetchImage('https://i.imgur.com/rlj5LeT.png');
+    const waterBottleImageBuffer = await fetchImage('https://i.imgur.com/YCakEvw.png');
+    const proPackageImageBuffer = await fetchImage('https://i.imgur.com/sUSSEzq.png');
+    const shoesImageBuffer = await fetchImage('https://i.imgur.com/QDlcM8d.png');
+    const pantsImageBuffer = await fetchImage('https://i.imgur.com/WvXNfJh.png');
+    const watchImageBuffer = await fetchImage('https://i.imgur.com/XK2bg8k.png');
+
     // Clear Preexisting data
     {
       // Eagle Flight Plan
@@ -371,123 +398,149 @@ module.exports = {
       {
         // Nondependent Tables
         {
-          // Populate awards
+          // Populate awards:
+          // - I'm inserting them one by one because the packet size
+          //  would be too large if I inserted them all at once
           await queryInterface.bulkInsert("awards", [
             {
               name: "Professional Attire Package",
-              description: "Includes a blazer, pants, and tie.",
+              description: "Includes a matching blazer, pants, and tie.",
               cost: 500,
               redemption_type: "in_person",
               redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png", // Default value added
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Professional Headshot",
-              description: "Receive a professional headshot session.",
-              cost: 300,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "OC Water Bottle",
-              description: "High-quality OC water bottle.",
-              cost: 150,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Dawson Hollow Concert Ticket",
-              description: "Includes tickets to the Dawson Hollow concert.",
-              cost: 200,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Business Attire Complete Set",
-              description:
-                "Includes blazer, pants, tie, and a professional headshot.",
-              cost: 800,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Stylish Blazer",
-              description: "Receive a stylish and professional blazer.",
-              cost: 400,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Formal Pants",
-              description:
-                "Classic formal pants suitable for business settings.",
-              cost: 300,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Formal Tie",
-              description: "Elegant tie to complement your business attire.",
-              cost: 100,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Formal Pencil Skirt",
-              description: "Classy skirt for warm days.",
-              cost: 250,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
-              image_type: "png",
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Complete Professional Package",
-              description:
-                "All items including attire, headshot, and concert ticket.",
-              cost: 1200,
-              redemption_type: "in_person",
-              redemption_info: "Pick up at Career Services office.",
-              image: Buffer.from("sample image data"),
+              image: proPackageImageBuffer,
               image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
           ]);
 
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Professional Headshot",
+            description: "Receive a professional headshot session.",
+            cost: 300,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: headshotImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "OC Water Bottle",
+            description: "High-quality OC water bottle.",
+            cost: 150,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: waterBottleImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Dawson Hollow Concert Ticket",
+            description: "Includes tickets to the Dawson Hollow concert.",
+            cost: 200,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: concertImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Classic Watch",
+            description: "Starter watch for your professional wardrobe.",
+            cost: 400,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: watchImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Stylish Blazer",
+            description: "Receive a fitted professional blazer.",
+            cost: 400,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: blazerImageBuffer,
+            image_type: "url",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Formal Pants",
+            description: "Classic pants suitable for business settings.",
+            cost: 300,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: pantsImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            },
+          ]);
+          
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Formal Tie",
+            description: "Elegant tie to complement your business attire.",
+            cost: 100,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: tieImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        ]);
+
+          await queryInterface.bulkInsert("awards", [
+          {
+            name: "Formal Pencil Skirt",
+            description: "Classy skirt for warm days.",
+            cost: 250,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: skirtImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+            name: "Work Shoes",
+            description: "Available sizes will vary.",
+            cost: 1200,
+            redemption_type: "in_person",
+            redemption_info: "Pick up at Career Services office.",
+            image: shoesImageBuffer,
+            image_type: "png",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        ]);
+        
           // Populate badges
           await queryInterface.bulkInsert("badges", [
             {
