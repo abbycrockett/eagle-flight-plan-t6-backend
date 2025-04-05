@@ -18,7 +18,7 @@ module.exports = (app) => {
   router.get("/student/:studentId/events", studentEventController.findEventsByStudentId);
 
   // Get verification for event
-  router.get("/event/:eventId/verification", studentEventController.getEventVerification);
+  // router.get("/event/:eventId/verification", studentEventController.getEventVerification);
 
   // Get specific student event by student id and event id
   router.get("/student/:studentId/event/:eventId", studentEventController.findStudentEventByEventId);
