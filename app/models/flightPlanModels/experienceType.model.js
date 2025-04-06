@@ -4,9 +4,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-        },
+        }, 
         category: {
-            type: Sequelize.ENUM('academic', 'leadership', 'networking', "strengths", "career_prep", "mentoring", "volunteer", ""),
+            type: Sequelize.ENUM('academic', 'leadership', 'networking', "strengths", "career_prep", "mentoring", "volunteer", "other"),
             allowNull: false,
             defaultValue: 'academic',
         },

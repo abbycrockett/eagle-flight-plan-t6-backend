@@ -7,5 +7,12 @@ module.exports = (app) => {
         { name: "cliftonStrength", key: "cliftonStrengthId" }
     ], "eventCliftonStrength");
 
+
+    // List of clifton strengths by event id
+    router.get("/event/:eventId/cliftonStrengths", eventCliftonStrengthController.findCliftonStrengthsByEventId);
+
+    // List of events by clifton strength id
+    router.get("/cliftonStrength/:cliftonStrengthId/events", eventCliftonStrengthController.findEventsByCliftonStrengthId);
+
     app.use("/flightPlan-t6", router);
 };

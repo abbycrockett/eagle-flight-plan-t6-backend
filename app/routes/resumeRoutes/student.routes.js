@@ -21,5 +21,11 @@ module.exports = (app) => {
     // Delete all Courses
     router.delete("/", [authenticate], student.deleteAll);
 
+    // Get recommended events based on student's majors and clifton strengths
+    router.get("/:id/recommended-events", [authenticate], student.findRecommendedEvents);
+
+    // Get events student has signed up for
+    router.get("/:id/registered-events", [authenticate], student.findRegisteredEvents);
+
     app.use("/resume-t6/student", router);
 };

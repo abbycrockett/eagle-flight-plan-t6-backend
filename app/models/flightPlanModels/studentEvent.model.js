@@ -5,6 +5,16 @@ module.exports = (sequelize, Sequelize) => {
       autoIncrement: true,
       primaryKey: true,
     },
+    attendence_status: {
+      type: Sequelize.ENUM('registered', 'attended', 'did_not_attend'),
+      allowNull: false,
+      defaultValue: 'registered',
+    },
+    verification_status: {
+      type: Sequelize.ENUM('approved', 'in_progress', 'denied', 'n/a'),
+      allowNull: false,
+      defaultValue: 'n/a'
+    }
   });
 
   return StudentEvent;
