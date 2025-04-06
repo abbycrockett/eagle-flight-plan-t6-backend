@@ -9,6 +9,7 @@
     "start-seed": "concurrently \"npm run start\" \"wait-on tcp:3026 && npm run seed:all\""
   },
   "dependencies": {
+    "axios": "^1.8.4",
     "body-parser": "^1.20.3",
     "concurrently": "^9.1.2",
     "cookie-parser": "~1.4.4",

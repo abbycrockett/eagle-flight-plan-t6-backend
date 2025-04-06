@@ -118,6 +118,9 @@ require("./app/routes/flightPlanRoutes/verification.routes")(app);
 require("./app/routes/flightPlanRoutes/studentEvent.routes")(app);
 require("./app/routes/flightPlanRoutes/quizResult.routes")(app);
 
+// Handles Communication with the Google App Script to link form to sheet
+require("./app/routes/flightPlanRoutes/linkFrom.routes")(app);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
