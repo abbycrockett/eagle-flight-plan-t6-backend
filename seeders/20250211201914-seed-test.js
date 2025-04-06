@@ -1851,7 +1851,7 @@ module.exports = {
               name: "Public Speaking for Career Success",
               description:
                 "Improve your public speaking skills to stand out in your career.",
-              event_type: "extra_curricular",
+              event_type: "career_services",
               date: new Date("2025-04-29"),
               start_date_time: new Date("2025-04-29T16:00:00"),
               end_date_time: new Date("2025-04-29T18:00:00"),
@@ -1869,7 +1869,7 @@ module.exports = {
               name: "Financial Literacy for Students",
               description:
                 "Learn essential financial skills, from budgeting to investing.",
-              event_type: "lunch_and_learn",
+              event_type: "academic",
               date: new Date("2025-04-24"),
               start_date_time: new Date("2025-04-24T12:30:00"),
               end_date_time: new Date("2025-04-24T13:30:00"),
@@ -1905,7 +1905,7 @@ module.exports = {
               name: "AI & Ethics Panel Discussion",
               description:
                 "Explore the ethical implications of artificial intelligence.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-07"),
               start_date_time: new Date("2025-05-07T15:00:00"),
               end_date_time: new Date("2025-05-07T17:00:00"),
@@ -1977,7 +1977,7 @@ module.exports = {
               name: "Future of Space Exploration",
               description:
                 "Join experts in discussing upcoming space missions and technologies.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-10"),
               start_date_time: new Date("2025-05-10T16:00:00"),
               end_date_time: new Date("2025-05-10T18:00:00"),
@@ -1995,7 +1995,7 @@ module.exports = {
               name: "Film Studies Club: The Art of Storytelling",
               description:
                 "A deep dive into cinematic storytelling techniques.",
-              event_type: "club",
+              event_type: "academic",
               date: new Date("2025-04-28"),
               start_date_time: new Date("2025-04-28T18:30:00"),
               end_date_time: new Date("2025-04-28T20:30:00"),
@@ -2067,7 +2067,7 @@ module.exports = {
               name: "Effective Time Management for Students",
               description:
                 "Learn practical strategies to better manage your time and workload.",
-              event_type: "lunch_and_learn",
+              event_type: "career_services",
               date: new Date("2025-05-04"),
               start_date_time: new Date("2025-05-04T12:30:00"),
               end_date_time: new Date("2025-05-04T13:30:00"),
@@ -2085,7 +2085,7 @@ module.exports = {
               name: "AI and Society: A Roundtable Discussion",
               description:
                 "Discuss the role of artificial intelligence in shaping our future society.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-15"),
               start_date_time: new Date("2025-05-15T14:00:00"),
               end_date_time: new Date("2025-05-15T16:00:00"),
@@ -2103,7 +2103,7 @@ module.exports = {
               name: "Navigating the Future of Green Technologies",
               description:
                 "Explore advancements in sustainable tech and their impact on the future.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-20"),
               start_date_time: new Date("2025-05-20T13:00:00"),
               end_date_time: new Date("2025-05-20T15:00:00"),
@@ -2139,7 +2139,7 @@ module.exports = {
               name: "Building a Personal Brand Online",
               description:
                 "Discover strategies to build a personal brand for your career or business.",
-              event_type: "lunch_and_learn",
+              event_type: "career_services",
               date: new Date("2025-05-13"),
               start_date_time: new Date("2025-05-13T12:00:00"),
               end_date_time: new Date("2025-05-13T13:00:00"),
@@ -2157,7 +2157,7 @@ module.exports = {
               name: "Understanding Blockchain Technology",
               description:
                 "Learn the basics of blockchain and its applications in various industries.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-21"),
               start_date_time: new Date("2025-05-21T14:00:00"),
               end_date_time: new Date("2025-05-21T16:00:00"),
@@ -2211,7 +2211,7 @@ module.exports = {
               name: "The Future of Renewable Energy",
               description:
                 "Join experts as they discuss advancements in renewable energy technologies.",
-              event_type: "extra_curricular",
+              event_type: "academic",
               date: new Date("2025-05-30"),
               start_date_time: new Date("2025-05-30T11:00:00"),
               end_date_time: new Date("2025-05-30T13:00:00"),
@@ -2283,7 +2283,7 @@ module.exports = {
               name: "Leadership and Communication Skills Workshop",
               description:
                 "Enhance your leadership and communication skills with this workshop.",
-              event_type: "extra_curricular",
+              event_type: "career_services",
               date: new Date("2025-04-22"),
               start_date_time: new Date("2025-04-22T10:00:00"),
               end_date_time: new Date("2025-04-22T12:00:00"),
