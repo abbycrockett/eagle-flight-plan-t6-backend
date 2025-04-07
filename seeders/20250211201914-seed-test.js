@@ -22,9 +22,9 @@ module.exports = {
     await queryInterface.sequelize.query("SET FOREIGN_KEY_CHECKS = 0");
 
     // Award Images:
-    const blazerImageBuffer = await fetchImage('https://i.imgur.com/LXXSNlO.png'); 
-    const tieImageBuffer = await fetchImage('https://i.imgur.com/VJ18kVB.png'); 
-    const skirtImageBuffer = await fetchImage('https://i.imgur.com/jmHijMS.png'); 
+    const blazerImageBuffer = await fetchImage('https://i.imgur.com/LXXSNlO.png');
+    const tieImageBuffer = await fetchImage('https://i.imgur.com/VJ18kVB.png');
+    const skirtImageBuffer = await fetchImage('https://i.imgur.com/jmHijMS.png');
     const headshotImageBuffer = await fetchImage('https://i.imgur.com/X89m7yD.png');
     const concertImageBuffer = await fetchImage('https://i.imgur.com/rlj5LeT.png');
     const waterBottleImageBuffer = await fetchImage('https://i.imgur.com/YCakEvw.png');
@@ -450,130 +450,130 @@ module.exports = {
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Professional Headshot",
-            description: "Receive a professional headshot session.",
-            cost: 300,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: headshotImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "Professional Headshot",
+              description: "Receive a professional headshot session.",
+              cost: 300,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: headshotImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "OC Water Bottle",
-            description: "High-quality OC water bottle.",
-            cost: 150,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: waterBottleImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "OC Water Bottle",
+              description: "High-quality OC water bottle.",
+              cost: 150,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: waterBottleImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Dawson Hollow Concert Ticket",
-            description: "Includes tickets to the Dawson Hollow concert.",
-            cost: 200,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: concertImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "Dawson Hollow Concert Ticket",
+              description: "Includes tickets to the Dawson Hollow concert.",
+              cost: 200,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: concertImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Classic Watch",
-            description: "Starter watch for your professional wardrobe.",
-            cost: 400,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: watchImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "Classic Watch",
+              description: "Starter watch for your professional wardrobe.",
+              cost: 400,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: watchImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Stylish Blazer",
-            description: "Receive a fitted professional blazer.",
-            cost: 400,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: blazerImageBuffer,
-            image_type: "url",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "Stylish Blazer",
+              description: "Receive a fitted professional blazer.",
+              cost: 400,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: blazerImageBuffer,
+              image_type: "url",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Formal Pants",
-            description: "Classic pants suitable for business settings.",
-            cost: 300,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: pantsImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+              name: "Formal Pants",
+              description: "Classic pants suitable for business settings.",
+              cost: 300,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: pantsImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
             },
           ]);
-          
-          await queryInterface.bulkInsert("awards", [
-            {
-            name: "Formal Tie",
-            description: "Elegant tie to complement your business attire.",
-            cost: 100,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: tieImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
-        ]);
-
-          await queryInterface.bulkInsert("awards", [
-          {
-            name: "Formal Pencil Skirt",
-            description: "Classy skirt for warm days.",
-            cost: 250,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: skirtImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
-        ]);
 
           await queryInterface.bulkInsert("awards", [
             {
-            name: "Work Shoes",
-            description: "Available sizes will vary.",
-            cost: 1200,
-            redemption_type: "in_person",
-            redemption_info: "Pick up at Career Services office.",
-            image: shoesImageBuffer,
-            image_type: "png",
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
-        ]);
-        
+              name: "Formal Tie",
+              description: "Elegant tie to complement your business attire.",
+              cost: 100,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: tieImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+              name: "Formal Pencil Skirt",
+              description: "Classy skirt for warm days.",
+              cost: 250,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: skirtImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+
+          await queryInterface.bulkInsert("awards", [
+            {
+              name: "Work Shoes",
+              description: "Available sizes will vary.",
+              cost: 1200,
+              redemption_type: "in_person",
+              redemption_info: "Pick up at Career Services office.",
+              image: shoesImageBuffer,
+              image_type: "png",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+
           // Populate badges
           await queryInterface.bulkInsert("badges", [
             {
@@ -586,10 +586,12 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Master Strategist",
-              description:
-                "Given to players who complete all strategic levels.",
+              description: "Given to players who complete all strategic levels.",
               type: "experience_completion",
               points: 500,
               image: masterStrategistImageBuffer,
@@ -597,6 +599,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Speed Runner",
               description: "For finishing a task under the time limit.",
@@ -607,6 +612,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Ultimate Collector",
               description: "Earned by collecting all available items.",
@@ -617,6 +625,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Team Player",
               description: "Awarded for participating in a team event.",
@@ -627,6 +638,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Problem Solver",
               description: "Given to those who solve a difficult puzzle.",
@@ -637,6 +651,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Perfectionist",
               description: "Earned by achieving a perfect score.",
@@ -647,6 +664,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Marathon Runner",
               description: "For completing an extended challenge.",
@@ -657,6 +677,9 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Elite Champion",
               description: "Awarded to tournament winners.",
@@ -667,13 +690,16 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("badges", [
             {
               name: "Legendary Status",
               description: "The highest badge for exceptional performance.",
               type: "task_completion",
               points: 1000,
               image: legendaryStatusImageBuffer,
-              image_type: "png", 
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
