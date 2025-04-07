@@ -33,6 +33,18 @@ module.exports = {
     const pantsImageBuffer = await fetchImage('https://i.imgur.com/WvXNfJh.png');
     const watchImageBuffer = await fetchImage('https://i.imgur.com/XK2bg8k.png');
 
+    // Badge Images:
+    const beginnerExplorerImageBuffer = await fetchImage('https://images.vexels.com/media/users/3/212734/isolated/preview/7ba254eccd4fe7ec244b379f067d2cbb-compass-explore-camping-round-badge.png');
+    const masterStrategistImageBuffer = await fetchImage('https://na-wotp.wgcdn.co/dcont/fb/image/art_of_strategy_premier_league_badge_200x185.png');
+    const speedRunnerImageBuffer = await fetchImage('https://images.vexels.com/media/users/3/212435/isolated/preview/5729ca8fb4eb89f1ba6a429ac6c24973-female-runner-running-club-badge-green.png');
+    const ultimateCollectorImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/4334/4334582.png');
+    const teamPlayerImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/128/1496/1496613.png');
+    const problemSolverImageBuffer = await fetchImage('https://cdn0.iconfinder.com/data/icons/life-skill-flat-self-improvement/512/problem_solving-512.png');
+    const perfectionistImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/3680/3680218.png');
+    const marathonRunnerImageBuffer = await fetchImage('https://static.vecteezy.com/system/resources/previews/005/927/756/non_2x/running-marathon-icon-and-symbol-vector.jpg');
+    const eliteChampionImageBuffer = await fetchImage('https://png.pngtree.com/png-vector/20220731/ourmid/pngtree-star-champion-award-medal-icon-png-image_6093706.png');
+    const legendaryStatusImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/2178/2178151.png');
+
     // Clear Preexisting data
     {
       // Eagle Flight Plan
@@ -569,8 +581,8 @@ module.exports = {
               description: "Awarded for completing the first challenge.",
               type: "task_completion",
               points: 100,
-              image: null,
-              image_type: null,
+              image: beginnerExplorerImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -580,8 +592,8 @@ module.exports = {
                 "Given to players who complete all strategic levels.",
               type: "experience_completion",
               points: 500,
-              image: null,
-              image_type: null,
+              image: masterStrategistImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -590,8 +602,8 @@ module.exports = {
               description: "For finishing a task under the time limit.",
               type: "flightplan_completion",
               points: 300,
-              image: null,
-              image_type: null,
+              image: speedRunnerImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -600,8 +612,8 @@ module.exports = {
               description: "Earned by collecting all available items.",
               type: "task_completion",
               points: 700,
-              image: null,
-              image_type: null,
+              image: ultimateCollectorImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -610,8 +622,8 @@ module.exports = {
               description: "Awarded for participating in a team event.",
               type: "experience_completion",
               points: 400,
-              image: null,
-              image_type: null,
+              image: teamPlayerImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -620,8 +632,8 @@ module.exports = {
               description: "Given to those who solve a difficult puzzle.",
               type: "flightplan_completion",
               points: 350,
-              image: null,
-              image_type: null,
+              image: problemSolverImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -630,8 +642,8 @@ module.exports = {
               description: "Earned by achieving a perfect score.",
               type: "task_completion",
               points: 600,
-              image: null,
-              image_type: null,
+              image: perfectionistImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -640,8 +652,8 @@ module.exports = {
               description: "For completing an extended challenge.",
               type: "experience_completion",
               points: 450,
-              image: null,
-              image_type: null,
+              image: marathonRunnerImageBuffer,
+              image_type: "jpg",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -650,8 +662,8 @@ module.exports = {
               description: "Awarded to tournament winners.",
               type: "flightplan_completion",
               points: 800,
-              image: null,
-              image_type: null,
+              image: eliteChampionImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -660,8 +672,8 @@ module.exports = {
               description: "The highest badge for exceptional performance.",
               type: "task_completion",
               points: 1000,
-              image: null,
-              image_type: null,
+              image: legendaryStatusImageBuffer,
+              image_type: "png", 
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -2910,6 +2922,13 @@ module.exports = {
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+            {
+              date_acquired: new Date("2023-11-30"),
+              studentId: 5,
+              badgeId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate studentCliftonStrength
@@ -3721,9 +3740,9 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              fName: "Arrian",
+              fName: "Arrian Naomi",
               lName: "Taton",
-              email: "arrian.taton@eagles.oc.edu",
+              email: "arriannaomi.a.taton@eagles.oc.edu",
               phone_number: "222-333-4444",
               prefix: "Ms.",
               studentId: 5,
