@@ -49,7 +49,6 @@ jobs:
           command: |
             cd nodeapps/2025/flight-plan/t6
             npm install
-            npm run seed:all
             sudo systemctl stop flight-plan-t6-backend
             sudo cp flight-plan-t6-backend.service /lib/systemd/system/flight-plan-t6-backend.service
 
