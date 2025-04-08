@@ -1,19 +1,11 @@
 "use strict";
 
-const { content_v2_1 } = require("googleapis");
+const path = require('path');
+const fs = require('fs');
 
-// This gets images from the internet and converts them to a buffer
-const https = require('https');
-
-function fetchImage(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      const chunks = [];
-      res.on('data', chunk => chunks.push(chunk));
-      res.on('end', () => resolve(Buffer.concat(chunks)));
-      res.on('error', reject);
-    }).on('error', reject);
-  });
+function loadLocalImage(imageName) {
+  const imagePath = path.join(__dirname, 'images', imageName);
+  return fs.readFileSync(imagePath);
 }
 
 /** @type {import('sequelize-cli').Migration} */
@@ -22,28 +14,28 @@ module.exports = {
     await queryInterface.sequelize.query("SET FOREIGN_KEY_CHECKS = 0");
 
     // Award Images:
-    const blazerImageBuffer = await fetchImage('https://i.imgur.com/LXXSNlO.png');
-    const tieImageBuffer = await fetchImage('https://i.imgur.com/VJ18kVB.png');
-    const skirtImageBuffer = await fetchImage('https://i.imgur.com/jmHijMS.png');
-    const headshotImageBuffer = await fetchImage('https://i.imgur.com/X89m7yD.png');
-    const concertImageBuffer = await fetchImage('https://i.imgur.com/rlj5LeT.png');
-    const waterBottleImageBuffer = await fetchImage('https://i.imgur.com/YCakEvw.png');
-    const proPackageImageBuffer = await fetchImage('https://i.imgur.com/sUSSEzq.png');
-    const shoesImageBuffer = await fetchImage('https://i.imgur.com/QDlcM8d.png');
-    const pantsImageBuffer = await fetchImage('https://i.imgur.com/WvXNfJh.png');
-    const watchImageBuffer = await fetchImage('https://i.imgur.com/XK2bg8k.png');
+    const blazerImageBuffer = loadLocalImage('blazer.png');
+    const tieImageBuffer = loadLocalImage('tie.png');
+    const skirtImageBuffer = loadLocalImage('skirt.png');
+    const headshotImageBuffer = loadLocalImage('headshot.png');
+    const concertImageBuffer = loadLocalImage('concert.png');
+    const waterBottleImageBuffer = loadLocalImage('waterbottle.png');
+    const proPackageImageBuffer = loadLocalImage('propackage.png');
+    const shoesImageBuffer = loadLocalImage('shoes.png');
+    const pantsImageBuffer = loadLocalImage('pants.png');
+    const watchImageBuffer = loadLocalImage('watch.png');
 
     // Badge Images:
-    const beginnerExplorerImageBuffer = await fetchImage('https://images.vexels.com/media/users/3/212734/isolated/preview/7ba254eccd4fe7ec244b379f067d2cbb-compass-explore-camping-round-badge.png');
-    const masterStrategistImageBuffer = await fetchImage('https://na-wotp.wgcdn.co/dcont/fb/image/art_of_strategy_premier_league_badge_200x185.png');
-    const speedRunnerImageBuffer = await fetchImage('https://images.vexels.com/media/users/3/212435/isolated/preview/5729ca8fb4eb89f1ba6a429ac6c24973-female-runner-running-club-badge-green.png');
-    const ultimateCollectorImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/4334/4334582.png');
-    const teamPlayerImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/128/1496/1496613.png');
-    const problemSolverImageBuffer = await fetchImage('https://cdn0.iconfinder.com/data/icons/life-skill-flat-self-improvement/512/problem_solving-512.png');
-    const perfectionistImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/3680/3680218.png');
-    const marathonRunnerImageBuffer = await fetchImage('https://static.vecteezy.com/system/resources/previews/005/927/756/non_2x/running-marathon-icon-and-symbol-vector.jpg');
-    const eliteChampionImageBuffer = await fetchImage('https://png.pngtree.com/png-vector/20220731/ourmid/pngtree-star-champion-award-medal-icon-png-image_6093706.png');
-    const legendaryStatusImageBuffer = await fetchImage('https://cdn-icons-png.flaticon.com/512/2178/2178151.png');
+    const beginnerExplorerImageBuffer = loadLocalImage('explorer.png');
+    const masterStrategistImageBuffer = loadLocalImage('strategy.png');
+    const speedRunnerImageBuffer = loadLocalImage('runner.png');
+    const ultimateCollectorImageBuffer = loadLocalImage('collector.png');
+    const teamPlayerImageBuffer = loadLocalImage('teamplayer.png');
+    const problemSolverImageBuffer = loadLocalImage('problemsolver.png');
+    const perfectionistImageBuffer = loadLocalImage('perfect.png');
+    const marathonRunnerImageBuffer = loadLocalImage('mrunner.png');
+    const eliteChampionImageBuffer = loadLocalImage('elite.png');
+    const legendaryStatusImageBuffer = loadLocalImage('legend.png');
 
     // Clear Preexisting data
     {
