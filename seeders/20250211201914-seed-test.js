@@ -2452,7 +2452,7 @@ module.exports = {
               name: "Volunteering: Community Cleanup",
               description:
                 "Join us in cleaning up the community and making a difference.",
-              event_type: "extra_curricular",
+              event_type: "volunteer",
               date: new Date("2025-05-03"),
               start_date_time: new Date("2025-05-03T08:00:00"),
               end_date_time: new Date("2025-05-03T12:00:00"),
@@ -2506,7 +2506,7 @@ module.exports = {
               name: "Sustainability in Action: Campus Clean-Up",
               description:
                 "Join fellow students to help clean and green our campus environment.",
-              event_type: "extra_curricular",
+              event_type: "volunteer",
               date: new Date("2025-03-31"),
               start_date_time: new Date("2025-03-31T09:00:00"),
               end_date_time: new Date("2025-03-31T12:00:00"),
@@ -2578,7 +2578,7 @@ module.exports = {
               name: "Volunteer Info Session: Habitat for Humanity",
               description:
                 "Learn how you can contribute to local homebuilding efforts.",
-              event_type: "extra_curricular",
+              event_type: "volunteer",
               date: new Date("2025-04-03"),
               start_date_time: new Date("2025-04-03T11:00:00"),
               end_date_time: new Date("2025-04-03T12:00:00"),
@@ -2669,7 +2669,7 @@ module.exports = {
               name: "Community Garden Work Day",
               description:
                 "Help plant and maintain the university community garden.",
-              event_type: "extra_curricular",
+              event_type: "volunteer",
               date: new Date("2025-04-08"),
               start_date_time: new Date("2025-04-08T08:00:00"),
               end_date_time: new Date("2025-04-08T11:00:00"),
