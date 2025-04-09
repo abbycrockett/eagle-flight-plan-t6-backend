@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const StudentExperienceTypeEvent = sequelize.define("studentExperienceTypeEvent", {
+    const StudentFlightPlanExperienceTypeEvent = sequelize.define("studentFlightPlanExperienceTypeEvent", {
         id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
@@ -26,6 +26,14 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             defaultValue: 'in_progress',
         },
+        required_document: {
+            type: Sequelize.BLOB("long"),
+            allowNull: true,
+        },
+        required_document_type: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
     });
-    return StudentExperienceTypeEvent;
+    return StudentFlightPlanExperienceTypeEvent;
 };

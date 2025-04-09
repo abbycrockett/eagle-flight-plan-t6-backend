@@ -10,11 +10,6 @@ module.exports = (sequelize, Sequelize) => {
             values: ['academic', 'leadership', 'networking', 'strengths', 'career_prep', 'mentoring', 'volunteer', 'other'],
             allowNull: false,
         },
-        reflection_required: {
-            type: Sequelize.BOOLEAN,
-            defaultValue: false,
-            allowNull: false,
-        },
         schedule_type: {
             type: Sequelize.ENUM,
             // Scheduling type (one time, semesterly, special event, etc.)

@@ -107,11 +107,6 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
-          await queryInterface.bulkDelete("documents", null, {
-            truncate: true,
-            cascade: true,
-            restartIdentity: true,
-          });
           await queryInterface.bulkDelete("events", null, {
             truncate: true,
             cascade: true,
@@ -151,7 +146,7 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
-          await queryInterface.bulkDelete("studentExperienceTypes", null, {
+          await queryInterface.bulkDelete("studentFlightPlanExperienceTypes", null, {
             truncate: true,
             cascade: true,
             restartIdentity: true,
@@ -210,7 +205,7 @@ module.exports = {
             cascade: true,
             restartIdentity: true,
           });
-          await queryInterface.bulkDelete("studentExperienceTypeEvents", null, {
+          await queryInterface.bulkDelete("studentFlightPlanExperienceTypeEvents", null, {
             truncate: true,
             cascade: true,
             restartIdentity: true,
@@ -1477,61 +1472,61 @@ module.exports = {
           // Populate verifications
           await queryInterface.bulkInsert("verifications", [
             {
-              type: "manual",
+              type: "reflection",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form2",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "reflection",
               google_form_url: "http://example.com/verification-form3",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form4",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "required_document",
               google_form_url: "http://example.com/verification-form5",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "required_document",
               google_form_url: "http://example.com/verification-form6",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form7",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: "http://example.com/verification-form8",
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -1689,99 +1684,6 @@ module.exports = {
             },
           ]);
 
-          // Populate documents
-          await queryInterface.bulkInsert("documents", [
-            {
-              name: "Resume",
-              completion_date: new Date("2024-01-15"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 1,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Cover Letter",
-              completion_date: new Date("2024-02-10"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 2,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Internship Agreement",
-              completion_date: new Date("2023-12-05"),
-              semester_approved: "fall",
-              image: null,
-              studentId: 3,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Project Report",
-              completion_date: new Date("2024-03-20"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 4,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Research Paper",
-              completion_date: new Date("2023-11-30"),
-              semester_approved: "fall",
-              image: null,
-              studentId: 5,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Portfolio",
-              completion_date: new Date("2024-01-25"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 6,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Reference Letter",
-              completion_date: new Date("2024-02-15"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 7,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Certification",
-              completion_date: new Date("2023-10-20"),
-              semester_approved: "fall",
-              image: null,
-              studentId: 8,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Training Completion",
-              completion_date: new Date("2024-04-05"),
-              semester_approved: "spring",
-              image: null,
-              studentId: 9,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              name: "Workshop Notes",
-              completion_date: new Date("2023-09-15"),
-              semester_approved: "fall",
-              image: null,
-              studentId: 10,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-          ]);
           await queryInterface.bulkInsert("events", [
             {
               name: "Tech Industry Career Fair",
@@ -3279,64 +3181,64 @@ module.exports = {
             },
           ]);
 
-          // Populate studentExperienceType
-          await queryInterface.bulkInsert("studentExperienceTypes", [
+          // Populate studentFlightPlanExperienceType
+          await queryInterface.bulkInsert("studentFlightPlanExperienceTypes", [
             {
-              studentId: 1,
+              studentFlightPlanId: 1,
               experienceTypeId: 1,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 1,
+              studentFlightPlanId: 1,
               experienceTypeId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 2,
+              studentFlightPlanId: 2,
               experienceTypeId: 3,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 2,
+              studentFlightPlanId: 2,
               experienceTypeId: 4,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 3,
+              studentFlightPlanId: 3,
               experienceTypeId: 5,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 3,
+              studentFlightPlanId: 3,
               experienceTypeId: 6,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 4,
+              studentFlightPlanId: 4,
               experienceTypeId: 7,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 4,
+              studentFlightPlanId: 4,
               experienceTypeId: 8,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 5,
+              studentFlightPlanId: 5,
               experienceTypeId: 9,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              studentId: 5,
+              studentFlightPlanId: 5,
               experienceTypeId: 10,
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -3651,7 +3553,6 @@ module.exports = {
           await queryInterface.bulkInsert("tasks", [
             {
               category: "academic",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Advanced Programming",
               description: "Study advanced programming concepts.",
@@ -3666,7 +3567,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Leadership Seminar",
               description: "Attend a leadership seminar.",
@@ -3681,7 +3581,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "special_event",
               name: "Networking Event",
               description: "Attend a professional networking event.",
@@ -3696,7 +3595,6 @@ module.exports = {
             },
             {
               category: "strengths",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Strengths Assessment",
               description: "Complete a strengths assessment.",
@@ -3712,7 +3610,6 @@ module.exports = {
             },
             {
               category: "career_prep",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Resume Workshop",
               description: "Attend a resume writing workshop.",
@@ -3727,7 +3624,6 @@ module.exports = {
             },
             {
               category: "mentoring",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Mentorship Program",
               description: "Participate in a mentorship program.",
@@ -3742,7 +3638,6 @@ module.exports = {
             },
             {
               category: "volunteer",
-              reflection_required: false,
               schedule_type: "semesterly",
               name: "Community Service",
               description: "Volunteer at a local charity or event.",
@@ -3757,7 +3652,6 @@ module.exports = {
             },
             {
               category: "other",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Hackathon Participation",
               description: "Participate in a hackathon event.",
@@ -3773,7 +3667,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Machine Learning Course",
               description: "Complete a machine learning course online.",
@@ -3788,7 +3681,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Leadership Conference",
               description: "Attend a leadership conference in person.",
@@ -3804,7 +3696,6 @@ module.exports = {
             },
             {
               category: "career_prep",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Career Fair Prep Session",
               description:
@@ -3821,7 +3712,6 @@ module.exports = {
             },
             {
               category: "mentoring",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Peer Mentoring Session",
               description:
@@ -3837,7 +3727,6 @@ module.exports = {
             },
             {
               category: "volunteer",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Campus Clean-Up Day",
               description:
@@ -3853,7 +3742,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "special_event",
               name: "Alumni Mixer",
               description: "Engage with alumni from your department or major.",
@@ -3869,7 +3757,6 @@ module.exports = {
             },
             {
               category: "strengths",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Personal Values Workshop",
               description:
@@ -3885,7 +3772,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Capstone Planning Session",
               description:
@@ -3902,7 +3788,6 @@ module.exports = {
             },
             {
               category: "other",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Creative Project Showcase",
               description:
@@ -3918,7 +3803,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: false,
               schedule_type: "semesterly",
               name: "STEM Outreach Volunteering",
               description:
@@ -3935,7 +3819,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Group Facilitation Training",
               description:
@@ -3952,7 +3835,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "LinkedIn Profile Review",
               description:
@@ -5572,10 +5454,10 @@ module.exports = {
             },
           ]);
 
-          // Populate studentExperienceTypeEvents
-          await queryInterface.bulkInsert("studentExperienceTypeEvents", [
+          // Populate studentFlightPlanExperienceTypeEvents
+          await queryInterface.bulkInsert("studentFlightPlanExperienceTypeEvents", [
             {
-              studentExperienceTypeId: 1,
+              studentFlightPlanExperienceTypeId: 1,
               eventId: 1,
               userId: 1,
               points_earned: 10,
@@ -5588,7 +5470,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 2,
+              studentFlightPlanExperienceTypeId: 2,
               eventId: 2,
               userId: 2,
               points_earned: 8,
@@ -5601,7 +5483,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 3,
+              studentFlightPlanExperienceTypeId: 3,
               eventId: 3,
               userId: 3,
               points_earned: 15,
@@ -5614,7 +5496,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 4,
+              studentFlightPlanExperienceTypeId: 4,
               eventId: 4,
               userId: 4,
               points_earned: 20,
@@ -5627,7 +5509,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 5,
+              studentFlightPlanExperienceTypeId: 5,
               eventId: 5,
               userId: 5,
               points_earned: 5,
@@ -5640,7 +5522,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 1,
+              studentFlightPlanExperienceTypeId: 1,
               eventId: 6,
               userId: 6,
               points_earned: 12,
@@ -5653,7 +5535,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 2,
+              studentFlightPlanExperienceTypeId: 2,
               eventId: 7,
               userId: 7,
               points_earned: 9,
@@ -5666,7 +5548,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 3,
+              studentFlightPlanExperienceTypeId: 3,
               eventId: 8,
               userId: 8,
               points_earned: 14,
@@ -5679,7 +5561,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 4,
+              studentFlightPlanExperienceTypeId: 4,
               eventId: 9,
               userId: 9,
               points_earned: 18,
@@ -5692,7 +5574,7 @@ module.exports = {
               updatedAt: new Date(),
             },
             {
-              studentExperienceTypeId: 5,
+              studentFlightPlanExperienceTypeId: 5,
               eventId: 10,
               userId: 10,
               points_earned: 7,
@@ -10167,11 +10049,6 @@ module.exports = {
           cascade: true,
           restartIdentity: true,
         });
-        await queryInterface.bulkDelete("documents", null, {
-          truncate: true,
-          cascade: true,
-          restartIdentity: true,
-        });
         await queryInterface.bulkDelete("events", null, {
           truncate: true,
           cascade: true,
@@ -10202,7 +10079,7 @@ module.exports = {
           cascade: true,
           restartIdentity: true,
         });
-        await queryInterface.bulkDelete("studentExperienceTypes", null, {
+        await queryInterface.bulkDelete("studentFlightPlanExperienceTypes", null, {
           truncate: true,
           cascade: true,
           restartIdentity: true,
@@ -10261,7 +10138,7 @@ module.exports = {
           cascade: true,
           restartIdentity: true,
         });
-        await queryInterface.bulkDelete("studentExperienceTypeEvents", null, {
+        await queryInterface.bulkDelete("studentFlightPlanExperienceTypeEvents", null, {
           truncate: true,
           cascade: true,
           restartIdentity: true,
