@@ -6,9 +6,9 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
         },
         type: {
-            type: Sequelize.ENUM('automatic', 'semi_automatic', 'manual'),
+            type: Sequelize.ENUM('quiz', 'reflection', 'required_document', 'csv_upload'),
             allowNull: false,
-            defaultValue: 'automatic',
+            defaultValue: 'quiz',
         },
         google_form_url: {
             type: Sequelize.STRING,

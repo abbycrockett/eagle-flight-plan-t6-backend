@@ -42,8 +42,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -85,7 +85,6 @@ require("./app/routes/flightPlanRoutes/badge.routes")(app);
 require("./app/routes/flightPlanRoutes/badgeExperienceType.routes")(app);
 require("./app/routes/flightPlanRoutes/class.routes")(app);
 require("./app/routes/flightPlanRoutes/cliftonStrength.routes")(app);
-require("./app/routes/flightPlanRoutes/document.routes")(app);
 require("./app/routes/flightPlanRoutes/event.routes")(app);
 require("./app/routes/flightPlanRoutes/eventCliftonStrength.routes")(app);
 require("./app/routes/flightPlanRoutes/experienceType.routes")(app);
@@ -103,8 +102,8 @@ require("./app/routes/flightPlanRoutes/semester.routes")(app);
 require("./app/routes/flightPlanRoutes/studentBadge.routes")(app);
 require("./app/routes/flightPlanRoutes/studentClass.routes")(app);
 require("./app/routes/flightPlanRoutes/studentCliftonStrength.routes")(app);
-require("./app/routes/flightPlanRoutes/studentExperienceType.routes")(app);
-require("./app/routes/flightPlanRoutes/studentExperienceTypeEvent.routes")(app);
+require("./app/routes/flightPlanRoutes/studentFlightPlanExperienceType.routes")(app);
+require("./app/routes/flightPlanRoutes/studentFlightPlanExperienceTypeEvent.routes")(app);
 require("./app/routes/flightPlanRoutes/studentFlightPlan.routes")(app);
 require("./app/routes/flightPlanRoutes/studentFlightPlanTask.routes")(app);
 require("./app/routes/flightPlanRoutes/studentMajor.routes")(app);
@@ -116,6 +115,7 @@ require("./app/routes/flightPlanRoutes/transaction.routes")(app);
 require("./app/routes/flightPlanRoutes/userRolePermission.routes")(app);
 require("./app/routes/flightPlanRoutes/verification.routes")(app);
 require("./app/routes/flightPlanRoutes/studentEvent.routes")(app);
+require("./app/routes/flightPlanRoutes/eventMajor.routes")(app);
 require("./app/routes/flightPlanRoutes/quizResult.routes")(app);
 
 // Handles Communication with the Google App Script to link form to sheet

@@ -27,6 +27,14 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.TEXT,
             allowNull: true,
         },
+        required_document: {
+            type: Sequelize.BLOB("long"),
+            allowNull: true,
+        },
+        required_document_type: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
     });
     return StudentFlightPlanTask;
 };

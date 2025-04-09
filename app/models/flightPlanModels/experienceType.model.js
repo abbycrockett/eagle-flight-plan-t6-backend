@@ -6,14 +6,9 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true,
         },
         category: {
-            type: Sequelize.ENUM('academic', 'leadership', 'networking', "strengths", "career_prep", "mentoring", "volunteer", ""),
+            type: Sequelize.ENUM('academic', 'leadership', 'networking', "strengths", "career_prep", "mentoring", "volunteer", "other"),
             allowNull: false,
             defaultValue: 'academic',
-        },
-        type: {
-            type: Sequelize.ENUM('automatic', 'manual'), //for adding to flight plan
-            allowNull: false,
-            defaultValue: 'automatic',
         },
         req_reflection: {
             type: Sequelize.BOOLEAN,
@@ -25,15 +20,15 @@ module.exports = (sequelize, Sequelize) => {
             defaultValue: 'one_time',
         },
         name: {
-            type: Sequelize.STRING, 
+            type: Sequelize.STRING,
             allowNull: false,
         },
         description: {
-            type: Sequelize.STRING, 
+            type: Sequelize.STRING,
             allowNull: false,
         },
         rational: {
-            type: Sequelize.STRING, 
+            type: Sequelize.STRING,
             allowNull: false,
         },
     });

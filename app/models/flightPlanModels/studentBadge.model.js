@@ -1,15 +1,17 @@
 module.exports = (sequelize, Sequelize) => {
     const StudentBadge = sequelize.define("studentBadge", {
-        id:{
+        id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        // studentId
-        // badgeId
+        points_earned: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+        },
         date_acquired: {
             type: Sequelize.DATE,
-            allowNull: true,
+            allowNull: false,
         }
     });
     return StudentBadge;

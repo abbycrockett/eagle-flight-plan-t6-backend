@@ -47,9 +47,9 @@ db.badge = require("./flightPlanModels/badge.model.js")(sequelize, Sequelize);
 db.badgeExperienceType = require("./flightPlanModels/badgeExperienceType.model.js")(sequelize, Sequelize);
 db.class = require("./flightPlanModels/class.model.js")(sequelize, Sequelize);
 db.cliftonStrength = require("./flightPlanModels/cliftonStrength.model.js")(sequelize, Sequelize);
-db.document = require("./flightPlanModels/document.model.js")(sequelize, Sequelize);
 db.event = require("./flightPlanModels/event.model.js")(sequelize, Sequelize);
 db.eventCliftonStrength = require("./flightPlanModels/eventCliftonStrength.model.js")(sequelize, Sequelize);
+db.eventMajor = require("./flightPlanModels/eventMajor.model.js")(sequelize, Sequelize);
 db.experienceType = require("./flightPlanModels/experienceType.model.js")(sequelize, Sequelize);
 db.experienceTypeEvent = require("./flightPlanModels/experienceTypeEvent.model.js")(sequelize, Sequelize);
 db.experienceTypeMajor = require("./flightPlanModels/experienceTypeMajor.model.js")(sequelize, Sequelize);
@@ -65,8 +65,8 @@ db.semester = require("./flightPlanModels/semester.model.js")(sequelize, Sequeli
 db.studentBadge = require("./flightPlanModels/studentBadge.model.js")(sequelize, Sequelize);
 db.studentClass = require("./flightPlanModels/studentClass.model.js")(sequelize, Sequelize);
 db.studentCliftonStrength = require("./flightPlanModels/studentCliftonStrength.model.js")(sequelize, Sequelize);
-db.studentExperienceType = require("./flightPlanModels/studentExperienceType.model.js")(sequelize, Sequelize);
-db.studentExperienceTypeEvent = require("./flightPlanModels/studentExperienceTypeEvent.model.js")(sequelize, Sequelize);
+db.studentFlightPlanExperienceType = require("./flightPlanModels/studentFlightPlanExperienceType.model.js")(sequelize, Sequelize);
+db.studentFlightPlanExperienceTypeEvent = require("./flightPlanModels/studentFlightPlanExperienceTypeEvent.model.js")(sequelize, Sequelize);
 db.studentFlightPlan = require("./flightPlanModels/studentFlightPlan.model.js")(sequelize, Sequelize);
 db.studentFlightPlanTask = require("./flightPlanModels/studentFlightPlanTask.model.js")(sequelize, Sequelize);
 db.studentMajor = require("./flightPlanModels/studentMajor.model.js")(sequelize, Sequelize);
@@ -560,18 +560,6 @@ db.rolePermission.belongsTo(db.role, {
   onDelete: "SET NULL"
 });
 
-// Document
-db.student.hasMany(db.document, {
-  as: "document",
-  foreignKey: "studentId",
-  onDelete: "CASCADE"
-});
-db.document.belongsTo(db.student, {
-  as: "student",
-  foreignKey: "studentId",
-  onDelete: "SET NULL"
-});
-
 // Class
 db.semester.hasMany(db.class, {
   as: "class",
@@ -860,24 +848,24 @@ db.badgeExperienceType.belongsTo(db.badge, {
   onDelete: "SET NULL"
 });
 
-// StudentExperienceType
-db.student.hasMany(db.studentExperienceType, {
-  as: "studentExperienceType",
-  foreignKey: "studentId",
+// StudentFlightPlanExperienceType
+db.studentFlightPlan.hasMany(db.studentFlightPlanExperienceType, {
+  as: "studentFlightPlanExperienceType",
+  foreignKey: "studentFlightPlanId",
   onDelete: "CASCADE"
 });
-db.studentExperienceType.belongsTo(db.student, {
-  as: "student",
-  foreignKey: "studentId",
+db.studentFlightPlanExperienceType.belongsTo(db.studentFlightPlan, {
+  as: "studentFlightPlan",
+  foreignKey: "studentFlightPlanId",
   onDelete: "SET NULL"
 });
 
-db.experienceType.hasMany(db.studentExperienceType, {
-  as: "studentExperienceType",
+db.experienceType.hasMany(db.studentFlightPlanExperienceType, {
+  as: "studentFlightPlanExperienceType",
   foreignKey: "experienceTypeId",
   onDelete: "CASCADE"
 });
-db.studentExperienceType.belongsTo(db.experienceType, {
+db.studentFlightPlanExperienceType.belongsTo(db.experienceType, {
   as: "experienceType",
   foreignKey: "experienceTypeId",
   onDelete: "SET NULL"
@@ -936,6 +924,29 @@ db.eventCliftonStrength.belongsTo(db.cliftonStrength, {
   onDelete: "SET NULL"
 });
 
+// EventMajor
+db.event.hasMany(db.eventMajor, {
+  as: "eventMajor",
+  foreignKey: "eventId",
+  onDelete: "CASCADE"
+});
+db.eventMajor.belongsTo(db.event, {
+  as: "event",
+  foreignKey: "eventId",
+  onDelete: "SET NULL",
+});
+
+db.major.hasMany(db.eventMajor, {
+  as: "eventMajor",
+  foreignKey: "majorId",
+  onDelete: "CASCADE",
+});
+db.eventMajor.belongsTo(db.major, {
+  as: "major",
+  foreignKey: "majorId",
+  onDelete: "SET NULL",
+});
+
 // ExperienceTypeEvent
 db.experienceType.hasMany(db.experienceTypeEvent, {
   as: "experienceTypeEvent",
@@ -959,35 +970,35 @@ db.experienceTypeEvent.belongsTo(db.event, {
   onDelete: "SET NULL"
 });
 
-// StudentExperienceTypeEvent
-db.studentExperienceType.hasMany(db.studentExperienceTypeEvent, {
-  as: "studentExperienceTypeEvent",
-  foreignKey: "studentExperienceTypeId",
+// StudentFlightPlanExperienceTypeEvent
+db.studentFlightPlanExperienceType.hasMany(db.studentFlightPlanExperienceTypeEvent, {
+  as: "studentFlightPlanExperienceTypeEvent",
+  foreignKey: "studentFlightPlanExperienceTypeId",
   onDelete: "CASCADE"
 });
-db.studentExperienceTypeEvent.belongsTo(db.studentExperienceType, {
-  as: "studentExperienceType",
-  foreignKey: "studentExperienceTypeId",
+db.studentFlightPlanExperienceTypeEvent.belongsTo(db.studentFlightPlanExperienceType, {
+  as: "studentFlightPlanExperienceType",
+  foreignKey: "studentFlightPlanExperienceTypeId",
   onDelete: "SET NULL"
 });
 
-db.event.hasMany(db.studentExperienceTypeEvent, {
-  as: "studentExperienceTypeEvent",
+db.event.hasMany(db.studentFlightPlanExperienceTypeEvent, {
+  as: "studentFlightPlanExperienceTypeEvent",
   foreignKey: "eventId",
   onDelete: "CASCADE"
 });
-db.studentExperienceTypeEvent.belongsTo(db.event, {
+db.studentFlightPlanExperienceTypeEvent.belongsTo(db.event, {
   as: "event",
   foreignKey: "eventId",
   onDelete: "SET NULL"
 });
 
-db.user.hasMany(db.studentExperienceTypeEvent, {
-  as: "studentExperienceTypeEvent",
+db.user.hasMany(db.studentFlightPlanExperienceTypeEvent, {
+  as: "studentFlightPlanExperienceTypeEvent",
   foreignKey: "userId",
   onDelete: "CASCADE"
 });
-db.studentExperienceTypeEvent.belongsTo(db.user, {
+db.studentFlightPlanExperienceTypeEvent.belongsTo(db.user, {
   as: "approver", // Different name from usual, don't know if this is right or not
   foreignKey: "userId",
   onDelete: "SET NULL"
