@@ -1472,61 +1472,61 @@ module.exports = {
           // Populate verifications
           await queryInterface.bulkInsert("verifications", [
             {
-              type: "manual",
+              type: "reflection",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form2",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "reflection",
               google_form_url: "http://example.com/verification-form3",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form4",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "required_document",
               google_form_url: "http://example.com/verification-form5",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: null,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "manual",
+              type: "required_document",
               google_form_url: "http://example.com/verification-form6",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "semi_automatic",
+              type: "csv_upload",
               google_form_url: "http://example.com/verification-form7",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
-              type: "automatic",
+              type: "quiz",
               google_form_url: "http://example.com/verification-form8",
               createdAt: new Date(),
               updatedAt: new Date(),
@@ -3553,7 +3553,6 @@ module.exports = {
           await queryInterface.bulkInsert("tasks", [
             {
               category: "academic",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Advanced Programming",
               description: "Study advanced programming concepts.",
@@ -3568,7 +3567,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Leadership Seminar",
               description: "Attend a leadership seminar.",
@@ -3583,7 +3581,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "special_event",
               name: "Networking Event",
               description: "Attend a professional networking event.",
@@ -3598,7 +3595,6 @@ module.exports = {
             },
             {
               category: "strengths",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Strengths Assessment",
               description: "Complete a strengths assessment.",
@@ -3614,7 +3610,6 @@ module.exports = {
             },
             {
               category: "career_prep",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Resume Workshop",
               description: "Attend a resume writing workshop.",
@@ -3629,7 +3624,6 @@ module.exports = {
             },
             {
               category: "mentoring",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Mentorship Program",
               description: "Participate in a mentorship program.",
@@ -3644,7 +3638,6 @@ module.exports = {
             },
             {
               category: "volunteer",
-              reflection_required: false,
               schedule_type: "semesterly",
               name: "Community Service",
               description: "Volunteer at a local charity or event.",
@@ -3659,7 +3652,6 @@ module.exports = {
             },
             {
               category: "other",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Hackathon Participation",
               description: "Participate in a hackathon event.",
@@ -3675,7 +3667,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Machine Learning Course",
               description: "Complete a machine learning course online.",
@@ -3690,7 +3681,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Leadership Conference",
               description: "Attend a leadership conference in person.",
@@ -3706,7 +3696,6 @@ module.exports = {
             },
             {
               category: "career_prep",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Career Fair Prep Session",
               description:
@@ -3723,7 +3712,6 @@ module.exports = {
             },
             {
               category: "mentoring",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Peer Mentoring Session",
               description:
@@ -3739,7 +3727,6 @@ module.exports = {
             },
             {
               category: "volunteer",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Campus Clean-Up Day",
               description:
@@ -3755,7 +3742,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "special_event",
               name: "Alumni Mixer",
               description: "Engage with alumni from your department or major.",
@@ -3771,7 +3757,6 @@ module.exports = {
             },
             {
               category: "strengths",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Personal Values Workshop",
               description:
@@ -3787,7 +3772,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: false,
               schedule_type: "one_time",
               name: "Capstone Planning Session",
               description:
@@ -3804,7 +3788,6 @@ module.exports = {
             },
             {
               category: "other",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "Creative Project Showcase",
               description:
@@ -3820,7 +3803,6 @@ module.exports = {
             },
             {
               category: "academic",
-              reflection_required: false,
               schedule_type: "semesterly",
               name: "STEM Outreach Volunteering",
               description:
@@ -3837,7 +3819,6 @@ module.exports = {
             },
             {
               category: "leadership",
-              reflection_required: false,
               schedule_type: "special_event",
               name: "Group Facilitation Training",
               description:
@@ -3854,7 +3835,6 @@ module.exports = {
             },
             {
               category: "networking",
-              reflection_required: true,
               schedule_type: "semesterly",
               name: "LinkedIn Profile Review",
               description:
