@@ -979,7 +979,6 @@ module.exports = {
           await queryInterface.bulkInsert("experienceTypes", [
               {
                 category: "mentoring",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Mentor Match Program",
@@ -992,7 +991,6 @@ module.exports = {
               },
               {
                 category: "volunteer",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "every_semester",
                 name: "Leadership Through Service",
@@ -1004,7 +1002,6 @@ module.exports = {
               },
               {
                 category: "career_prep",
-                type: "automatic",
                 req_reflection: false,
                 schedule_type: "special_event",
                 name: "Career Fair Blitz",
@@ -1017,7 +1014,6 @@ module.exports = {
               },
               {
                 category: "other",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Growth Journal",
@@ -1030,7 +1026,6 @@ module.exports = {
               },
               {
                 category: "networking",
-                type: "automatic",
                 req_reflection: false,
                 schedule_type: "one_time",
                 name: "LinkedIn Optimization",
@@ -1042,7 +1037,6 @@ module.exports = {
               },
               {
                 category: "academic",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "every_semester",
                 name: "Academic Tutoring",
@@ -1054,7 +1048,6 @@ module.exports = {
               },
               {
                 category: "strengths",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Personal Vision Statement",
@@ -1067,7 +1060,6 @@ module.exports = {
               },
               {
                 category: "mentoring",
-                type: "manual",
                 req_reflection: false,
                 schedule_type: "every_semester",
                 name: "Mentor Check-ins",
@@ -1078,7 +1070,6 @@ module.exports = {
               },
               {
                 category: "academic",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "special_event",
                 name: "Study Skills Workshop",
@@ -1091,7 +1082,6 @@ module.exports = {
               },
               {
                 category: "career_prep",
-                type: "manual",
                 req_reflection: false,
                 schedule_type: "one_time",
                 name: "Mock Interview Marathon",
@@ -1104,7 +1094,6 @@ module.exports = {
               },
               {
                 category: "volunteer",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Volunteer for a Cause",
@@ -1117,7 +1106,6 @@ module.exports = {
               },
               {
                 category: "leadership",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "every_semester",
                 name: "Run a Campus Initiative",
@@ -1130,7 +1118,6 @@ module.exports = {
               },
               {
                 category: "academic",
-                type: "automatic",
                 req_reflection: false,
                 schedule_type: "special_event",
                 name: "Library Research Bootcamp",
@@ -1143,7 +1130,6 @@ module.exports = {
               },
               {
                 category: "strengths",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Life Mapping Exercise",
@@ -1156,7 +1142,6 @@ module.exports = {
               },
               {
                 category: "other",
-                type: "automatic",
                 req_reflection: false,
                 schedule_type: "one_time",
                 name: "Digital Wellness Session",
@@ -1169,7 +1154,6 @@ module.exports = {
               },
               {
                 category: "networking",
-                type: "manual",
                 req_reflection: true,
                 schedule_type: "every_semester",
                 name: "Industry Talks",
@@ -1181,7 +1165,6 @@ module.exports = {
               },
               {
                 category: "career_prep",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "one_time",
                 name: "Job Shadowing Experience",
@@ -1194,7 +1177,6 @@ module.exports = {
               },
               {
                 category: "volunteer",
-                type: "manual",
                 req_reflection: false,
                 schedule_type: "every_semester",
                 name: "Semester of Service",
@@ -1206,7 +1188,6 @@ module.exports = {
               },
               {
                 category: "other",
-                type: "automatic",
                 req_reflection: true,
                 schedule_type: "special_event",
                 name: "Life Skills Expo",
@@ -1218,7 +1199,6 @@ module.exports = {
               },
               {
                 category: "mentoring",
-                type: "manual",
                 req_reflection: false,
                 schedule_type: "one_time",
                 name: "Mentor Coffee Chat",
