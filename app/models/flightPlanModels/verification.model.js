@@ -10,7 +10,11 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
             defaultValue: 'quiz',
         },
-        google_form_url: {
+        public_google_form_url: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        private_google_form_url: {
             type: Sequelize.STRING,
             allowNull: true,
         },
