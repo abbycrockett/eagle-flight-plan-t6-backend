@@ -51,4 +51,20 @@ eventCliftonStrengthController.findEventsByCliftonStrengthId = async (req, res) 
   }
 };
 
+eventCliftonStrengthController.findAllByEventId = async (req, res) => {
+  try {
+    const eventId = req.params.eventId;
+
+    const eventCliftonStrengths = await EventCliftonStrength.findAll({
+      where: { eventId: eventId }
+    });
+
+    res.send(eventCliftonStrengths);
+  } catch (err) {
+    res.status(500).send({
+      message: err.message || "Error occurred while retrieving event clifton strengths.",
+    });
+  }
+};
+
 module.exports = eventCliftonStrengthController;
