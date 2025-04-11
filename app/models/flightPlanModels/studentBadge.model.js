@@ -8,6 +8,7 @@ module.exports = (sequelize, Sequelize) => {
         points_earned: {
             type: Sequelize.INTEGER,
             allowNull: false,
+            defaultValue: 0
         },
         date_acquired: {
             type: Sequelize.DATE,
