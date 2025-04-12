@@ -6,6 +6,8 @@ const StudentCliftonStrength = db.studentCliftonStrength;
 const EventMajor = db.eventMajor;
 const EventCliftonStrength = db.eventCliftonStrength;
 const StudentEvent = db.studentEvent;
+const Major = db.major;
+const CliftonStrength = db.cliftonStrength;
 const genericController = require('../genericController.js');
 const studentController = genericController(Student);
 
@@ -25,6 +27,19 @@ studentController.findRecommendedEvents = async (req, res) => {
     });
     const strengthIds = studentStrengths.map((strength) => strength.cliftonStrengthId);
 
+    const allMajor = await Major.findOne({
+      where: { name: "All" }
+    });
+    const allStrength = await CliftonStrength.findOne({
+      where: { name: "All" }
+    });
+
+    const allMajorId = allMajor ? allMajor.id : null;
+    const allStrengthId = allStrength ? allStrength.id : null;
+
+    if (allMajorId) majorIds.push(allMajorId);
+    if (allStrengthId) strengthIds.push(allStrengthId);
+
     const events = await Event.findAll({
       include: [
         {
@@ -38,16 +53,12 @@ studentController.findRecommendedEvents = async (req, res) => {
           as: "eventCliftonStrength",
           where: { cliftonStrengthId: strengthIds },
           required: false,
-        },
+        }
       ],
       where: {
         [db.Sequelize.Op.or]: [
           { "$eventMajor.majorId$": { [db.Sequelize.Op.in]: majorIds } },
-          {
-            "$eventCliftonStrength.cliftonStrengthId$": {
-              [db.Sequelize.Op.in]: strengthIds,
-            },
-          },
+          { "$eventCliftonStrength.cliftonStrengthId$": { [db.Sequelize.Op.in]: strengthIds } }
         ],
       },
     });
