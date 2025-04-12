@@ -14,5 +14,8 @@ module.exports = (app) => {
     // List of events by clifton strength id
     router.get("/cliftonStrength/:cliftonStrengthId/events", eventCliftonStrengthController.findEventsByCliftonStrengthId);
 
+    // list of event clifton strengths by event id
+    router.get("/event/:eventId/eventCliftonStrengths", eventCliftonStrengthController.findAllByEventId);
+
     app.use("/flightPlan-t6", router);
 };

@@ -51,4 +51,20 @@ eventMajorController.findEventsByMajorId = async (req, res) => {
   }
 };
 
+eventMajorController.findAllByEventId = async (req, res) => {
+  try {
+    const eventId = req.params.eventId;
+
+    const eventMajors = await EventMajor.findAll({
+      where: { eventId: eventId }
+    });
+
+    res.send(eventMajors);
+  } catch (err) {
+    res.status(500).send({
+      message: err.message || "Error occurred while retrieving event majors.",
+    });
+  }
+};
+
 module.exports = eventMajorController;
