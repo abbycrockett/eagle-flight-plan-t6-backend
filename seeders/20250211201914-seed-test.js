@@ -592,7 +592,7 @@ module.exports = {
             {
               name: "Speed Runner",
               description: "For finishing a task under the time limit.",
-              type: "flightplan_completion",
+              type: "experience_completion",
               points: 300,
               image: speedRunnerImageBuffer,
               image_type: "png",
@@ -631,7 +631,7 @@ module.exports = {
             {
               name: "Problem Solver",
               description: "Given to those who solve a difficult puzzle.",
-              type: "flightplan_completion",
+              type: "experience_completion",
               points: 350,
               image: problemSolverImageBuffer,
               image_type: "png",
@@ -670,7 +670,7 @@ module.exports = {
             {
               name: "Elite Champion",
               description: "Awarded to tournament winners.",
-              type: "flightplan_completion",
+              type: "experience_completion",
               points: 800,
               image: eliteChampionImageBuffer,
               image_type: "png",
@@ -977,237 +977,237 @@ module.exports = {
 
           // Populate experienceType
           await queryInterface.bulkInsert("experienceTypes", [
-              {
-                category: "mentoring",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Mentor Match Program",
-                description:
-                  "Join a short-term mentor matching event with professionals.",
-                rational:
-                  "Provides insight from experienced individuals in the field.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "volunteer",
-                req_reflection: true,
-                schedule_type: "every_semester",
-                name: "Leadership Through Service",
-                description: "Lead a campus volunteer group or initiative.",
-                rational:
-                  "Builds leadership through giving back to the community.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "career_prep",
-                req_reflection: false,
-                schedule_type: "special_event",
-                name: "Career Fair Blitz",
-                description:
-                  "Attend a major campus career fair and talk to employers.",
-                rational:
-                  "Explores job opportunities and improves communication skills.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "other",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Growth Journal",
-                description:
-                  "Write a personal reflection journal on your college journey.",
-                rational:
-                  "Encourages self-awareness and long-term growth tracking.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "networking",
-                req_reflection: false,
-                schedule_type: "one_time",
-                name: "LinkedIn Optimization",
-                description:
-                  "Attend a session to improve your LinkedIn profile.",
-                rational: "Enhances your digital professional presence.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "academic",
-                req_reflection: true,
-                schedule_type: "every_semester",
-                name: "Academic Tutoring",
-                description: "Provide tutoring for a class in your major.",
-                rational:
-                  "Reinforces subject knowledge and supports peers academically.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "strengths",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Personal Vision Statement",
-                description:
-                  "Craft a vision statement based on your values and strengths.",
-                rational:
-                  "Clarifies goals and aligns personal and professional growth.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "mentoring",
-                req_reflection: false,
-                schedule_type: "every_semester",
-                name: "Mentor Check-ins",
-                description: "Meet regularly with your assigned peer mentor.",
-                rational: "Fosters consistent growth through peer support.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "academic",
-                req_reflection: true,
-                schedule_type: "special_event",
-                name: "Study Skills Workshop",
-                description:
-                  "Attend a session focused on study techniques and habits.",
-                rational:
-                  "Strengthens time management and learning strategies.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "career_prep",
-                req_reflection: false,
-                schedule_type: "one_time",
-                name: "Mock Interview Marathon",
-                description:
-                  "Participate in a mock interview with a career advisor.",
-                rational:
-                  "Prepares for real-world job interviews through practice.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "volunteer",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Volunteer for a Cause",
-                description:
-                  "Spend a day helping with a local food bank or shelter.",
-                rational:
-                  "Supports the local community while building empathy.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "leadership",
-                req_reflection: true,
-                schedule_type: "every_semester",
-                name: "Run a Campus Initiative",
-                description:
-                  "Organize or lead a student-led project on campus.",
-                rational:
-                  "Teaches initiative, organization, and impact leadership.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "academic",
-                req_reflection: false,
-                schedule_type: "special_event",
-                name: "Library Research Bootcamp",
-                description:
-                  "Join a hands-on library session to build research skills.",
-                rational:
-                  "Improves academic resourcefulness and citation accuracy.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "strengths",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Life Mapping Exercise",
-                description:
-                  "Create a visual life map to explore your strengths and past.",
-                rational:
-                  "Encourages deep reflection on experiences and motivations.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "other",
-                req_reflection: false,
-                schedule_type: "one_time",
-                name: "Digital Wellness Session",
-                description:
-                  "Learn techniques for managing digital distractions.",
-                rational:
-                  "Improves focus and mental well-being in tech-heavy lives.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "networking",
-                req_reflection: true,
-                schedule_type: "every_semester",
-                name: "Industry Talks",
-                description:
-                  "Attend guest speaker events featuring professionals.",
-                rational: "Connects academic learning to real-world careers.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "career_prep",
-                req_reflection: true,
-                schedule_type: "one_time",
-                name: "Job Shadowing Experience",
-                description:
-                  "Shadow a professional in a field you're interested in.",
-                rational:
-                  "Provides clarity on career path and daily responsibilities.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "volunteer",
-                req_reflection: false,
-                schedule_type: "every_semester",
-                name: "Semester of Service",
-                description: "Volunteer consistently throughout the semester.",
-                rational:
-                  "Builds long-term community relationships and impact.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "other",
-                req_reflection: true,
-                schedule_type: "special_event",
-                name: "Life Skills Expo",
-                description:
-                  "Attend workshops on budgeting, cooking, and self-care.",
-                rational: "Prepares students for life beyond college.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                category: "mentoring",
-                req_reflection: false,
-                schedule_type: "one_time",
-                name: "Mentor Coffee Chat",
-                description:
-                  "Have an informal conversation with a professional mentor.",
-                rational: "Encourages relationship-building and curiosity.",
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
+            {
+              category: "mentoring",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Mentor Match Program",
+              description:
+                "Join a short-term mentor matching event with professionals.",
+              rational:
+                "Provides insight from experienced individuals in the field.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "volunteer",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Leadership Through Service",
+              description: "Lead a campus volunteer group or initiative.",
+              rational:
+                "Builds leadership through giving back to the community.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "career_prep",
+              req_reflection: false,
+              schedule_type: "special_event",
+              name: "Career Fair Blitz",
+              description:
+                "Attend a major campus career fair and talk to employers.",
+              rational:
+                "Explores job opportunities and improves communication skills.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "other",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Growth Journal",
+              description:
+                "Write a personal reflection journal on your college journey.",
+              rational:
+                "Encourages self-awareness and long-term growth tracking.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "networking",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "LinkedIn Optimization",
+              description:
+                "Attend a session to improve your LinkedIn profile.",
+              rational: "Enhances your digital professional presence.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "academic",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Academic Tutoring",
+              description: "Provide tutoring for a class in your major.",
+              rational:
+                "Reinforces subject knowledge and supports peers academically.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "strengths",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Personal Vision Statement",
+              description:
+                "Craft a vision statement based on your values and strengths.",
+              rational:
+                "Clarifies goals and aligns personal and professional growth.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "mentoring",
+              req_reflection: false,
+              schedule_type: "every_semester",
+              name: "Mentor Check-ins",
+              description: "Meet regularly with your assigned peer mentor.",
+              rational: "Fosters consistent growth through peer support.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "academic",
+              req_reflection: true,
+              schedule_type: "special_event",
+              name: "Study Skills Workshop",
+              description:
+                "Attend a session focused on study techniques and habits.",
+              rational:
+                "Strengthens time management and learning strategies.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "career_prep",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "Mock Interview Marathon",
+              description:
+                "Participate in a mock interview with a career advisor.",
+              rational:
+                "Prepares for real-world job interviews through practice.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "volunteer",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Volunteer for a Cause",
+              description:
+                "Spend a day helping with a local food bank or shelter.",
+              rational:
+                "Supports the local community while building empathy.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "leadership",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Run a Campus Initiative",
+              description:
+                "Organize or lead a student-led project on campus.",
+              rational:
+                "Teaches initiative, organization, and impact leadership.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "academic",
+              req_reflection: false,
+              schedule_type: "special_event",
+              name: "Library Research Bootcamp",
+              description:
+                "Join a hands-on library session to build research skills.",
+              rational:
+                "Improves academic resourcefulness and citation accuracy.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "strengths",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Life Mapping Exercise",
+              description:
+                "Create a visual life map to explore your strengths and past.",
+              rational:
+                "Encourages deep reflection on experiences and motivations.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "other",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "Digital Wellness Session",
+              description:
+                "Learn techniques for managing digital distractions.",
+              rational:
+                "Improves focus and mental well-being in tech-heavy lives.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "networking",
+              req_reflection: true,
+              schedule_type: "every_semester",
+              name: "Industry Talks",
+              description:
+                "Attend guest speaker events featuring professionals.",
+              rational: "Connects academic learning to real-world careers.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "career_prep",
+              req_reflection: true,
+              schedule_type: "one_time",
+              name: "Job Shadowing Experience",
+              description:
+                "Shadow a professional in a field you're interested in.",
+              rational:
+                "Provides clarity on career path and daily responsibilities.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "volunteer",
+              req_reflection: false,
+              schedule_type: "every_semester",
+              name: "Semester of Service",
+              description: "Volunteer consistently throughout the semester.",
+              rational:
+                "Builds long-term community relationships and impact.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "other",
+              req_reflection: true,
+              schedule_type: "special_event",
+              name: "Life Skills Expo",
+              description:
+                "Attend workshops on budgeting, cooking, and self-care.",
+              rational: "Prepares students for life beyond college.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              category: "mentoring",
+              req_reflection: false,
+              schedule_type: "one_time",
+              name: "Mentor Coffee Chat",
+              description:
+                "Have an informal conversation with a professional mentor.",
+              rational: "Encourages relationship-building and curiosity.",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
           ]);
 
           // Populate majors
@@ -3220,6 +3220,37 @@ module.exports = {
             {
               studentFlightPlanId: 5,
               experienceTypeId: 10,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              id: 11,
+              studentFlightPlanId: 11,
+              experienceTypeId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            }, {
+              id: 12,
+              studentFlightPlanId: 12,
+              experienceTypeId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            }, {
+              id: 13,
+              studentFlightPlanId: 13,
+              experienceTypeId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            }, {
+              id: 14,
+              studentFlightPlanId: 14,
+              experienceTypeId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            }, {
+              id: 15,
+              studentFlightPlanId: 15,
+              experienceTypeId: 2,
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -5563,6 +5594,71 @@ module.exports = {
               reflection_text:
                 "I gained hands-on experience, but there was room for improvement.",
               status: "in_progress",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentFlightPlanExperienceTypeId: 11,
+              eventId: 9,
+              userId: 9,
+              points_earned: 18,
+              completed_date: new Date("2025-02-03"),
+              unapprove_reason: null,
+              reflection_text:
+                "This experience sharpened my problem-solving and critical thinking abilities.",
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentFlightPlanExperienceTypeId: 12,
+              eventId: 9,
+              userId: 9,
+              points_earned: 18,
+              completed_date: new Date("2025-02-03"),
+              unapprove_reason: null,
+              reflection_text:
+                "This experience sharpened my problem-solving and critical thinking abilities.",
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentFlightPlanExperienceTypeId: 13,
+              eventId: 9,
+              userId: 9,
+              points_earned: 18,
+              completed_date: new Date("2025-02-03"),
+              unapprove_reason: null,
+              reflection_text:
+                "This experience sharpened my problem-solving and critical thinking abilities.",
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentFlightPlanExperienceTypeId: 14,
+              eventId: 9,
+              userId: 9,
+              points_earned: 18,
+              completed_date: new Date("2025-02-03"),
+              unapprove_reason: null,
+              reflection_text:
+                "This experience sharpened my problem-solving and critical thinking abilities.",
+              status: "approved",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentFlightPlanExperienceTypeId: 15,
+              eventId: 9,
+              userId: 9,
+              points_earned: 18,
+              completed_date: new Date("2025-02-03"),
+              unapprove_reason: null,
+              reflection_text:
+                "This experience sharpened my problem-solving and critical thinking abilities.",
+              status: "approved",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
