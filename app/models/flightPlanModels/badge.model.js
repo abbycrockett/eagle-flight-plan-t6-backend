@@ -30,6 +30,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING, // Image file type
             allowNull: true,
         },
+        semester_from_grad: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+        }
     });
     return Badge;
 };

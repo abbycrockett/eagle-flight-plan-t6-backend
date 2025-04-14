@@ -5,6 +5,14 @@ module.exports = (sequelize, Sequelize) => {
             autoIncrement: true,
             primaryKey: true,
         },
+        semester_from_grad: {
+            type: Sequelize.INTEGER,
+            allowNull: true,
+        },
+        completion_date: {
+            type: Sequelize.DATE, 
+            allowNull: true,
+        }
     });
     return StudentFlightPlan;
 };
