@@ -22,11 +22,13 @@
     "jade": "~1.11.0",
     "json-bigint": "^1.0.0",
     "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.9.0",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.3",
     "node-fetch": "^3.3.2",
     "pug": "^3.0.3",
+    "puppeteer": "^24.6.1",
     "sequelize": "^6.37.4"
   },
   "devDependencies": {
