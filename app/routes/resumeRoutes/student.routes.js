@@ -27,5 +27,8 @@ module.exports = (app) => {
     // Get events student has signed up for
     router.get("/:id/registered-events", [authenticate], student.findRegisteredEvents);
 
+    // Get student by OC student id
+    router.get("/student-id/:studentId", [authenticate], student.getStudentByStudentId);
+
     app.use("/resume-t6/student", router);
 };
