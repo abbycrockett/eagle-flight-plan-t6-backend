@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         type: {
             type: Sequelize.ENUM,
-            values: ['task_completion', 'experience_completion', 'flightplan_completion', 'other'],
+            values: ['task_completion', 'experience_completion', 'task_experience_completion', 'flightplan_completion', 'other'],
             allowNull: true,
         },
         points: {
