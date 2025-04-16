@@ -121,6 +121,9 @@ require("./app/routes/flightPlanRoutes/quizResult.routes")(app);
 // Handles Communication with the Google App Script to link form to sheet
 require("./app/routes/flightPlanRoutes/linkFrom.routes")(app);
 
+// Handles converting a docx to pdf to view on the frontend
+require("./app/routes/flightPlanRoutes/convertDocx.routes")(app);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
