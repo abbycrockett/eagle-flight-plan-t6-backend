@@ -3589,6 +3589,70 @@ module.exports = {
             },
           ]);
 
+          // Populate studentMajors
+          await queryInterface.bulkInsert("studentMajors", [
+            {
+              studentId: 1,
+              majorId: 1, //Computer Science
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 2,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 3,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 4,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 5,
+              majorId: 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 6,
+              majorId: 2,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 7,
+              majorId: 3,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 8,
+              majorId: 4,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 9,
+              majorId: 5,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+            {
+              studentId: 10,
+              majorId: 6,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+            },
+          ]);
+
           // Populate task
           await queryInterface.bulkInsert("tasks", [
             {
