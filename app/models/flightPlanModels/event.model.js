@@ -14,7 +14,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: false,
         },
         event_type: {
-            type: Sequelize.ENUM('academic', 'club', 'extra_curricular', 'career_fair', 'mentoring', 'career_services', 'lunch_and_learn', 'galup_strengths_class', 'volunteer'),
+            type: Sequelize.ENUM('academic', 'club', 'extra_curricular', 'career_fair', 'mentoring', 'career_services', 'lunch_and_learn', 'galup_strengths_class', 'volunteer', 'custom'),
             allowNull: false,
             defaultValue: 'career_services',
         },
