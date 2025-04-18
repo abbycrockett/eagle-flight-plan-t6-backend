@@ -15,6 +15,8 @@ module.exports = (app) => {
     // Retreive a single Course with id
     router.get("/user/:userId/userRole/:id", [authenticate], userRole.getById);
 
+    router.get("/role/:roleId/userRole/", [authenticate], userRole.getAll);
+
     // Update a Course with id
     router.put("/user/:userId/userRole/:id", [authenticate], userRole.update);
 

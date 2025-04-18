@@ -1352,26 +1352,31 @@ module.exports = {
           // Populate roles
           await queryInterface.bulkInsert("roles", [
             {
+              name: "Admin",
               role_type: "admin",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
+              name: "Student",
               role_type: "student",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
+              name: "Reviewer",
               role_type: "reviewer",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
+              name: "Student Worker",
               role_type: "student_worker",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
+              name: "Professor",
               role_type: "professor",
               createdAt: new Date(),
               updatedAt: new Date(),
