@@ -124,6 +124,9 @@ require("./app/routes/flightPlanRoutes/linkFrom.routes")(app);
 // Handles converting a docx to pdf to view on the frontend
 require("./app/routes/flightPlanRoutes/convertDocx.routes")(app);
 
+// Google Calendar
+require("./app/routes/flightPlanRoutes/googleCalendar.routes")(app);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
