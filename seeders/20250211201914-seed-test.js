@@ -37,6 +37,20 @@ module.exports = {
     const eliteChampionImageBuffer = loadLocalImage('elite.png');
     const legendaryStatusImageBuffer = loadLocalImage('legend.png');
 
+    // User Images:
+    const anthonyImageBuffer = loadLocalImage('anthony-li.png');
+    const abbyImageBuffer = loadLocalImage('abby-ig.png');
+    const billImageBuffer = loadLocalImage('bill-li.png');
+    const jennaImageBuffer = loadLocalImage('jenna-li.png');
+    const arrianImageBuffer = loadLocalImage('arrian-li.png');
+    const adamImageBuffer = loadLocalImage('adam-li.png');
+    const graceImageBuffer = loadLocalImage('grace-li.png');
+    const northImageBuffer = loadLocalImage('north-oc.png');
+    const hamilImageBuffer = loadLocalImage('hamil-oc.png');
+    const frankImageBuffer = loadLocalImage('frank-li.png');
+    const jacobImageBuffer = loadLocalImage('jacob-li.png');
+    const eveImageBuffer = loadLocalImage('eve-li.png');
+
     // Clear Preexisting data
     {
       // Eagle Flight Plan
@@ -3965,9 +3979,14 @@ module.exports = {
               studentId: 1,
               reviewerId: 1,
               adminId: 1,
+              image: anthonyImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Abby",
               lName: "Crockett",
@@ -3977,9 +3996,14 @@ module.exports = {
               studentId: 2,
               reviewerId: 2,
               adminId: 2,
+              image: abbyImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Bill",
               lName: "Le",
@@ -3989,9 +4013,14 @@ module.exports = {
               studentId: 3,
               reviewerId: 3,
               adminId: 3,
+              image: billImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Jenna",
               lName: "Stilling",
@@ -4001,9 +4030,14 @@ module.exports = {
               studentId: 4,
               reviewerId: 4,
               adminId: 4,
+              image: jennaImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Arrian Naomi",
               lName: "Taton",
@@ -4013,16 +4047,23 @@ module.exports = {
               studentId: 5,
               reviewerId: 5,
               adminId: 5,
+              image: arrianImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
-              fName: "Paul",
-              lName: "Nason",
-              email: "paul.nason@eagles.oc.edu",
+              fName: "Charlotte",
+              lName: "Hamil",
+              email: "charlotte.hamil@oc.edu",
               phone_number: "111-222-3333",
-              prefix: "Dr.",
+              prefix: "Mrs.",
               studentId: null,
+              image: hamilImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -4031,8 +4072,10 @@ module.exports = {
               lName: "Martin",
               email: "eve.martin@example.com",
               phone_number: "666-555-4444",
-              prefix: "Dr.",
+              prefix: "Ms.",
               studentId: 6,
+              image: eveImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
@@ -4041,11 +4084,16 @@ module.exports = {
               lName: "Garcia",
               email: "frank.garcia@example.com",
               phone_number: "777-888-9999",
-              prefix: "Mr.",
+              prefix: "Dr.",
               studentId: null,
+              image: frankImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Grace",
               lName: "Rodriguez",
@@ -4053,20 +4101,29 @@ module.exports = {
               phone_number: "999-888-7777",
               prefix: "Ms.",
               studentId: 7,
+              image: graceImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
-              fName: "Hannah",
-              lName: "Martinez",
-              email: "hannah.martinez@example.com",
-              phone_number: "333-222-1111",
-              prefix: "Mrs.",
+              fName: "David",
+              lName: "North",
+              email: "david.north@oc.edu",
+              phone_number: "405-425-5434",
+              prefix: "Mr.",
               studentId: 8,
+              image: northImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
-            // New users
+          ]);
+
+          await queryInterface.bulkInsert("users", [
             {
               fName: "Adam",
               lName: "Nguyen",
@@ -4074,16 +4131,20 @@ module.exports = {
               phone_number: "123-345-4312",
               prefix: "Mr.",
               studentId: 9,
+              image: adamImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
             {
               fName: "Jacob",
-              lName: "Doe",
+              lName: "Davidson",
               email: "jacob.doe@example.com",
               phone_number: "645-854-8765",
               prefix: "Mr.",
               studentId: 10,
+              image: jacobImageBuffer,
+              image_type: "png",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
