@@ -47,7 +47,7 @@ const genericController = (model, associations = [], foreignKeys = []) => {
             }
         },
 
-        // Get by Id
+        // Get By Id
         getById: async (req, res) => {
             try {
                 const query = { include: associations, where: { id: req.params.id } };
