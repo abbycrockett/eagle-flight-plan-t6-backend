@@ -9108,6 +9108,8 @@ module.exports = {
             {
               studentId: 1,
               eventId: 20,
+              attendance_status: "attended",
+              verification_status: "in_progress",
               createdAt: new Date(),
               updatedAt: new Date(),
             },
