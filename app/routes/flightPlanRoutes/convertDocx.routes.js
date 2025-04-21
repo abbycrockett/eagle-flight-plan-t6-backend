@@ -19,7 +19,7 @@ module.exports = (app) => {
 
             const base64String = Buffer.from(pdfBuffer).toString('base64');
 
-            const base64Pdf = `data:application/pdf;base64,${base64String}`;
+            const base64Pdf = `${base64String}`;
 
             res.json({ base64Pdf });
         } catch (err) {

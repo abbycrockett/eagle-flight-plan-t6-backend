@@ -7,6 +7,10 @@ const genericController = (model, associations = [], foreignKeys = []) => {
                     const imageBuffer = Buffer.from(req.body.image, 'base64'); // Decodes Base64 image
                     req.body.image = imageBuffer; // Stores as Buffer
                 }
+                if (req.body.required_document && req.body.required_document_type) {
+                    const imageBuffer = Buffer.from(req.body.required_document, 'base64'); // Decodes Base64 image
+                    req.body.required_document = imageBuffer; // Stores as Buffer
+                }
 
                 // Assigns foreign keys from route parameters to the request body
                 foreignKeys.forEach((key) => {
@@ -39,6 +43,9 @@ const genericController = (model, associations = [], foreignKeys = []) => {
                     if (record.image && record.image_type) {
                         record.image = `data:${record.image_type};base64,${record.image.toString('base64')}`; // Image Handling
                     }
+                    if (record.required_document && record.required_document_type) {
+                        record.required_document = `data:${record.required_document_type};base64,${record.required_document.toString('base64')}`; // Image Handling
+                    }
                 });
 
                 res.status(200).json(records);
@@ -63,6 +70,9 @@ const genericController = (model, associations = [], foreignKeys = []) => {
                     if (record.image && record.image_type) {
                         record.image = `data:${record.image_type};base64,${record.image.toString('base64')}`; // Image Handling
                     }
+                    if (record.required_document && record.required_document_type) {
+                        record.required_document = `data:${record.required_document_type};base64,${record.required_document.toString('base64')}`; // Image Handling
+                    }
                     res.status(200).json(record);
                 } else {
                     res.status(404).json({ error: 'Record not found' });
@@ -77,6 +87,9 @@ const genericController = (model, associations = [], foreignKeys = []) => {
             try {
                 if (req.body.image && req.body.image_type) {
                     req.body.image = Buffer.from(req.body.image, 'base64'); // Base64 to Buffer for images
+                }
+                if (req.body.required_document && req.body.required_document_type) {
+                    req.body.required_document = Buffer.from(req.body.required_document, 'base64'); // Base64 to Buffer for images
                 }
 
                 const query = { where: { id: req.params.id } };
@@ -96,6 +109,9 @@ const genericController = (model, associations = [], foreignKeys = []) => {
 
                     if (updatedRecord.image && updatedRecord.image_type) {
                         updatedRecord.image = `data:${updatedRecord.image_type};base64,${updatedRecord.image.toString('base64')}`;
+                    }
+                    if (updatedRecord.required_document && updatedRecord.required_document_type) {
+                        updatedRecord.required_document = `data:${updatedRecord.required_document_type};base64,${updatedRecord.required_document.toString('base64')}`;
                     }
                     res.status(200).json(updatedRecord);
                 } else {
