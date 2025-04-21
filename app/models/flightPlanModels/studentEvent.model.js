@@ -11,16 +11,15 @@ module.exports = (sequelize, Sequelize) => {
       defaultValue: "registered",
     },
     verification_status: {
-      type: Sequelize.ENUM("approved", "in_progress", "denied", "n/a"),
+      type: Sequelize.ENUM("approved", "in_progress", "denied"),
       allowNull: false,
-      defaultValue: "n/a",
+      defaultValue: "in_progress",
     },
     calendar_id: {
       type: Sequelize.STRING,
       allowNull: false,
       defaultValue: "",
     },
-      defaultValue: 'registered',
   });
 
   return StudentEvent;
