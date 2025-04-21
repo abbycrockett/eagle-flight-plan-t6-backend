@@ -9379,7 +9379,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9387,7 +9387,7 @@ module.exports = {
             {
               studentId: 10,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9395,7 +9395,7 @@ module.exports = {
             {
               studentId: 9,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9403,7 +9403,7 @@ module.exports = {
             {
               studentId: 9,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9411,7 +9411,7 @@ module.exports = {
             {
               studentId: 9,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9419,7 +9419,7 @@ module.exports = {
             {
               studentId: 9,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9427,7 +9427,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9435,7 +9435,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9443,7 +9443,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9451,7 +9451,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
@@ -9459,7 +9459,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9467,7 +9467,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9475,7 +9475,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9483,7 +9483,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9491,7 +9491,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9499,7 +9499,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9507,7 +9507,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9515,7 +9515,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9523,7 +9523,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9531,7 +9531,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9539,7 +9539,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9547,7 +9547,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9555,7 +9555,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9563,7 +9563,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9571,7 +9571,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9579,7 +9579,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9587,7 +9587,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: "attended",
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9595,15 +9595,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
-              verification_status: "in_progress",
-              createdAt: new Date(Date.now()), 
-              updatedAt: new Date(Date.now()),
-            },
-            {
-              studentId: 2,
-              eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9611,7 +9603,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9619,7 +9611,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9627,7 +9619,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9635,7 +9627,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9643,7 +9635,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9651,7 +9643,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9659,7 +9651,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9667,7 +9659,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9675,7 +9667,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9683,7 +9675,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9691,7 +9683,15 @@ module.exports = {
             {
               studentId: 2,
               eventId: 11,
-              attendence_status: null,
+              attendance_status: "attended",
+              verification_status: "in_progress",
+              createdAt: new Date(Date.now()), 
+              updatedAt: new Date(Date.now()),
+            },
+            {
+              studentId: 2,
+              eventId: 11,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now()), 
               updatedAt: new Date(Date.now()),
@@ -9699,7 +9699,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9707,7 +9707,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9715,7 +9715,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9723,7 +9723,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9731,7 +9731,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9739,7 +9739,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9747,7 +9747,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9755,7 +9755,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9763,7 +9763,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9771,7 +9771,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9779,7 +9779,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9787,7 +9787,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9795,7 +9795,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9803,7 +9803,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9811,7 +9811,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9819,7 +9819,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9827,7 +9827,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9835,7 +9835,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9843,7 +9843,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9851,7 +9851,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9859,7 +9859,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9867,7 +9867,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9875,7 +9875,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9883,7 +9883,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9891,7 +9891,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9899,7 +9899,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9907,7 +9907,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9915,7 +9915,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9923,7 +9923,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9931,7 +9931,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9939,7 +9939,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9947,7 +9947,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000),
@@ -9955,7 +9955,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -9963,7 +9963,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -9971,7 +9971,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -9979,7 +9979,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -9987,7 +9987,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -9995,7 +9995,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10003,7 +10003,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10011,7 +10011,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10019,7 +10019,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10027,7 +10027,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "approved",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10035,7 +10035,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10043,7 +10043,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10051,7 +10051,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10059,7 +10059,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10067,7 +10067,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10075,7 +10075,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10083,7 +10083,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000),
@@ -10091,7 +10091,7 @@ module.exports = {
             {
               studentId: 2,
               eventId: 1,
-              attendence_status: null,
+              attendance_status: "attended",
               verification_status: "in_progress",
               createdAt: new Date(Date.now() - 58 * 24 * 60 * 60 * 1000), 
               updatedAt: new Date(Date.now() - 58 * 24 * 60 * 60 * 1000),

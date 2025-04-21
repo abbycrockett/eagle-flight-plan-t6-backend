@@ -20,6 +20,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false,
       defaultValue: "",
     },
+      defaultValue: 'registered',
   });
 
   return StudentEvent;
