@@ -1,7 +1,8 @@
+const router = require("express").Router();
 const { google } = require("googleapis");
 
 module.exports = function (app) {
-  app.post("/api/calendar/create", async (req, res) => {
+  router.post("/api/calendar/create", async (req, res) => {
     try {
       const {
         access_token,
@@ -58,7 +59,7 @@ module.exports = function (app) {
     }
   });
 
-  app.delete("/api/calendar/delete", async (req, res) => {
+  router.delete("/api/calendar/delete", async (req, res) => {
     try {
       const { access_token, eventId } = req.body;
 
@@ -92,8 +93,8 @@ module.exports = function (app) {
       res.status(500).json({ error: err.message, details: err });
     }
   });
-  
-  app.delete("/api/calendar/delete", async (req, res) => {
+
+  router.delete("/api/calendar/delete", async (req, res) => {
     try {
       const { access_token, eventId } = req.body;
 
@@ -127,4 +128,6 @@ module.exports = function (app) {
       res.status(500).json({ error: err.message, details: err });
     }
   });
+
+  app.use("/flightPlan-t6", router);
 };
