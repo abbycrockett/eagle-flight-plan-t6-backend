@@ -29,6 +29,7 @@ jobs:
           echo DB_PW = "$DB_PW" >> .env
           echo DB_USER = "$DB_USER" >> .env
           echo DB_NAME = "$DB_NAME" >> .env
+          echo GOOGLE_WEB_APP_URL = "$GOOGLE_WEB_APP_URL" >> .env
       - run: npm run bundle
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
