@@ -8,7 +8,7 @@ const EventCliftonStrength = db.eventCliftonStrength;
 const StudentEvent = db.studentEvent;
 const Major = db.major;
 const CliftonStrength = db.cliftonStrength;
-const genericController = require('../genericController.js');
+const genericController = require("../genericController.js");
 const studentController = genericController(Student);
 
 studentController.findRecommendedEvents = async (req, res) => {
@@ -25,13 +25,15 @@ studentController.findRecommendedEvents = async (req, res) => {
       where: { studentId },
       attributes: ["cliftonStrengthId"],
     });
-    const strengthIds = studentStrengths.map((strength) => strength.cliftonStrengthId);
+    const strengthIds = studentStrengths.map(
+      (strength) => strength.cliftonStrengthId
+    );
 
     const allMajor = await Major.findOne({
-      where: { name: "All" }
+      where: { name: "All" },
     });
     const allStrength = await CliftonStrength.findOne({
-      where: { name: "All" }
+      where: { name: "All" },
     });
 
     const allMajorId = allMajor ? allMajor.id : null;
@@ -53,12 +55,16 @@ studentController.findRecommendedEvents = async (req, res) => {
           as: "eventCliftonStrength",
           where: { cliftonStrengthId: strengthIds },
           required: false,
-        }
+        },
       ],
       where: {
         [db.Sequelize.Op.or]: [
           { "$eventMajor.majorId$": { [db.Sequelize.Op.in]: majorIds } },
-          { "$eventCliftonStrength.cliftonStrengthId$": { [db.Sequelize.Op.in]: strengthIds } }
+          {
+            "$eventCliftonStrength.cliftonStrengthId$": {
+              [db.Sequelize.Op.in]: strengthIds,
+            },
+          },
         ],
       },
     });
@@ -94,6 +100,20 @@ studentController.findRegisteredEvents = async (req, res) => {
         error.message ||
         "Some error occurred while retrieving registered events.",
     });
+  }
+};
+
+studentController.getStudentByStudentId = async (req, res) => {
+  try {
+    const studentId = req.params.studentId;
+
+    const student = await Student.findOne({
+      where: { student_issued_id: studentId },
+    });
+
+    res.send(student);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
